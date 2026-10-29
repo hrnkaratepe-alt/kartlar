@@ -528,6 +528,80 @@
     .sozluk-anlam { font-size: 15px; color: var(--yesil); font-weight: 600; margin-top: 4px; }
     .sozluk-anlam.yok { color: var(--soluk); font-weight: 400; }
 
+    .sozluk-ipucu {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      border: none;
+      border-radius: 10px;
+      background: var(--ana-acik);
+      color: var(--ana);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 8px;
+    }
+
+    /* ---------- Hafıza kartı (kelimeye ikinci dokunuşta açılır) ---------- */
+    .hafiza-perde {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      background: rgba(10, 14, 25, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .hafiza-kart {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      max-height: calc(100dvh - 32px);
+      overflow-y: auto;
+      background: var(--yuzey);
+      border-radius: 22px;
+      box-shadow: var(--golge);
+      padding: 22px 20px 20px;
+      text-align: center;
+    }
+    .hafiza-kart .kapat {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      border: none;
+      background: none;
+      font-size: 24px;
+      color: var(--soluk);
+      padding: 4px 10px;
+    }
+    .hafiza-baslik { font-size: 12px; color: var(--soluk); font-weight: 600; letter-spacing: 0.5px; }
+    .hafiza-emoji { font-size: 52px; line-height: 1.2; margin: 6px 0; }
+    .hafiza-kelime { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 28px; font-weight: 700; }
+    .hafiza-okunus { color: var(--ana); font-style: italic; margin-top: 2px; }
+    .hafiza-anlam { color: var(--yesil); font-weight: 700; font-size: 18px; margin-top: 6px; }
+    .hafiza-bolum {
+      text-align: left;
+      background: var(--arka);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-top: 12px;
+    }
+    .hafiza-bolum h3 { font-size: 12px; color: var(--soluk); margin: 0 0 4px; }
+    .hafiza-benzetme { font-size: 17px; font-weight: 600; }
+    .hafiza-benzetme b { color: var(--turuncu); }
+    .hafiza-hikaye { font-size: 15px; line-height: 1.55; margin: 0; }
+    .hafiza-dinle {
+      width: 100%;
+      margin-top: 14px;
+      border: none;
+      border-radius: 14px;
+      padding: 14px;
+      background: var(--ana);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
     [hidden] { display: none !important; }
   </style>
 </head>
@@ -672,6 +746,31 @@
     </div>
     <div class="sozluk-okunus" id="sozlukOkunus"></div>
     <div class="sozluk-anlam" id="sozlukAnlam"></div>
+    <button class="sozluk-ipucu" id="sozlukIpucu" hidden>🧠 Hafıza kartı için tekrar dokun</button>
+  </div>
+
+  <!-- Hafıza kartı: anahtar kelime yöntemiyle kelimeyi akılda tutmaya yardım eder -->
+  <div class="hafiza-perde" id="hafizaPerde" hidden>
+    <div class="hafiza-kart" role="dialog" aria-modal="true" aria-labelledby="hafizaKelime">
+      <button class="kapat" id="hafizaKapat" aria-label="Hafıza kartını kapat">×</button>
+      <div class="hafiza-baslik">🧠 HAFIZA KARTI</div>
+      <div class="hafiza-emoji" id="hafizaEmoji"></div>
+      <div class="hafiza-kelime">
+        <span id="hafizaKelime"></span>
+        <button class="ses mini" id="hafizaKelimeSes" aria-label="Kelimeyi dinle">🔊</button>
+      </div>
+      <div class="hafiza-okunus" id="hafizaOkunus"></div>
+      <div class="hafiza-anlam" id="hafizaAnlam"></div>
+      <div class="hafiza-bolum">
+        <h3>🔗 Benzetme: kulağa ne benziyor?</h3>
+        <div class="hafiza-benzetme" id="hafizaBenzetme"></div>
+      </div>
+      <div class="hafiza-bolum">
+        <h3>📖 Hikaye</h3>
+        <p class="hafiza-hikaye" id="hafizaHikaye"></p>
+      </div>
+      <button class="hafiza-dinle" id="hafizaDinle">🔊 Hikayeyi dinle</button>
+    </div>
   </div>
 
   <script>
@@ -686,6 +785,11 @@
     // ---------- SÖZLÜK ----------
     // Seviye dosyalarındaki kelimeler yüklendikçe buraya eklenir: { "apple": ["elma", "epıl"] }
     const KELIME_SOZLUGU = {};
+    // Hafıza kartları (data/hafiza.json): { "hello": { emoji, anahtar, hikaye } }
+    const HAFIZA = {};
+    // Kalıplı hafıza kartlarının ilk kelimesi: "thank" → "thank you"
+    const HAFIZA_KALIP = {};
+
     // Kalıpların ilk kelimesi ("abide by" → "abide"); başka hiçbir şey bulunamazsa kullanılır
     const KALIP_SOZLUGU = {};
 
@@ -1614,19 +1718,29 @@
                      sesler[0] || null;
     }
 
-    function seslendir(metin, yavas) {
+    let turkceSes = null;
+
+    function turkceSesSec() {
+      const sesler = speechSynthesis.getVoices().filter(s => s.lang && s.lang.toLowerCase().startsWith("tr"));
+      turkceSes = sesler.find(s => s.localService) || sesler[0] || null;
+    }
+
+    // dil "tr" ise Türkçe sesle okur (hafıza kartı hikayeleri); varsayılan İngilizce
+    function seslendir(metin, yavas, dil) {
       if (!sesVar) return;
       speechSynthesis.cancel();
       const konusma = new SpeechSynthesisUtterance(metin);
-      konusma.lang = ingilizceSes ? ingilizceSes.lang : "en-US";
-      if (ingilizceSes) konusma.voice = ingilizceSes;
+      const ses = dil === "tr" ? turkceSes : ingilizceSes;
+      konusma.lang = ses ? ses.lang : (dil === "tr" ? "tr-TR" : "en-US");
+      if (ses) konusma.voice = ses;
       konusma.rate = yavas ? 0.6 : 0.95;
       speechSynthesis.speak(konusma);
     }
 
     if (sesVar) {
       sesSec();
-      speechSynthesis.onvoiceschanged = sesSec;
+      turkceSesSec();
+      speechSynthesis.onvoiceschanged = () => { sesSec(); turkceSesSec(); };
     } else {
       document.querySelectorAll(".ses").forEach(b => b.hidden = true);
       document.querySelector(".oto-ses").hidden = true;
@@ -2073,18 +2187,8 @@
 
     const kayitBul = k => KELIME_SOZLUGU[k] || SOZLUK[k] || null;
 
-    // Sözlükte yoksa ekleri atarak dener: "cats" → "cat", "studied" → "study", "running" → "run"
-    function sozlukteBul(kelime) {
-      const k = kelime.toLowerCase();
-      if (kayitBul(k)) return kayitBul(k);
-
-      // Düzensiz fiiller ve çoğullar: "went" → go
-      if (DUZENSIZ[k]) {
-        const [kok, okunus] = DUZENSIZ[k];
-        const kokKaydi = kayitBul(kok);
-        if (kokKaydi) return [kokKaydi[0] + " (" + kok + " kelimesinin çekimli hâli)", okunus];
-      }
-
+    // Ekleri atarak olası kök hâllerini sıralar: "cats" → "cat", "studied" → "study", "running" → "run"
+    function ekAdaylari(k) {
       const adaylar = [];
       const kes = n => k.slice(0, k.length - n);
       if (k.endsWith("'s")) adaylar.push(kes(2));
@@ -2099,10 +2203,59 @@
       if (k.endsWith("est")) adaylar.push(kes(3), kes(2), kes(4));
       if (k.endsWith("ily")) adaylar.push(kes(3) + "y");                    // easily → easy
       if (k.endsWith("ly")) adaylar.push(kes(2));                           // quickly → quick
-      for (const aday of adaylar) {
-        if (aday.length > 1 && kayitBul(aday)) return kayitBul(aday);
+      return adaylar.filter(a => a.length > 1);
+    }
+
+    function sozlukteBul(kelime) {
+      const k = kelime.toLowerCase();
+      if (kayitBul(k)) return kayitBul(k);
+
+      // Düzensiz fiiller ve çoğullar: "went" → go
+      if (DUZENSIZ[k]) {
+        const [kok, okunus] = DUZENSIZ[k];
+        const kokKaydi = kayitBul(kok);
+        if (kokKaydi) return [kokKaydi[0] + " (" + kok + " kelimesinin çekimli hâli)", okunus];
+      }
+
+      for (const aday of ekAdaylari(k)) {
+        if (kayitBul(aday)) return kayitBul(aday);
       }
       return KALIP_SOZLUGU[k] || null;
+    }
+
+    // Dokunulan kelimenin hafıza kartı anahtarını bulur ("went" → "go", "thank" → "thank you")
+    function hafizaAnahtari(kelime) {
+      const k = kelime.toLowerCase();
+      const adaylar = [k, ...(DUZENSIZ[k] ? [DUZENSIZ[k][0]] : []), ...ekAdaylari(k)];
+      return adaylar.find(a => HAFIZA[a]) || HAFIZA_KALIP[k] || null;
+    }
+
+    // ---------- HAFIZA KARTI ----------
+    function hafizaGoster(anahtar) {
+      const h = HAFIZA[anahtar];
+      const kayit = kayitBul(anahtar) || ["", ""];
+      sozlukKapat();
+      $("hafizaEmoji").textContent = h.emoji;
+      $("hafizaKelime").textContent = h.en;
+      $("hafizaOkunus").textContent = kayit[1] ? "[ " + kayit[1] + " ]" : "";
+      $("hafizaAnlam").textContent = kayit[0];
+      const b = $("hafizaBenzetme");
+      b.textContent = "";
+      b.append((kayit[1] || h.en) + "  ≈  ");
+      b.appendChild(yeni("b", "", h.anahtar));
+      $("hafizaHikaye").textContent = h.hikaye;
+      $("hafizaDinle").hidden = !sesVar;
+      $("hafizaKelimeSes").hidden = !sesVar;
+      $("hafizaDinle").onclick = () => seslendir(h.hikaye, false, "tr");
+      $("hafizaKelimeSes").onclick = () => seslendir(h.en);
+      $("hafizaPerde").hidden = false;
+      $("hafizaKapat").focus();
+    }
+
+    function hafizaKapat() {
+      if ($("hafizaPerde").hidden) return;
+      $("hafizaPerde").hidden = true;
+      if (sesVar) speechSynthesis.cancel();
     }
 
     let acikKelime = null;
@@ -2110,6 +2263,11 @@
     function sozlukGoster(kelimeEl) {
       const kutu = $("sozlukKutu");
       const kelime = kelimeEl.textContent;
+      const hafiza = hafizaAnahtari(kelime);
+
+      // Açık kelimeye ikinci kez dokunulunca hafıza kartı açılır
+      if (acikKelime === kelimeEl && !kutu.hidden && hafiza) return hafizaGoster(hafiza);
+
       const kayit = sozlukteBul(kelime);
       if (acikKelime) acikKelime.classList.remove("acik");
       acikKelime = kelimeEl;
@@ -2119,6 +2277,8 @@
       $("sozlukOkunus").textContent = kayit ? "[ " + kayit[1] + " ]" : "";
       $("sozlukAnlam").textContent = kayit ? kayit[0] : "Bu kelime sözlükte yok";
       $("sozlukAnlam").classList.toggle("yok", !kayit);
+      $("sozlukIpucu").hidden = !hafiza;
+      $("sozlukIpucu").onclick = () => hafizaGoster(hafiza);
       seslendir(kelime);
 
       // Kutuyu kelimenin üstüne ortala; yer yoksa altına koy, ekrandan taşırma
@@ -2159,7 +2319,9 @@
       if (kelime) sozlukGoster(kelime);
       else if (!e.target.closest(".sozluk-kutu")) sozlukKapat();
     });
-    window.addEventListener("scroll", sozlukKapat, true);
+    $("hafizaKapat").addEventListener("click", hafizaKapat);
+    $("hafizaPerde").addEventListener("click", e => { if (e.target === $("hafizaPerde")) hafizaKapat(); });
+    window.addEventListener("scroll", e => { if (!$("hafizaPerde").contains(e.target)) sozlukKapat(); }, true);
     window.addEventListener("resize", sozlukKapat);
     $("sozlukSes").addEventListener("click", () => {
       if (acikKelime) seslendir(acikKelime.textContent, true);
@@ -2202,6 +2364,10 @@
 
     // Bilgisayarda klavye: Boşluk = çevir, 1/2/3 = Bilmiyorum/Zor/Biliyorum, S = dinle
     document.addEventListener("keydown", e => {
+      if (!$("hafizaPerde").hidden) {
+        if (e.key === "Escape") hafizaKapat();
+        return;
+      }
       if ($("ekranKart").hidden || e.target.tagName === "INPUT") return;
       if (e.key === " " || e.key === "Enter") {
         if (e.target.tagName === "BUTTON" && e.target !== kartEl) return;
@@ -2236,6 +2402,16 @@
       }
       $("yukleniyor").hidden = true;
       ekraniCiz();
+
+      // Hafıza kartları arka planda yüklenir; yüklenemezse uygulama onlarsız çalışır
+      jsonAl("data/hafiza.json").then(veri => {
+        Object.entries(veri).forEach(([en, h]) => {
+          const anahtar = en.toLowerCase();
+          HAFIZA[anahtar] = Object.assign({ en }, h);
+          const ilk = anahtar.split(" ")[0];
+          if (ilk !== anahtar && !HAFIZA_KALIP[ilk]) HAFIZA_KALIP[ilk] = anahtar;
+        });
+      }).catch(() => {});
 
       // Diğer seviyeler arka planda yüklenir: sözlük tüm kelimeleri tanısın, yüzdeler görünsün
       SEVIYELER.forEach(s => seviyeyiYukle(s.kod).then(() => {
