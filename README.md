@@ -15,6 +15,17 @@ Telefonda çalışan, başlangıçtan ileri seviyeye İngilizce öğrenme uygula
 - Günde 20 kartlık hedef ve 🔥 seri sayacı
 - İlerleme telefonun tarayıcısında saklanır
 
+## İçerik
+
+| Seviye | Kelime | Cümle | Dilbilgisi dersi |
+|---|---|---|---|
+| A1 · Başlangıç | 798 | 98 | 15 (82 alıştırma) |
+| A2 · Temel | 876 | 70 | 15 (80 alıştırma) |
+| B1 · Orta | 1025 | 60 | 14 (74 alıştırma) |
+| B2 · Orta-üstü | 1033 | 44 | 12 (60 alıştırma) |
+| C1 · İleri | 1246 | 40 | 12 (62 alıştırma) |
+| **Toplam** | **4978** | **312** | **68 (358 alıştırma)** |
+
 ## Çalıştırma
 
 İçerik `data/` klasöründeki JSON dosyalarından yüklendiği için uygulama bir web adresinden açılmalıdır:
