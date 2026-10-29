@@ -1,0 +1,2394 @@
+{
+  "seviye": "A2",
+  "ad": "Temel",
+  "aciklama": "Günlük ihtiyaçlar, geçmiş ve gelecekten bahsetme.",
+  "kelimeler": [
+    {"en": "might", "tr": "-ebilir (belki)", "ok": "mayt", "ornek": "It might rain later.", "ornekTr": "Sonra yağmur yağabilir."},
+    {"en": "shall", "tr": "-elim mi? (öneri)", "ok": "şel", "ornek": "Shall we go?", "ornekTr": "Gidelim mi?"},
+    {"en": "would", "tr": "-erdi; kibar istek", "ok": "vud", "ornek": "Would you like some tea?", "ornekTr": "Biraz çay ister misin?"},
+    {"en": "going to", "tr": "-ecek (plan)", "ok": "gouing tu", "ornek": "I'm going to visit my aunt.", "ornekTr": "Teyzemi ziyaret edeceğim."},
+    {"en": "used to", "tr": "eskiden -erdi", "ok": "yuust tu", "ornek": "I used to live in Ankara.", "ornekTr": "Eskiden Ankara'da yaşardım."},
+    {"en": "become", "tr": "olmak, haline gelmek", "ok": "bikam", "ornek": "She wants to become a doctor.", "ornekTr": "Doktor olmak istiyor."},
+    {"en": "begin", "tr": "başlamak", "ok": "bigin", "ornek": "The concert begins at eight.", "ornekTr": "Konser sekizde başlıyor."},
+    {"en": "break", "tr": "kırmak; mola", "ok": "breyk", "ornek": "Be careful, don't break the glass.", "ornekTr": "Dikkat et, bardağı kırma."},
+    {"en": "build", "tr": "inşa etmek", "ok": "bild", "ornek": "They are building a new school.", "ornekTr": "Yeni bir okul inşa ediyorlar."},
+    {"en": "catch", "tr": "yakalamak; (otobüse) yetişmek", "ok": "keç", "ornek": "I need to catch the bus.", "ornekTr": "Otobüse yetişmem lazım."},
+    {"en": "decide", "tr": "karar vermek", "ok": "disayd", "ornek": "I can't decide.", "ornekTr": "Karar veremiyorum."},
+    {"en": "describe", "tr": "tarif etmek, anlatmak", "ok": "diskrayb", "ornek": "Can you describe the man?", "ornekTr": "Adamı tarif edebilir misin?"},
+    {"en": "explain", "tr": "açıklamak", "ok": "ikspleyn", "ornek": "Can you explain this rule?", "ornekTr": "Bu kuralı açıklayabilir misin?"},
+    {"en": "follow", "tr": "takip etmek", "ok": "folou", "ornek": "Follow me, please.", "ornekTr": "Lütfen beni takip edin."},
+    {"en": "hate", "tr": "nefret etmek", "ok": "heyt", "ornek": "I hate cold weather.", "ornekTr": "Soğuk havadan nefret ederim."},
+    {"en": "hold", "tr": "tutmak", "ok": "hould", "ornek": "Hold my hand.", "ornekTr": "Elimi tut."},
+    {"en": "invite", "tr": "davet etmek", "ok": "invayt", "ornek": "I want to invite you to dinner.", "ornekTr": "Seni akşam yemeğine davet etmek istiyorum."},
+    {"en": "join", "tr": "katılmak", "ok": "coyn", "ornek": "Do you want to join us?", "ornekTr": "Bize katılmak ister misin?"},
+    {"en": "keep", "tr": "saklamak, tutmak", "ok": "kiip", "ornek": "Keep the change.", "ornekTr": "Para üstü kalsın."},
+    {"en": "kill", "tr": "öldürmek", "ok": "kil", "ornek": "Smoking can kill you.", "ornekTr": "Sigara seni öldürebilir."},
+    {"en": "lend", "tr": "ödünç vermek", "ok": "lend", "ornek": "Can you lend me some money?", "ornekTr": "Bana biraz borç verebilir misin?"},
+    {"en": "lie", "tr": "yalan söylemek; uzanmak", "ok": "lay", "ornek": "Don't lie to me.", "ornekTr": "Bana yalan söyleme."},
+    {"en": "notice", "tr": "fark etmek", "ok": "noutis", "ornek": "Did you notice his new car?", "ornekTr": "Yeni arabasını fark ettin mi?"},
+    {"en": "offer", "tr": "teklif etmek; teklif", "ok": "ofır", "ornek": "They offered me a job.", "ornekTr": "Bana bir iş teklif ettiler."},
+    {"en": "pass", "tr": "geçmek; uzatmak", "ok": "pes", "ornek": "I passed my driving test.", "ornekTr": "Ehliyet sınavını geçtim."},
+    {"en": "prefer", "tr": "tercih etmek", "ok": "prifför", "ornek": "I prefer tea to coffee.", "ornekTr": "Çayı kahveye tercih ederim."},
+    {"en": "prepare", "tr": "hazırlamak", "ok": "priper", "ornek": "I prepare lunch for my kids.", "ornekTr": "Çocuklarıma öğle yemeği hazırlarım."},
+    {"en": "promise", "tr": "söz vermek; söz", "ok": "promis", "ornek": "I promise I'll call you.", "ornekTr": "Seni arayacağıma söz veriyorum."},
+    {"en": "pull", "tr": "çekmek", "ok": "pul", "ornek": "Pull the door, don't push it.", "ornekTr": "Kapıyı çek, itme."},
+    {"en": "push", "tr": "itmek", "ok": "puş", "ornek": "Push the button.", "ornekTr": "Düğmeye bas."},
+    {"en": "reach", "tr": "ulaşmak", "ok": "riiç", "ornek": "We reached the top of the hill.", "ornekTr": "Tepenin zirvesine ulaştık."},
+    {"en": "receive", "tr": "almak (gelen bir şeyi)", "ok": "risiiv", "ornek": "Did you receive my email?", "ornekTr": "E-postamı aldın mı?"},
+    {"en": "return", "tr": "geri dönmek; iade etmek", "ok": "ritörn", "ornek": "I'll return the book tomorrow.", "ornekTr": "Kitabı yarın iade edeceğim."},
+    {"en": "save", "tr": "kurtarmak; biriktirmek; kaydetmek", "ok": "seyv", "ornek": "I'm saving money for a car.", "ornekTr": "Araba için para biriktiriyorum."},
+    {"en": "share", "tr": "paylaşmak", "ok": "şer", "ornek": "Let's share the pizza.", "ornekTr": "Pizzayı paylaşalım."},
+    {"en": "shout", "tr": "bağırmak", "ok": "şaut", "ornek": "Don't shout at me!", "ornekTr": "Bana bağırma!"},
+    {"en": "spend", "tr": "harcamak; geçirmek", "ok": "spend", "ornek": "I spend a lot of money on books.", "ornekTr": "Kitaplara çok para harcarım."},
+    {"en": "steal", "tr": "çalmak (hırsızlık)", "ok": "stiil", "ornek": "Someone stole my wallet.", "ornekTr": "Biri cüzdanımı çaldı."},
+    {"en": "suggest", "tr": "önermek", "ok": "sıcest", "ornek": "I suggest a walk by the sea.", "ornekTr": "Deniz kenarında bir yürüyüş öneririm."},
+    {"en": "throw", "tr": "atmak, fırlatmak", "ok": "trou", "ornek": "Throw the ball to me.", "ornekTr": "Topu bana at."},
+    {"en": "touch", "tr": "dokunmak", "ok": "taç", "ornek": "Don't touch the paint.", "ornekTr": "Boyaya dokunma."},
+    {"en": "worry", "tr": "endişelenmek", "ok": "vari", "ornek": "Don't worry about me.", "ornekTr": "Benim için endişelenme."},
+    {"en": "agree", "tr": "katılmak (fikre), aynı fikirde olmak", "ok": "ıgrii", "ornek": "I agree with you.", "ornekTr": "Sana katılıyorum."},
+    {"en": "allow", "tr": "izin vermek", "ok": "ılau", "ornek": "Smoking is not allowed here.", "ornekTr": "Burada sigara içmek yasak."},
+    {"en": "appear", "tr": "görünmek, ortaya çıkmak", "ok": "ıpiır", "ornek": "A man appeared at the door.", "ornekTr": "Kapıda bir adam belirdi."},
+    {"en": "apply", "tr": "başvurmak", "ok": "ıplay", "ornek": "I applied for a new job.", "ornekTr": "Yeni bir işe başvurdum."},
+    {"en": "arrange", "tr": "ayarlamak, düzenlemek", "ok": "ıreync", "ornek": "Let's arrange a meeting.", "ornekTr": "Bir toplantı ayarlayalım."},
+    {"en": "attack", "tr": "saldırmak; saldırı", "ok": "ıtek", "ornek": "The dog attacked the cat.", "ornekTr": "Köpek kediye saldırdı."},
+    {"en": "avoid", "tr": "kaçınmak", "ok": "ıvoyd", "ornek": "Avoid fast food.", "ornekTr": "Hazır yemekten kaçın."},
+    {"en": "bake", "tr": "fırında pişirmek", "ok": "beyk", "ornek": "My mother bakes bread.", "ornekTr": "Annem ekmek pişirir."},
+    {"en": "belong", "tr": "ait olmak", "ok": "bilong", "ornek": "This bag belongs to me.", "ornekTr": "Bu çanta bana ait."},
+    {"en": "burn", "tr": "yanmak, yakmak", "ok": "börn", "ornek": "Don't burn the food.", "ornekTr": "Yemeği yakma."},
+    {"en": "celebrate", "tr": "kutlamak", "ok": "selıbreyt", "ornek": "We celebrate New Year together.", "ornekTr": "Yılbaşını birlikte kutlarız."},
+    {"en": "compare", "tr": "karşılaştırmak", "ok": "kımper", "ornek": "Compare the two prices.", "ornekTr": "İki fiyatı karşılaştır."},
+    {"en": "complain", "tr": "şikâyet etmek", "ok": "kımpleyn", "ornek": "He always complains about the food.", "ornekTr": "Hep yemekten şikâyet eder."},
+    {"en": "continue", "tr": "devam etmek", "ok": "kıntinyu", "ornek": "Please continue.", "ornekTr": "Lütfen devam edin."},
+    {"en": "cover", "tr": "örtmek, kapatmak", "ok": "kavır", "ornek": "Cover the pot.", "ornekTr": "Tencerenin kapağını kapat."},
+    {"en": "cross", "tr": "karşıdan karşıya geçmek", "ok": "kros", "ornek": "Cross the street carefully.", "ornekTr": "Caddeyi dikkatlice geç."},
+    {"en": "cut", "tr": "kesmek", "ok": "kat", "ornek": "Cut the bread, please.", "ornekTr": "Ekmeği kes, lütfen."},
+    {"en": "deliver", "tr": "teslim etmek, getirmek", "ok": "dilivır", "ornek": "They deliver pizza until midnight.", "ornekTr": "Gece yarısına kadar pizza getiriyorlar."},
+    {"en": "depend", "tr": "bağlı olmak", "ok": "dipend", "ornek": "It depends on the weather.", "ornekTr": "Havaya bağlı."},
+    {"en": "destroy", "tr": "yok etmek", "ok": "distroy", "ornek": "The fire destroyed the house.", "ornekTr": "Yangın evi yok etti."},
+    {"en": "develop", "tr": "geliştirmek", "ok": "divelıp", "ornek": "He develops mobile apps.", "ornekTr": "Mobil uygulamalar geliştiriyor."},
+    {"en": "die", "tr": "ölmek", "ok": "day", "ornek": "The plant died.", "ornekTr": "Bitki öldü."},
+    {"en": "disappear", "tr": "kaybolmak", "ok": "disıpiır", "ornek": "My keys disappeared!", "ornekTr": "Anahtarlarım kayboldu!"},
+    {"en": "discover", "tr": "keşfetmek", "ok": "diskavır", "ornek": "We discovered a nice café.", "ornekTr": "Güzel bir kafe keşfettik."},
+    {"en": "discuss", "tr": "tartışmak, görüşmek", "ok": "diskas", "ornek": "Let's discuss the plan.", "ornekTr": "Planı konuşalım."},
+    {"en": "download", "tr": "indirmek", "ok": "daunloud", "ornek": "Download the app for free.", "ornekTr": "Uygulamayı ücretsiz indir."},
+    {"en": "get dressed", "tr": "giyinmek", "ok": "get drest", "ornek": "Get dressed, we're late.", "ornekTr": "Giyin, geç kaldık."},
+    {"en": "drop", "tr": "düşürmek", "ok": "drop", "ornek": "I dropped my phone.", "ornekTr": "Telefonumu düşürdüm."},
+    {"en": "earn", "tr": "kazanmak (para)", "ok": "örn", "ornek": "She earns a good salary.", "ornekTr": "İyi bir maaş kazanıyor."},
+    {"en": "enter", "tr": "girmek", "ok": "entır", "ornek": "Enter your password.", "ornekTr": "Şifreni gir."},
+    {"en": "exercise", "tr": "egzersiz yapmak; egzersiz", "ok": "eksırsayz", "ornek": "I exercise three times a week.", "ornekTr": "Haftada üç kez egzersiz yaparım."},
+    {"en": "expect", "tr": "beklemek, ummak", "ok": "ikspekt", "ornek": "I didn't expect you here.", "ornekTr": "Seni burada beklemiyordum."},
+    {"en": "fail", "tr": "başarısız olmak; kalmak (sınav)", "ok": "feyl", "ornek": "He failed the exam.", "ornekTr": "Sınavda kaldı."},
+    {"en": "fight", "tr": "kavga etmek", "ok": "fayt", "ornek": "The boys are fighting.", "ornekTr": "Çocuklar kavga ediyor."},
+    {"en": "fill", "tr": "doldurmak", "ok": "fil", "ornek": "Fill the glass with water.", "ornekTr": "Bardağı suyla doldur."},
+    {"en": "fit", "tr": "uymak (beden); formda", "ok": "fit", "ornek": "These jeans don't fit me.", "ornekTr": "Bu kot bana olmuyor."},
+    {"en": "fix", "tr": "tamir etmek", "ok": "fiks", "ornek": "Can you fix my bike?", "ornekTr": "Bisikletimi tamir edebilir misin?"},
+    {"en": "guess", "tr": "tahmin etmek", "ok": "ges", "ornek": "Guess who I saw today!", "ornekTr": "Bil bakalım bugün kimi gördüm!"},
+    {"en": "hang", "tr": "asmak", "ok": "heng", "ornek": "Hang your coat here.", "ornekTr": "Paltonu buraya as."},
+    {"en": "hide", "tr": "saklamak, saklanmak", "ok": "hayd", "ornek": "The cat is hiding under the bed.", "ornekTr": "Kedi yatağın altına saklanıyor."},
+    {"en": "hit", "tr": "vurmak, çarpmak", "ok": "hit", "ornek": "The car hit a tree.", "ornekTr": "Araba bir ağaca çarptı."},
+    {"en": "hurry", "tr": "acele etmek", "ok": "hari", "ornek": "Hurry up!", "ornekTr": "Acele et!"},
+    {"en": "imagine", "tr": "hayal etmek", "ok": "imecin", "ornek": "Imagine a world without war.", "ornekTr": "Savaşsız bir dünya hayal et."},
+    {"en": "improve", "tr": "geliştirmek, iyileştirmek", "ok": "impruuv", "ornek": "I want to improve my English.", "ornekTr": "İngilizcemi geliştirmek istiyorum."},
+    {"en": "include", "tr": "içermek, dahil etmek", "ok": "inkluud", "ornek": "Breakfast is included.", "ornekTr": "Kahvaltı dahil."},
+    {"en": "introduce", "tr": "tanıştırmak", "ok": "intrıduus", "ornek": "Let me introduce my wife.", "ornekTr": "Eşimi tanıştırayım."},
+    {"en": "kick", "tr": "tekmelemek", "ok": "kik", "ornek": "He kicked the ball.", "ornekTr": "Topa vurdu."},
+    {"en": "knock", "tr": "kapıyı çalmak", "ok": "nok", "ornek": "Someone is knocking at the door.", "ornekTr": "Biri kapıyı çalıyor."},
+    {"en": "lead", "tr": "yönetmek, liderlik etmek", "ok": "liid", "ornek": "She leads the team.", "ornekTr": "Takımı o yönetiyor."},
+    {"en": "lock", "tr": "kilitlemek; kilit", "ok": "lok", "ornek": "Did you lock the door?", "ornekTr": "Kapıyı kilitledin mi?"},
+    {"en": "marry", "tr": "evlenmek", "ok": "meri", "ornek": "Will you marry me?", "ornekTr": "Benimle evlenir misin?"},
+    {"en": "mix", "tr": "karıştırmak", "ok": "miks", "ornek": "Mix the eggs and the sugar.", "ornekTr": "Yumurtaları ve şekeri karıştır."},
+    {"en": "pack", "tr": "bavul hazırlamak", "ok": "pek", "ornek": "I need to pack my suitcase.", "ornekTr": "Bavulumu hazırlamam lazım."},
+    {"en": "paint", "tr": "boyamak; boya", "ok": "peynt", "ornek": "We painted the kitchen white.", "ornekTr": "Mutfağı beyaza boyadık."},
+    {"en": "pick up", "tr": "almak (yerden, birini)", "ok": "pik ap", "ornek": "I'll pick you up at six.", "ornekTr": "Seni altıda alırım."},
+    {"en": "post", "tr": "postalamak", "ok": "poust", "ornek": "I posted the letter yesterday.", "ornekTr": "Mektubu dün postaladım."},
+    {"en": "practise", "tr": "pratik yapmak", "ok": "prektis", "ornek": "Practise speaking every day.", "ornekTr": "Her gün konuşma pratiği yap."},
+    {"en": "print", "tr": "yazdırmak (yazıcıda)", "ok": "print", "ornek": "Can you print this page?", "ornekTr": "Bu sayfayı yazdırabilir misin?"},
+    {"en": "protect", "tr": "korumak", "ok": "prıtekt", "ornek": "Sunglasses protect your eyes.", "ornekTr": "Güneş gözlüğü gözlerini korur."},
+    {"en": "prove", "tr": "kanıtlamak", "ok": "pruuv", "ornek": "Can you prove it?", "ornekTr": "Bunu kanıtlayabilir misin?"},
+    {"en": "provide", "tr": "sağlamak", "ok": "prıvayd", "ornek": "The hotel provides free Wi-Fi.", "ornekTr": "Otel ücretsiz internet sağlıyor."},
+    {"en": "recognize", "tr": "tanımak (görünce)", "ok": "rekıgnayz", "ornek": "I didn't recognize you!", "ornekTr": "Seni tanıyamadım!"},
+    {"en": "recommend", "tr": "tavsiye etmek", "ok": "rekımend", "ornek": "Can you recommend a good restaurant?", "ornekTr": "İyi bir restoran tavsiye edebilir misin?"},
+    {"en": "relax", "tr": "rahatlamak, dinlenmek", "ok": "rileks", "ornek": "Sit down and relax.", "ornekTr": "Otur ve rahatla."},
+    {"en": "repair", "tr": "tamir etmek", "ok": "riper", "ornek": "They repaired the roof.", "ornekTr": "Çatıyı tamir ettiler."},
+    {"en": "reply", "tr": "cevap vermek", "ok": "riplay", "ornek": "Please reply to my message.", "ornekTr": "Lütfen mesajıma cevap ver."},
+    {"en": "rescue", "tr": "kurtarmak", "ok": "reskyuu", "ornek": "They rescued the cat from the tree.", "ornekTr": "Kediyi ağaçtan kurtardılar."},
+    {"en": "rise", "tr": "yükselmek, doğmak", "ok": "rayz", "ornek": "Prices are rising.", "ornekTr": "Fiyatlar yükseliyor."},
+    {"en": "seem", "tr": "gibi görünmek", "ok": "siim", "ornek": "You seem tired.", "ornekTr": "Yorgun görünüyorsun."},
+    {"en": "shake", "tr": "sallamak", "ok": "şeyk", "ornek": "Shake the bottle before use.", "ornekTr": "Kullanmadan önce şişeyi çalkala."},
+    {"en": "shine", "tr": "parlamak", "ok": "şayn", "ornek": "The sun is shining.", "ornekTr": "Güneş parlıyor."},
+    {"en": "shut", "tr": "kapatmak", "ok": "şat", "ornek": "Shut the door, please.", "ornekTr": "Kapıyı kapat, lütfen."},
+    {"en": "skate", "tr": "paten kaymak", "ok": "skeyt", "ornek": "Can you skate?", "ornekTr": "Paten kayabilir misin?"},
+    {"en": "ski", "tr": "kayak yapmak", "ok": "skii", "ornek": "We ski every winter.", "ornekTr": "Her kış kayak yaparız."},
+    {"en": "smell", "tr": "koklamak; koku", "ok": "smel", "ornek": "This soup smells good.", "ornekTr": "Bu çorba güzel kokuyor."},
+    {"en": "smoke", "tr": "sigara içmek; duman", "ok": "smouk", "ornek": "He doesn't smoke.", "ornekTr": "O sigara içmez."},
+    {"en": "solve", "tr": "çözmek", "ok": "solv", "ornek": "We solved the problem.", "ornekTr": "Sorunu çözdük."},
+    {"en": "stay", "tr": "kalmak", "ok": "stey", "ornek": "We stayed at a nice hotel.", "ornekTr": "Güzel bir otelde kaldık."},
+    {"en": "succeed", "tr": "başarmak", "ok": "sıksiid", "ornek": "If you work hard, you'll succeed.", "ornekTr": "Çok çalışırsan başarırsın."},
+    {"en": "surprise", "tr": "şaşırtmak; sürpriz", "ok": "sırprayz", "ornek": "Let's surprise Mum.", "ornekTr": "Anneme sürpriz yapalım."},
+    {"en": "taste", "tr": "tadına bakmak; tat", "ok": "teyst", "ornek": "Taste this sauce.", "ornekTr": "Bu sosun tadına bak."},
+    {"en": "thank", "tr": "teşekkür etmek", "ok": "tenk", "ornek": "I want to thank you.", "ornekTr": "Sana teşekkür etmek istiyorum."},
+    {"en": "tidy", "tr": "toplamak (oda); düzenli", "ok": "taydi", "ornek": "Tidy your room!", "ornekTr": "Odanı topla!"},
+    {"en": "translate", "tr": "çevirmek (dil)", "ok": "trensleyt", "ornek": "Can you translate this letter?", "ornekTr": "Bu mektubu çevirebilir misin?"},
+    {"en": "trust", "tr": "güvenmek", "ok": "trast", "ornek": "I trust you.", "ornekTr": "Sana güveniyorum."},
+    {"en": "type", "tr": "yazmak (klavyede)", "ok": "tayp", "ornek": "Type your name here.", "ornekTr": "Adını buraya yaz."},
+    {"en": "upload", "tr": "yüklemek (internete)", "ok": "aploud", "ornek": "I uploaded the photos.", "ornekTr": "Fotoğrafları yükledim."},
+    {"en": "vote", "tr": "oy vermek", "ok": "vout", "ornek": "Who did you vote for?", "ornekTr": "Kime oy verdin?"},
+    {"en": "wonder", "tr": "merak etmek", "ok": "vandır", "ornek": "I wonder where she is.", "ornekTr": "Nerede olduğunu merak ediyorum."},
+    {"en": "worry about", "tr": "-i dert etmek", "ok": "vari ıbaut", "ornek": "Don't worry about it.", "ornekTr": "Onu dert etme."},
+    {"en": "yell", "tr": "bağırmak", "ok": "yel", "ornek": "Stop yelling!", "ornekTr": "Bağırmayı kes!"},
+    {"en": "accident", "tr": "kaza", "ok": "eksidınt", "ornek": "He had a car accident.", "ornekTr": "Bir trafik kazası geçirdi."},
+    {"en": "account", "tr": "hesap (banka, internet)", "ok": "ıkaunt", "ornek": "I opened a bank account.", "ornekTr": "Banka hesabı açtım."},
+    {"en": "activity", "tr": "etkinlik", "ok": "ektiviti", "ornek": "There are many activities for children.", "ornekTr": "Çocuklar için çok etkinlik var."},
+    {"en": "advice", "tr": "tavsiye", "ok": "ıdvays", "ornek": "Can I give you some advice?", "ornekTr": "Sana bir tavsiye verebilir miyim?"},
+    {"en": "advertisement", "tr": "reklam", "ok": "edvırtaysmınt", "ornek": "I saw an advertisement on TV.", "ornekTr": "Televizyonda bir reklam gördüm."},
+    {"en": "afraid", "tr": "korkmuş", "ok": "ıfreyd", "ornek": "I'm afraid of spiders.", "ornekTr": "Örümceklerden korkarım."},
+    {"en": "agency", "tr": "ajans", "ok": "eycınsi", "ornek": "She works for a travel agency.", "ornekTr": "Bir seyahat acentesinde çalışıyor."},
+    {"en": "air", "tr": "hava (soluduğumuz)", "ok": "er", "ornek": "I need some fresh air.", "ornekTr": "Biraz temiz havaya ihtiyacım var."},
+    {"en": "alarm", "tr": "alarm", "ok": "ılarm", "ornek": "My alarm rings at six.", "ornekTr": "Alarmım altıda çalar."},
+    {"en": "ambulance", "tr": "ambulans", "ok": "embyulıns", "ornek": "Call an ambulance!", "ornekTr": "Ambulans çağırın!"},
+    {"en": "amount", "tr": "miktar", "ok": "ımaunt", "ornek": "A small amount of sugar.", "ornekTr": "Az miktarda şeker."},
+    {"en": "appointment", "tr": "randevu", "ok": "ıpoyntmınt", "ornek": "I have a doctor's appointment.", "ornekTr": "Doktor randevum var."},
+    {"en": "area", "tr": "bölge, alan", "ok": "eriı", "ornek": "This is a quiet area.", "ornekTr": "Burası sakin bir bölge."},
+    {"en": "argument", "tr": "tartışma", "ok": "argyumınt", "ornek": "They had an argument.", "ornekTr": "Tartıştılar."},
+    {"en": "army", "tr": "ordu", "ok": "armi", "ornek": "My brother is in the army.", "ornekTr": "Abim askerde."},
+    {"en": "arrival", "tr": "varış", "ok": "ırayvıl", "ornek": "The arrival time is 10:30.", "ornekTr": "Varış saati 10:30."},
+    {"en": "article", "tr": "makale", "ok": "artikıl", "ornek": "I read an interesting article.", "ornekTr": "İlginç bir makale okudum."},
+    {"en": "attention", "tr": "dikkat", "ok": "ıtenşın", "ornek": "Pay attention, please.", "ornekTr": "Dikkat edin, lütfen."},
+    {"en": "audience", "tr": "seyirci, izleyiciler", "ok": "odiıns", "ornek": "The audience loved the show.", "ornekTr": "Seyirciler gösteriyi çok sevdi."},
+    {"en": "baggage", "tr": "bagaj", "ok": "begic", "ornek": "Where can I collect my baggage?", "ornekTr": "Bagajımı nereden alabilirim?"},
+    {"en": "balcony", "tr": "balkon", "ok": "belkıni", "ornek": "We have breakfast on the balcony.", "ornekTr": "Balkonda kahvaltı yaparız."},
+    {"en": "band", "tr": "müzik grubu", "ok": "bend", "ornek": "My favourite band is playing tonight.", "ornekTr": "En sevdiğim grup bu akşam çalıyor."},
+    {"en": "battery", "tr": "pil, batarya", "ok": "betıri", "ornek": "My phone battery is low.", "ornekTr": "Telefonumun şarjı az."},
+    {"en": "beard", "tr": "sakal", "ok": "biırd", "ornek": "My father has a beard.", "ornekTr": "Babamın sakalı var."},
+    {"en": "bell", "tr": "zil", "ok": "bel", "ornek": "The bell is ringing.", "ornekTr": "Zil çalıyor."},
+    {"en": "belt", "tr": "kemer", "ok": "belt", "ornek": "Fasten your seat belt.", "ornekTr": "Emniyet kemerini bağla."},
+    {"en": "biscuit", "tr": "bisküvi", "ok": "biskit", "ornek": "Would you like a biscuit?", "ornekTr": "Bisküvi ister misin?"},
+    {"en": "blanket", "tr": "battaniye", "ok": "blenkit", "ornek": "Can I have another blanket?", "ornekTr": "Bir battaniye daha alabilir miyim?"},
+    {"en": "blood", "tr": "kan", "ok": "blad", "ornek": "He lost a lot of blood.", "ornekTr": "Çok kan kaybetti."},
+    {"en": "bone", "tr": "kemik", "ok": "boun", "ornek": "The dog has a bone.", "ornekTr": "Köpeğin bir kemiği var."},
+    {"en": "border", "tr": "sınır", "ok": "bordır", "ornek": "We crossed the border.", "ornekTr": "Sınırı geçtik."},
+    {"en": "boss", "tr": "patron", "ok": "bos", "ornek": "My boss is very nice.", "ornekTr": "Patronum çok iyi."},
+    {"en": "bowl", "tr": "kase", "ok": "boul", "ornek": "A bowl of soup, please.", "ornekTr": "Bir kase çorba, lütfen."},
+    {"en": "brain", "tr": "beyin", "ok": "breyn", "ornek": "The brain needs sleep.", "ornekTr": "Beyin uykuya ihtiyaç duyar."},
+    {"en": "branch", "tr": "şube; dal", "ok": "brenç", "ornek": "The bank has a branch here.", "ornekTr": "Bankanın burada bir şubesi var."},
+    {"en": "brand", "tr": "marka", "ok": "brend", "ornek": "What brand is your phone?", "ornekTr": "Telefonun hangi marka?"},
+    {"en": "bread roll", "tr": "küçük ekmek", "ok": "bred roul", "ornek": "I'd like two bread rolls.", "ornekTr": "İki küçük ekmek istiyorum."},
+    {"en": "button", "tr": "düğme", "ok": "batın", "ornek": "Press the red button.", "ornekTr": "Kırmızı düğmeye bas."},
+    {"en": "cafeteria", "tr": "kafeterya", "ok": "kefıtiıriı", "ornek": "We eat lunch in the cafeteria.", "ornekTr": "Öğle yemeğini kafeteryada yeriz."},
+    {"en": "calendar", "tr": "takvim", "ok": "kelındır", "ornek": "Check the calendar.", "ornekTr": "Takvime bak."},
+    {"en": "campsite", "tr": "kamp alanı", "ok": "kempsayt", "ornek": "The campsite is near the lake.", "ornekTr": "Kamp alanı gölün yakınında."},
+    {"en": "candle", "tr": "mum", "ok": "kendıl", "ornek": "Light a candle.", "ornekTr": "Bir mum yak."},
+    {"en": "capital", "tr": "başkent", "ok": "kepitıl", "ornek": "Ankara is the capital of Turkey.", "ornekTr": "Ankara Türkiye'nin başkentidir."},
+    {"en": "career", "tr": "kariyer", "ok": "kıriır", "ornek": "She has a great career.", "ornekTr": "Harika bir kariyeri var."},
+    {"en": "castle", "tr": "kale, şato", "ok": "kesıl", "ornek": "We visited an old castle.", "ornekTr": "Eski bir kaleyi gezdik."},
+    {"en": "ceiling", "tr": "tavan", "ok": "siiling", "ornek": "The ceiling is very high.", "ornekTr": "Tavan çok yüksek."},
+    {"en": "century", "tr": "yüzyıl", "ok": "sençıri", "ornek": "This house is from the 19th century.", "ornekTr": "Bu ev 19. yüzyıldan."},
+    {"en": "championship", "tr": "şampiyona", "ok": "çempiınşip", "ornek": "They won the championship.", "ornekTr": "Şampiyonayı kazandılar."},
+    {"en": "character", "tr": "karakter", "ok": "kerıktır", "ornek": "He is my favourite character.", "ornekTr": "O en sevdiğim karakter."},
+    {"en": "charity", "tr": "hayır kurumu", "ok": "çerıti", "ornek": "She gives money to charity.", "ornekTr": "Hayır kurumlarına para verir."},
+    {"en": "chat", "tr": "sohbet etmek; sohbet", "ok": "çet", "ornek": "Let's chat later.", "ornekTr": "Sonra sohbet edelim."},
+    {"en": "check-in", "tr": "giriş işlemi", "ok": "çek in", "ornek": "Check-in starts at two.", "ornekTr": "Giriş saat ikide başlıyor."},
+    {"en": "chef", "tr": "şef (aşçı)", "ok": "şef", "ornek": "The chef is from France.", "ornekTr": "Şef Fransız."},
+    {"en": "chemist's", "tr": "eczane", "ok": "kemists", "ornek": "You can buy it at the chemist's.", "ornekTr": "Eczaneden alabilirsin."},
+    {"en": "chess", "tr": "satranç", "ok": "çes", "ornek": "Do you play chess?", "ornekTr": "Satranç oynar mısın?"},
+    {"en": "chips", "tr": "patates kızartması", "ok": "çips", "ornek": "Fish and chips, please.", "ornekTr": "Balık ve patates kızartması, lütfen."},
+    {"en": "choice", "tr": "seçim, tercih", "ok": "çoys", "ornek": "You have no choice.", "ornekTr": "Başka seçeneğin yok."},
+    {"en": "church", "tr": "kilise", "ok": "çörç", "ornek": "There is an old church in the village.", "ornekTr": "Köyde eski bir kilise var."},
+    {"en": "cigarette", "tr": "sigara", "ok": "sigıret", "ornek": "He stopped smoking cigarettes.", "ornekTr": "Sigarayı bıraktı."},
+    {"en": "circle", "tr": "daire, çember", "ok": "sörkıl", "ornek": "Draw a circle.", "ornekTr": "Bir daire çiz."},
+    {"en": "climate", "tr": "iklim", "ok": "klaymıt", "ornek": "The climate here is mild.", "ornekTr": "Buranın iklimi ılıman."},
+    {"en": "coast", "tr": "sahil", "ok": "koust", "ornek": "We drove along the coast.", "ornekTr": "Sahil boyunca araba sürdük."},
+    {"en": "coin", "tr": "madeni para", "ok": "koyn", "ornek": "I need some coins for the machine.", "ornekTr": "Makine için bozuk para lazım."},
+    {"en": "collection", "tr": "koleksiyon", "ok": "kılekşın", "ornek": "He has a big stamp collection.", "ornekTr": "Büyük bir pul koleksiyonu var."},
+    {"en": "comedy", "tr": "komedi", "ok": "komıdi", "ornek": "I like watching comedies.", "ornekTr": "Komedi izlemeyi severim."},
+    {"en": "company", "tr": "şirket", "ok": "kampıni", "ornek": "He works for a big company.", "ornekTr": "Büyük bir şirkette çalışıyor."},
+    {"en": "competition", "tr": "yarışma", "ok": "kompıtişın", "ornek": "She won a singing competition.", "ornekTr": "Bir şarkı yarışmasını kazandı."},
+    {"en": "concert", "tr": "konser", "ok": "konsırt", "ornek": "We went to a rock concert.", "ornekTr": "Bir rock konserine gittik."},
+    {"en": "condition", "tr": "durum, koşul", "ok": "kındişın", "ornek": "The car is in good condition.", "ornekTr": "Araba iyi durumda."},
+    {"en": "conversation", "tr": "sohbet, konuşma", "ok": "konvırseyşın", "ornek": "We had a long conversation.", "ornekTr": "Uzun bir sohbet ettik."},
+    {"en": "copy", "tr": "kopya; kopyalamak", "ok": "kopi", "ornek": "Can I have a copy?", "ornekTr": "Bir kopyasını alabilir miyim?"},
+    {"en": "cotton", "tr": "pamuk", "ok": "kotın", "ornek": "This shirt is made of cotton.", "ornekTr": "Bu gömlek pamuktan."},
+    {"en": "cough", "tr": "öksürük; öksürmek", "ok": "kof", "ornek": "I have a bad cough.", "ornekTr": "Kötü bir öksürüğüm var."},
+    {"en": "couple", "tr": "çift (iki kişi)", "ok": "kapıl", "ornek": "They are a lovely couple.", "ornekTr": "Çok tatlı bir çiftler."},
+    {"en": "course", "tr": "kurs", "ok": "kors", "ornek": "I'm taking an English course.", "ornekTr": "Bir İngilizce kursuna gidiyorum."},
+    {"en": "crime", "tr": "suç", "ok": "kraym", "ornek": "Crime is a big problem here.", "ornekTr": "Burada suç büyük bir sorun."},
+    {"en": "crowd", "tr": "kalabalık", "ok": "kraud", "ornek": "There was a big crowd.", "ornekTr": "Büyük bir kalabalık vardı."},
+    {"en": "culture", "tr": "kültür", "ok": "kalçır", "ornek": "I love Japanese culture.", "ornekTr": "Japon kültürünü çok severim."},
+    {"en": "customer", "tr": "müşteri", "ok": "kastımır", "ornek": "The customer is always right.", "ornekTr": "Müşteri her zaman haklıdır."},
+    {"en": "cycling", "tr": "bisiklet sürme", "ok": "saykling", "ornek": "Cycling is good exercise.", "ornekTr": "Bisiklet sürmek iyi bir egzersizdir."},
+    {"en": "danger", "tr": "tehlike", "ok": "deyncır", "ornek": "You are in danger!", "ornekTr": "Tehlikedesin!"},
+    {"en": "death", "tr": "ölüm", "ok": "det", "ornek": "The death of his dog made him sad.", "ornekTr": "Köpeğinin ölümü onu üzdü."},
+    {"en": "department", "tr": "bölüm, departman", "ok": "dipartmınt", "ornek": "She works in the sales department.", "ornekTr": "Satış bölümünde çalışıyor."},
+    {"en": "departure", "tr": "kalkış, ayrılış", "ok": "dipaarçır", "ornek": "Check the departure time.", "ornekTr": "Kalkış saatini kontrol et."},
+    {"en": "desert", "tr": "çöl", "ok": "dezırt", "ornek": "Camels live in the desert.", "ornekTr": "Develer çölde yaşar."},
+    {"en": "design", "tr": "tasarım; tasarlamak", "ok": "dizayn", "ornek": "I like the design of this chair.", "ornekTr": "Bu sandalyenin tasarımını beğeniyorum."},
+    {"en": "detail", "tr": "ayrıntı", "ok": "diiteyl", "ornek": "Tell me the details.", "ornekTr": "Bana ayrıntıları anlat."},
+    {"en": "diary", "tr": "günlük; ajanda", "ok": "dayıri", "ornek": "I write in my diary every night.", "ornekTr": "Her gece günlüğüme yazarım."},
+    {"en": "dictionary", "tr": "sözlük", "ok": "dikşıneri", "ornek": "Look it up in the dictionary.", "ornekTr": "Sözlükte bak."},
+    {"en": "diet", "tr": "diyet, beslenme", "ok": "dayıt", "ornek": "I'm on a diet.", "ornekTr": "Diyetteyim."},
+    {"en": "direction", "tr": "yön", "ok": "dırekşın", "ornek": "We went in the wrong direction.", "ornekTr": "Yanlış yöne gittik."},
+    {"en": "dirt", "tr": "kir, toprak", "ok": "dört", "ornek": "There is dirt on your shoes.", "ornekTr": "Ayakkabılarında kir var."},
+    {"en": "discount", "tr": "indirim", "ok": "diskaunt", "ornek": "Is there a student discount?", "ornekTr": "Öğrenci indirimi var mı?"},
+    {"en": "dish", "tr": "yemek (tabak); bulaşık", "ok": "diş", "ornek": "This is a traditional dish.", "ornekTr": "Bu geleneksel bir yemek."},
+    {"en": "document", "tr": "belge", "ok": "dokyumınt", "ornek": "Sign this document.", "ornekTr": "Bu belgeyi imzala."},
+    {"en": "drawing", "tr": "çizim, resim", "ok": "droing", "ornek": "What a beautiful drawing!", "ornekTr": "Ne güzel bir çizim!"},
+    {"en": "earth", "tr": "dünya, toprak", "ok": "ört", "ornek": "The Earth goes round the Sun.", "ornekTr": "Dünya Güneş'in etrafında döner."},
+    {"en": "education", "tr": "eğitim", "ok": "ecukeyşın", "ornek": "Education is very important.", "ornekTr": "Eğitim çok önemlidir."},
+    {"en": "effect", "tr": "etki", "ok": "ifekt", "ornek": "Coffee has a strong effect on me.", "ornekTr": "Kahvenin bende güçlü bir etkisi var."},
+    {"en": "election", "tr": "seçim (oylama)", "ok": "ilekşın", "ornek": "The election is next month.", "ornekTr": "Seçim gelecek ay."},
+    {"en": "electricity", "tr": "elektrik", "ok": "ilektrisıti", "ornek": "The electricity is off.", "ornekTr": "Elektrik kesik."},
+    {"en": "emergency", "tr": "acil durum", "ok": "imörcınsi", "ornek": "In an emergency, call 112.", "ornekTr": "Acil durumda 112'yi ara."},
+    {"en": "energy", "tr": "enerji", "ok": "enırci", "ornek": "I have no energy today.", "ornekTr": "Bugün hiç enerjim yok."},
+    {"en": "entrance", "tr": "giriş", "ok": "entrıns", "ornek": "Meet me at the main entrance.", "ornekTr": "Benimle ana girişte buluş."},
+    {"en": "environment", "tr": "çevre", "ok": "invayrınmınt", "ornek": "We must protect the environment.", "ornekTr": "Çevreyi korumalıyız."},
+    {"en": "event", "tr": "etkinlik, olay", "ok": "ivent", "ornek": "The event starts at seven.", "ornekTr": "Etkinlik yedide başlıyor."},
+    {"en": "exhibition", "tr": "sergi", "ok": "eksibişın", "ornek": "We visited an art exhibition.", "ornekTr": "Bir sanat sergisini gezdik."},
+    {"en": "exit", "tr": "çıkış", "ok": "eksit", "ornek": "Where is the exit?", "ornekTr": "Çıkış nerede?"},
+    {"en": "experience", "tr": "deneyim", "ok": "ikspiriıns", "ornek": "She has five years of experience.", "ornekTr": "Beş yıllık deneyimi var."},
+    {"en": "expert", "tr": "uzman", "ok": "ekspört", "ornek": "He is a computer expert.", "ornekTr": "O bir bilgisayar uzmanı."},
+    {"en": "factory", "tr": "fabrika", "ok": "fektıri", "ornek": "My father works in a factory.", "ornekTr": "Babam bir fabrikada çalışıyor."},
+    {"en": "fan", "tr": "hayran; vantilatör", "ok": "fen", "ornek": "I'm a big fan of this team.", "ornekTr": "Bu takımın büyük bir hayranıyım."},
+    {"en": "fashion", "tr": "moda", "ok": "feşın", "ornek": "She is interested in fashion.", "ornekTr": "Modayla ilgileniyor."},
+    {"en": "fear", "tr": "korku", "ok": "fiır", "ornek": "He has a fear of flying.", "ornekTr": "Uçma korkusu var."},
+    {"en": "fee", "tr": "ücret", "ok": "fii", "ornek": "The entrance fee is ten euros.", "ornekTr": "Giriş ücreti on avro."},
+    {"en": "festival", "tr": "festival", "ok": "festıvıl", "ornek": "We went to a music festival.", "ornekTr": "Bir müzik festivaline gittik."},
+    {"en": "fever", "tr": "ateş (hastalık)", "ok": "fiivır", "ornek": "The baby has a fever.", "ornekTr": "Bebeğin ateşi var."},
+    {"en": "field", "tr": "tarla; alan", "ok": "fiild", "ornek": "The cows are in the field.", "ornekTr": "İnekler tarlada."},
+    {"en": "fire", "tr": "ateş, yangın", "ok": "fayır", "ornek": "There's a fire in the building!", "ornekTr": "Binada yangın var!"},
+    {"en": "flight", "tr": "uçuş", "ok": "flayt", "ornek": "Our flight is at nine.", "ornekTr": "Uçuşumuz dokuzda."},
+    {"en": "flu", "tr": "grip", "ok": "fluu", "ornek": "I have the flu.", "ornekTr": "Grip oldum."},
+    {"en": "fog", "tr": "sis", "ok": "fog", "ornek": "There is fog this morning.", "ornekTr": "Bu sabah sis var."},
+    {"en": "foreigner", "tr": "yabancı", "ok": "forınır", "ornek": "Many foreigners live in this area.", "ornekTr": "Bu bölgede çok yabancı yaşıyor."},
+    {"en": "form", "tr": "form", "ok": "form", "ornek": "Please fill in this form.", "ornekTr": "Lütfen bu formu doldurun."},
+    {"en": "fridge magnet", "tr": "buzdolabı magneti", "ok": "fric megnıt", "ornek": "I collect fridge magnets.", "ornekTr": "Buzdolabı magneti biriktiririm."},
+    {"en": "furniture", "tr": "mobilya", "ok": "förniçır", "ornek": "We bought new furniture.", "ornekTr": "Yeni mobilya aldık."},
+    {"en": "future", "tr": "gelecek", "ok": "fyuuçır", "ornek": "What are your plans for the future?", "ornekTr": "Gelecek için planların neler?"},
+    {"en": "gallery", "tr": "galeri", "ok": "gelıri", "ornek": "The gallery is free on Sundays.", "ornekTr": "Galeri pazar günleri ücretsiz."},
+    {"en": "gate", "tr": "kapı (bahçe, uçak)", "ok": "geyt", "ornek": "Our flight leaves from gate 12.", "ornekTr": "Uçuşumuz 12 numaralı kapıdan kalkıyor."},
+    {"en": "generation", "tr": "kuşak, nesil", "ok": "cenıreyşın", "ornek": "The young generation uses phones a lot.", "ornekTr": "Genç nesil telefonu çok kullanıyor."},
+    {"en": "ghost", "tr": "hayalet", "ok": "goust", "ornek": "Do you believe in ghosts?", "ornekTr": "Hayaletlere inanır mısın?"},
+    {"en": "goal", "tr": "gol; hedef", "ok": "goul", "ornek": "He scored a goal.", "ornekTr": "Gol attı."},
+    {"en": "government", "tr": "hükümet", "ok": "gavırnmınt", "ornek": "The government made a new law.", "ornekTr": "Hükümet yeni bir yasa çıkardı."},
+    {"en": "ground", "tr": "yer, zemin", "ok": "graund", "ornek": "The ground is wet.", "ornekTr": "Yer ıslak."},
+    {"en": "group", "tr": "grup", "ok": "gruup", "ornek": "We work in groups.", "ornekTr": "Gruplar halinde çalışırız."},
+    {"en": "guide", "tr": "rehber", "ok": "gayd", "ornek": "Our guide speaks five languages.", "ornekTr": "Rehberimiz beş dil konuşuyor."},
+    {"en": "gym", "tr": "spor salonu", "ok": "cim", "ornek": "I go to the gym every morning.", "ornekTr": "Her sabah spor salonuna giderim."},
+    {"en": "habit", "tr": "alışkanlık", "ok": "hebit", "ornek": "Smoking is a bad habit.", "ornekTr": "Sigara kötü bir alışkanlık."},
+    {"en": "heat", "tr": "sıcaklık", "ok": "hiit", "ornek": "I can't stand the heat.", "ornekTr": "Sıcağa dayanamıyorum."},
+    {"en": "height", "tr": "boy, yükseklik", "ok": "hayt", "ornek": "What is your height?", "ornekTr": "Boyun kaç?"},
+    {"en": "hero", "tr": "kahraman", "ok": "hiırou", "ornek": "My father is my hero.", "ornekTr": "Babam benim kahramanım."},
+    {"en": "hole", "tr": "delik", "ok": "houl", "ornek": "There's a hole in my sock.", "ornekTr": "Çorabımda delik var."},
+    {"en": "horror", "tr": "korku (film türü)", "ok": "horır", "ornek": "I don't watch horror films.", "ornekTr": "Korku filmi izlemem."},
+    {"en": "host", "tr": "ev sahibi; sunucu", "ok": "houst", "ornek": "Thank the host for dinner.", "ornekTr": "Ev sahibine yemek için teşekkür et."},
+    {"en": "human", "tr": "insan", "ok": "hyuumın", "ornek": "Humans need water to live.", "ornekTr": "İnsanlar yaşamak için suya ihtiyaç duyar."},
+    {"en": "ice", "tr": "buz", "ok": "ays", "ornek": "I'd like a drink with ice.", "ornekTr": "Buzlu bir içecek istiyorum."},
+    {"en": "illness", "tr": "hastalık", "ok": "ilnıs", "ornek": "She is recovering from a long illness.", "ornekTr": "Uzun bir hastalıktan iyileşiyor."},
+    {"en": "information", "tr": "bilgi", "ok": "infırmeyşın", "ornek": "I need more information.", "ornekTr": "Daha fazla bilgiye ihtiyacım var."},
+    {"en": "injury", "tr": "yaralanma", "ok": "incıri", "ornek": "He has a knee injury.", "ornekTr": "Dizinden sakatlandı."},
+    {"en": "insect", "tr": "böcek", "ok": "insekt", "ornek": "There are many insects in summer.", "ornekTr": "Yazın çok böcek olur."},
+    {"en": "interview", "tr": "mülakat, röportaj", "ok": "intırvyuu", "ornek": "I have a job interview tomorrow.", "ornekTr": "Yarın bir iş görüşmem var."},
+    {"en": "invitation", "tr": "davetiye, davet", "ok": "inviteyşın", "ornek": "Thanks for the invitation.", "ornekTr": "Davet için teşekkürler."},
+    {"en": "jam", "tr": "reçel; trafik sıkışıklığı", "ok": "cem", "ornek": "I like strawberry jam.", "ornekTr": "Çilek reçelini severim."},
+    {"en": "jewellery", "tr": "mücevher, takı", "ok": "cuuılri", "ornek": "She loves jewellery.", "ornekTr": "Takıları çok sever."},
+    {"en": "journey", "tr": "yolculuk", "ok": "cörni", "ornek": "It was a long journey.", "ornekTr": "Uzun bir yolculuktu."},
+    {"en": "judge", "tr": "hakim; yargılamak", "ok": "cac", "ornek": "The judge was very fair.", "ornekTr": "Hakim çok adildi."},
+    {"en": "kid", "tr": "çocuk", "ok": "kid", "ornek": "The kid is very clever.", "ornekTr": "Çocuk çok zeki."},
+    {"en": "king", "tr": "kral", "ok": "king", "ornek": "The king lives in a palace.", "ornekTr": "Kral bir sarayda yaşıyor."},
+    {"en": "knee", "tr": "diz", "ok": "nii", "ornek": "My knee hurts.", "ornekTr": "Dizim ağrıyor."},
+    {"en": "lady", "tr": "hanımefendi", "ok": "leydi", "ornek": "Ask that lady.", "ornekTr": "Şu hanımefendiye sor."},
+    {"en": "land", "tr": "toprak, arazi; inmek (uçak)", "ok": "lend", "ornek": "The plane landed safely.", "ornekTr": "Uçak güvenle indi."},
+    {"en": "law", "tr": "kanun, yasa", "ok": "lo", "ornek": "It's against the law.", "ornekTr": "Bu yasalara aykırı."},
+    {"en": "lawyer", "tr": "avukat", "ok": "loyır", "ornek": "You need a lawyer.", "ornekTr": "Bir avukata ihtiyacın var."},
+    {"en": "leaf", "tr": "yaprak", "ok": "liif", "ornek": "The leaves are turning yellow.", "ornekTr": "Yapraklar sararıyor."},
+    {"en": "level", "tr": "seviye", "ok": "levıl", "ornek": "What is your English level?", "ornekTr": "İngilizce seviyen ne?"},
+    {"en": "lift", "tr": "asansör; kaldırmak", "ok": "lift", "ornek": "Take the lift to the fifth floor.", "ornekTr": "Beşinci kata asansörle çık."},
+    {"en": "line", "tr": "çizgi; sıra", "ok": "layn", "ornek": "Draw a straight line.", "ornekTr": "Düz bir çizgi çiz."},
+    {"en": "list", "tr": "liste", "ok": "list", "ornek": "Make a shopping list.", "ornekTr": "Bir alışveriş listesi yap."},
+    {"en": "local", "tr": "yerel", "ok": "loukıl", "ornek": "Try the local food.", "ornekTr": "Yerel yemekleri dene."},
+    {"en": "luck", "tr": "şans", "ok": "lak", "ornek": "Good luck with your exam!", "ornekTr": "Sınavında iyi şanslar!"},
+    {"en": "machine", "tr": "makine", "ok": "mışiin", "ornek": "The washing machine is broken.", "ornekTr": "Çamaşır makinesi bozuk."},
+    {"en": "manager", "tr": "yönetici, müdür", "ok": "menıcır", "ornek": "I need to talk to the manager.", "ornekTr": "Müdürle konuşmam gerekiyor."},
+    {"en": "match", "tr": "maç; kibrit", "ok": "meç", "ornek": "Did you watch the match?", "ornekTr": "Maçı izledin mi?"},
+    {"en": "meeting", "tr": "toplantı", "ok": "miiting", "ornek": "The meeting starts at ten.", "ornekTr": "Toplantı onda başlıyor."},
+    {"en": "member", "tr": "üye", "ok": "membır", "ornek": "I'm a member of the club.", "ornekTr": "Kulübün üyesiyim."},
+    {"en": "memory", "tr": "hafıza; anı", "ok": "memıri", "ornek": "I have a bad memory for names.", "ornekTr": "İsimleri hiç aklımda tutamam."},
+    {"en": "metal", "tr": "metal", "ok": "metıl", "ornek": "The table is made of metal.", "ornekTr": "Masa metalden yapılmış."},
+    {"en": "method", "tr": "yöntem", "ok": "metıd", "ornek": "This is a good method.", "ornekTr": "Bu iyi bir yöntem."},
+    {"en": "middle", "tr": "orta", "ok": "midıl", "ornek": "Stand in the middle.", "ornekTr": "Ortada dur."},
+    {"en": "mind", "tr": "akıl, zihin; sakıncası olmak", "ok": "maynd", "ornek": "Do you mind if I open the window?", "ornekTr": "Pencereyi açmamın sakıncası var mı?"},
+    {"en": "mirror", "tr": "ayna", "ok": "mirır", "ornek": "Look in the mirror.", "ornekTr": "Aynaya bak."},
+    {"en": "mistake", "tr": "hata", "ok": "misteyk", "ornek": "Everyone makes mistakes.", "ornekTr": "Herkes hata yapar."},
+    {"en": "moment", "tr": "an", "ok": "moumınt", "ornek": "Wait a moment, please.", "ornekTr": "Bir dakika bekleyin, lütfen."},
+    {"en": "moon", "tr": "ay (gökteki)", "ok": "muun", "ornek": "The moon is beautiful tonight.", "ornekTr": "Ay bu gece çok güzel."},
+    {"en": "motorway", "tr": "otoyol", "ok": "moutırvey", "ornek": "Take the motorway to Ankara.", "ornekTr": "Ankara'ya otoyoldan git."},
+    {"en": "mountain bike", "tr": "dağ bisikleti", "ok": "mauntın bayk", "ornek": "He rides a mountain bike.", "ornekTr": "Dağ bisikleti sürüyor."},
+    {"en": "mystery", "tr": "gizem", "ok": "mistıri", "ornek": "It's still a mystery.", "ornekTr": "Bu hâlâ bir gizem."},
+    {"en": "nature", "tr": "doğa", "ok": "neyçır", "ornek": "I love walking in nature.", "ornekTr": "Doğada yürümeyi çok severim."},
+    {"en": "neck", "tr": "boyun", "ok": "nek", "ornek": "My neck hurts.", "ornekTr": "Boynum ağrıyor."},
+    {"en": "noise", "tr": "gürültü", "ok": "noyz", "ornek": "What's that noise?", "ornekTr": "O gürültü ne?"},
+    {"en": "note", "tr": "not", "ok": "nout", "ornek": "I left you a note.", "ornekTr": "Sana bir not bıraktım."},
+    {"en": "novel", "tr": "roman", "ok": "novıl", "ornek": "I'm reading a novel.", "ornekTr": "Bir roman okuyorum."},
+    {"en": "ocean", "tr": "okyanus", "ok": "ouşın", "ornek": "The Pacific is the biggest ocean.", "ornekTr": "Büyük Okyanus en büyük okyanustur."},
+    {"en": "opinion", "tr": "fikir, görüş", "ok": "ıpinyın", "ornek": "In my opinion, it's a good idea.", "ornekTr": "Bence bu iyi bir fikir."},
+    {"en": "opposite", "tr": "karşısında; zıt", "ok": "opızit", "ornek": "The bank is opposite the park.", "ornekTr": "Banka parkın karşısında."},
+    {"en": "owner", "tr": "sahip", "ok": "ounır", "ornek": "Who is the owner of this car?", "ornekTr": "Bu arabanın sahibi kim?"},
+    {"en": "pain", "tr": "ağrı, acı", "ok": "peyn", "ornek": "I have a pain in my back.", "ornekTr": "Sırtımda bir ağrı var."},
+    {"en": "palace", "tr": "saray", "ok": "pelıs", "ornek": "Topkapı Palace is in Istanbul.", "ornekTr": "Topkapı Sarayı İstanbul'da."},
+    {"en": "parcel", "tr": "koli, paket", "ok": "parsıl", "ornek": "I'm waiting for a parcel.", "ornekTr": "Bir paket bekliyorum."},
+    {"en": "partner", "tr": "partner, eş", "ok": "partnır", "ornek": "This is my partner, Deniz.", "ornekTr": "Bu eşim Deniz."},
+    {"en": "passenger", "tr": "yolcu", "ok": "pesincır", "ornek": "The bus has fifty passengers.", "ornekTr": "Otobüste elli yolcu var."},
+    {"en": "password", "tr": "şifre", "ok": "pesvörd", "ornek": "I forgot my password.", "ornekTr": "Şifremi unuttum."},
+    {"en": "path", "tr": "patika, yol", "ok": "pet", "ornek": "Follow the path to the lake.", "ornekTr": "Göle giden patikayı izle."},
+    {"en": "patient", "tr": "hasta (hastanede); sabırlı", "ok": "peyşınt", "ornek": "The doctor has many patients.", "ornekTr": "Doktorun çok hastası var."},
+    {"en": "peace", "tr": "barış, huzur", "ok": "piis", "ornek": "We want peace.", "ornekTr": "Barış istiyoruz."},
+    {"en": "pepper", "tr": "biber", "ok": "pepır", "ornek": "Add salt and pepper.", "ornekTr": "Tuz ve biber ekle."},
+    {"en": "period", "tr": "dönem, süre", "ok": "piriıd", "ornek": "It was a difficult period.", "ornekTr": "Zor bir dönemdi."},
+    {"en": "pet", "tr": "evcil hayvan", "ok": "pet", "ornek": "Do you have any pets?", "ornekTr": "Evcil hayvanın var mı?"},
+    {"en": "pharmacy", "tr": "eczane", "ok": "farmısi", "ornek": "Is there a pharmacy near here?", "ornekTr": "Yakında eczane var mı?"},
+    {"en": "pill", "tr": "hap", "ok": "pil", "ornek": "Take one pill after each meal.", "ornekTr": "Her yemekten sonra bir hap al."},
+    {"en": "planet", "tr": "gezegen", "ok": "plenit", "ornek": "Mars is a red planet.", "ornekTr": "Mars kırmızı bir gezegen."},
+    {"en": "plant", "tr": "bitki", "ok": "plent", "ornek": "Water the plants.", "ornekTr": "Bitkileri sula."},
+    {"en": "platform", "tr": "peron", "ok": "pletform", "ornek": "The train leaves from platform 3.", "ornekTr": "Tren 3. perondan kalkıyor."},
+    {"en": "pocket", "tr": "cep", "ok": "pokit", "ornek": "My phone is in my pocket.", "ornekTr": "Telefonum cebimde."},
+    {"en": "poem", "tr": "şiir", "ok": "pouım", "ornek": "She wrote a poem.", "ornekTr": "Bir şiir yazdı."},
+    {"en": "point", "tr": "nokta; mesele", "ok": "poynt", "ornek": "That's a good point.", "ornekTr": "Bu iyi bir nokta."},
+    {"en": "police", "tr": "polis", "ok": "pıliis", "ornek": "Call the police!", "ornekTr": "Polisi ara!"},
+    {"en": "politics", "tr": "siyaset", "ok": "polıtiks", "ornek": "I'm not interested in politics.", "ornekTr": "Siyasetle ilgilenmiyorum."},
+    {"en": "pollution", "tr": "kirlilik", "ok": "pıluuşın", "ornek": "Air pollution is a big problem.", "ornekTr": "Hava kirliliği büyük bir sorun."},
+    {"en": "population", "tr": "nüfus", "ok": "popyuleyşın", "ornek": "What is the population of Turkey?", "ornekTr": "Türkiye'nin nüfusu ne kadar?"},
+    {"en": "post office", "tr": "postane", "ok": "poust ofis", "ornek": "Where is the post office?", "ornekTr": "Postane nerede?"},
+    {"en": "pot", "tr": "tencere; saksı", "ok": "pot", "ornek": "Put the pot on the stove.", "ornekTr": "Tencereyi ocağa koy."},
+    {"en": "prize", "tr": "ödül", "ok": "prayz", "ornek": "She won first prize.", "ornekTr": "Birincilik ödülünü kazandı."},
+    {"en": "programme", "tr": "program", "ok": "prougrem", "ornek": "What's your favourite TV programme?", "ornekTr": "En sevdiğin TV programı hangisi?"},
+    {"en": "project", "tr": "proje", "ok": "procekt", "ornek": "We're working on a new project.", "ornekTr": "Yeni bir proje üzerinde çalışıyoruz."},
+    {"en": "pronunciation", "tr": "telaffuz", "ok": "prınansieyşın", "ornek": "Your pronunciation is very good.", "ornekTr": "Telaffuzun çok iyi."},
+    {"en": "pub", "tr": "bar, birahane", "ok": "pab", "ornek": "Let's meet at the pub.", "ornekTr": "Barda buluşalım."},
+    {"en": "purse", "tr": "kadın cüzdanı", "ok": "pörs", "ornek": "She lost her purse.", "ornekTr": "Cüzdanını kaybetti."},
+    {"en": "queen", "tr": "kraliçe", "ok": "kviin", "ornek": "The queen visited the city.", "ornekTr": "Kraliçe şehri ziyaret etti."},
+    {"en": "queue", "tr": "kuyruk, sıra", "ok": "kyuu", "ornek": "There was a long queue.", "ornekTr": "Uzun bir kuyruk vardı."},
+    {"en": "race", "tr": "yarış", "ok": "reys", "ornek": "He won the race.", "ornekTr": "Yarışı kazandı."},
+    {"en": "rate", "tr": "oran; fiyat", "ok": "reyt", "ornek": "What's the exchange rate?", "ornekTr": "Döviz kuru ne?"},
+    {"en": "receipt", "tr": "fiş, makbuz", "ok": "risiit", "ornek": "Can I have a receipt?", "ornekTr": "Fiş alabilir miyim?"},
+    {"en": "reception", "tr": "resepsiyon", "ok": "risepşın", "ornek": "Leave the key at reception.", "ornekTr": "Anahtarı resepsiyona bırak."},
+    {"en": "recipe", "tr": "yemek tarifi", "ok": "resıpi", "ornek": "Can you give me the recipe?", "ornekTr": "Bana tarifini verebilir misin?"},
+    {"en": "relationship", "tr": "ilişki", "ok": "rileyşınşip", "ornek": "They have a good relationship.", "ornekTr": "İyi bir ilişkileri var."},
+    {"en": "report", "tr": "rapor; bildirmek", "ok": "riport", "ornek": "I have to write a report.", "ornekTr": "Bir rapor yazmam lazım."},
+    {"en": "result", "tr": "sonuç", "ok": "rizalt", "ornek": "The results are good.", "ornekTr": "Sonuçlar iyi."},
+    {"en": "review", "tr": "eleştiri, değerlendirme", "ok": "rivyuu", "ornek": "The film got good reviews.", "ornekTr": "Film iyi eleştiriler aldı."},
+    {"en": "rock", "tr": "kaya; rock müzik", "ok": "rok", "ornek": "We sat on a big rock.", "ornekTr": "Büyük bir kayanın üstüne oturduk."},
+    {"en": "roof", "tr": "çatı", "ok": "ruuf", "ornek": "There is a cat on the roof.", "ornekTr": "Çatıda bir kedi var."},
+    {"en": "rubbish", "tr": "çöp", "ok": "rabiş", "ornek": "Take out the rubbish.", "ornekTr": "Çöpü çıkar."},
+    {"en": "rule", "tr": "kural", "ok": "ruul", "ornek": "Follow the rules.", "ornekTr": "Kurallara uy."},
+    {"en": "sail", "tr": "yelken açmak", "ok": "seyl", "ornek": "We sailed to the island.", "ornekTr": "Adaya yelkenliyle gittik."},
+    {"en": "sale", "tr": "satış; indirim", "ok": "seyl", "ornek": "Shoes are on sale.", "ornekTr": "Ayakkabılar indirimde."},
+    {"en": "sand", "tr": "kum", "ok": "send", "ornek": "The children are playing in the sand.", "ornekTr": "Çocuklar kumda oynuyor."},
+    {"en": "sauce", "tr": "sos", "ok": "sos", "ornek": "Do you want tomato sauce?", "ornekTr": "Domates sosu ister misin?"},
+    {"en": "scarf", "tr": "atkı, eşarp", "ok": "skarf", "ornek": "Wear a scarf, it's cold.", "ornekTr": "Atkı tak, hava soğuk."},
+    {"en": "science fiction", "tr": "bilim kurgu", "ok": "sayıns fikşın", "ornek": "I love science fiction films.", "ornekTr": "Bilim kurgu filmlerini çok severim."},
+    {"en": "score", "tr": "skor; puan", "ok": "skor", "ornek": "What's the score?", "ornekTr": "Skor kaç?"},
+    {"en": "screen", "tr": "ekran", "ok": "skriin", "ornek": "My phone screen is broken.", "ornekTr": "Telefonumun ekranı kırık."},
+    {"en": "season", "tr": "mevsim; sezon", "ok": "siizın", "ornek": "Which season do you like best?", "ornekTr": "En çok hangi mevsimi seversin?"},
+    {"en": "seat", "tr": "koltuk, yer", "ok": "siit", "ornek": "Is this seat free?", "ornekTr": "Bu koltuk boş mu?"},
+    {"en": "secret", "tr": "sır", "ok": "siikrıt", "ornek": "Can you keep a secret?", "ornekTr": "Sır tutabilir misin?"},
+    {"en": "service", "tr": "hizmet, servis", "ok": "sörvis", "ornek": "The service here is excellent.", "ornekTr": "Buradaki hizmet mükemmel."},
+    {"en": "shape", "tr": "şekil", "ok": "şeyp", "ornek": "What shape is it?", "ornekTr": "Ne şekilde?"},
+    {"en": "shelf", "tr": "raf", "ok": "şelf", "ornek": "Put the books on the shelf.", "ornekTr": "Kitapları rafa koy."},
+    {"en": "ship", "tr": "gemi", "ok": "şip", "ornek": "The ship arrived at the port.", "ornekTr": "Gemi limana vardı."},
+    {"en": "shoulder", "tr": "omuz", "ok": "şouldır", "ornek": "My shoulder hurts.", "ornekTr": "Omzum ağrıyor."},
+    {"en": "sight", "tr": "görme; manzara", "ok": "sayt", "ornek": "My grandfather has poor sight.", "ornekTr": "Dedemin gözleri iyi görmüyor."},
+    {"en": "sign", "tr": "işaret, tabela; imzalamak", "ok": "sayn", "ornek": "Read the sign.", "ornekTr": "Tabelayı oku."},
+    {"en": "silver", "tr": "gümüş", "ok": "silvır", "ornek": "She has a silver ring.", "ornekTr": "Gümüş bir yüzüğü var."},
+    {"en": "gold", "tr": "altın", "ok": "gould", "ornek": "This watch is made of gold.", "ornekTr": "Bu saat altından."},
+    {"en": "skin", "tr": "cilt, deri", "ok": "skin", "ornek": "Use sun cream to protect your skin.", "ornekTr": "Cildini korumak için güneş kremi kullan."},
+    {"en": "smartphone", "tr": "akıllı telefon", "ok": "smartfoun", "ornek": "Almost everyone has a smartphone.", "ornekTr": "Neredeyse herkesin akıllı telefonu var."},
+    {"en": "soap", "tr": "sabun", "ok": "soup", "ornek": "Wash your hands with soap.", "ornekTr": "Ellerini sabunla yıka."},
+    {"en": "society", "tr": "toplum", "ok": "sısayıti", "ornek": "Education is important for society.", "ornekTr": "Eğitim toplum için önemlidir."},
+    {"en": "soldier", "tr": "asker", "ok": "soulcır", "ornek": "The soldiers are marching.", "ornekTr": "Askerler yürüyor."},
+    {"en": "sound", "tr": "ses; gibi gelmek", "ok": "saund", "ornek": "That sounds great!", "ornekTr": "Kulağa harika geliyor!"},
+    {"en": "space", "tr": "uzay; yer, boşluk", "ok": "speys", "ornek": "There is no space in my bag.", "ornekTr": "Çantamda yer yok."},
+    {"en": "speech", "tr": "konuşma (topluluğa)", "ok": "spiiç", "ornek": "He gave a great speech.", "ornekTr": "Harika bir konuşma yaptı."},
+    {"en": "speed", "tr": "hız", "ok": "spiid", "ornek": "Reduce your speed.", "ornekTr": "Hızını azalt."},
+    {"en": "spider", "tr": "örümcek", "ok": "spaydır", "ornek": "There's a spider on the wall.", "ornekTr": "Duvarda bir örümcek var."},
+    {"en": "stadium", "tr": "stadyum", "ok": "steydiım", "ornek": "The stadium was full.", "ornekTr": "Stadyum doluydu."},
+    {"en": "stamp", "tr": "pul", "ok": "stemp", "ornek": "I need a stamp for this letter.", "ornekTr": "Bu mektup için bir pula ihtiyacım var."},
+    {"en": "star", "tr": "yıldız", "ok": "star", "ornek": "Look at the stars!", "ornekTr": "Yıldızlara bak!"},
+    {"en": "step", "tr": "adım; basamak", "ok": "step", "ornek": "Take one step forward.", "ornekTr": "Bir adım öne çık."},
+    {"en": "stomach", "tr": "mide", "ok": "stamık", "ornek": "I have a stomach ache.", "ornekTr": "Midem ağrıyor."},
+    {"en": "storm", "tr": "fırtına", "ok": "storm", "ornek": "There was a big storm last night.", "ornekTr": "Dün gece büyük bir fırtına vardı."},
+    {"en": "stranger", "tr": "yabancı (tanımadığın kişi)", "ok": "streyncır", "ornek": "Don't talk to strangers.", "ornekTr": "Yabancılarla konuşma."},
+    {"en": "stress", "tr": "stres", "ok": "stres", "ornek": "I'm under a lot of stress.", "ornekTr": "Çok stres altındayım."},
+    {"en": "style", "tr": "tarz, stil", "ok": "stayl", "ornek": "I like her style.", "ornekTr": "Onun tarzını beğeniyorum."},
+    {"en": "success", "tr": "başarı", "ok": "sıkses", "ornek": "Congratulations on your success!", "ornekTr": "Başarın için tebrikler!"},
+    {"en": "sunglasses", "tr": "güneş gözlüğü", "ok": "sanglesiz", "ornek": "Don't forget your sunglasses.", "ornekTr": "Güneş gözlüğünü unutma."},
+    {"en": "surname", "tr": "soyadı", "ok": "sörneym", "ornek": "What's your surname?", "ornekTr": "Soyadın ne?"},
+    {"en": "survey", "tr": "anket", "ok": "sörvey", "ornek": "Please fill in our survey.", "ornekTr": "Lütfen anketimizi doldurun."},
+    {"en": "swimming pool", "tr": "yüzme havuzu", "ok": "sviming puul", "ornek": "The hotel has a swimming pool.", "ornekTr": "Otelin yüzme havuzu var."},
+    {"en": "symbol", "tr": "sembol", "ok": "simbıl", "ornek": "The dove is a symbol of peace.", "ornekTr": "Güvercin barışın sembolüdür."},
+    {"en": "tablet", "tr": "tablet; hap", "ok": "teblıt", "ornek": "I read books on my tablet.", "ornekTr": "Kitapları tabletimde okurum."},
+    {"en": "talent", "tr": "yetenek", "ok": "telınt", "ornek": "She has a talent for music.", "ornekTr": "Müzik yeteneği var."},
+    {"en": "tax", "tr": "vergi", "ok": "teks", "ornek": "Is tax included in the price?", "ornekTr": "Vergi fiyata dahil mi?"},
+    {"en": "technology", "tr": "teknoloji", "ok": "teknolıci", "ornek": "Technology changes very fast.", "ornekTr": "Teknoloji çok hızlı değişiyor."},
+    {"en": "temperature", "tr": "sıcaklık; ateş", "ok": "temprıçır", "ornek": "The temperature is 30 degrees.", "ornekTr": "Sıcaklık 30 derece."},
+    {"en": "tent", "tr": "çadır", "ok": "tent", "ornek": "We slept in a tent.", "ornekTr": "Çadırda uyuduk."},
+    {"en": "theatre", "tr": "tiyatro", "ok": "tiıtır", "ornek": "We went to the theatre last night.", "ornekTr": "Dün akşam tiyatroya gittik."},
+    {"en": "thief", "tr": "hırsız", "ok": "tiif", "ornek": "The police caught the thief.", "ornekTr": "Polis hırsızı yakaladı."},
+    {"en": "throat", "tr": "boğaz", "ok": "trout", "ornek": "I have a sore throat.", "ornekTr": "Boğazım ağrıyor."},
+    {"en": "tip", "tr": "bahşiş; ipucu", "ok": "tip", "ornek": "We left a tip for the waiter.", "ornekTr": "Garsona bahşiş bıraktık."},
+    {"en": "title", "tr": "başlık; unvan", "ok": "taytıl", "ornek": "What is the title of the book?", "ornekTr": "Kitabın adı ne?"},
+    {"en": "tool", "tr": "alet", "ok": "tuul", "ornek": "I need a tool to fix this.", "ornekTr": "Bunu tamir etmek için bir alete ihtiyacım var."},
+    {"en": "top", "tr": "tepe, üst", "ok": "top", "ornek": "Write your name at the top of the page.", "ornekTr": "Adını sayfanın üstüne yaz."},
+    {"en": "tour", "tr": "tur, gezi", "ok": "tur", "ornek": "We went on a city tour.", "ornekTr": "Bir şehir turuna çıktık."},
+    {"en": "towel", "tr": "havlu", "ok": "tauıl", "ornek": "Can I have a clean towel?", "ornekTr": "Temiz bir havlu alabilir miyim?"},
+    {"en": "tower", "tr": "kule", "ok": "tauır", "ornek": "Galata Tower is very old.", "ornekTr": "Galata Kulesi çok eski."},
+    {"en": "traffic light", "tr": "trafik ışığı", "ok": "trefik layt", "ornek": "Turn right at the traffic lights.", "ornekTr": "Trafik ışıklarından sağa dön."},
+    {"en": "tradition", "tr": "gelenek", "ok": "trıdişın", "ornek": "It's a Turkish tradition.", "ornekTr": "Bu bir Türk geleneği."},
+    {"en": "trainers", "tr": "spor ayakkabı", "ok": "treynırz", "ornek": "I need new trainers.", "ornekTr": "Yeni spor ayakkabıya ihtiyacım var."},
+    {"en": "truth", "tr": "gerçek, doğru", "ok": "truut", "ornek": "Tell me the truth.", "ornekTr": "Bana doğruyu söyle."},
+    {"en": "tyre", "tr": "lastik (araba)", "ok": "tayır", "ornek": "We have a flat tyre.", "ornekTr": "Lastiğimiz patladı."},
+    {"en": "uniform", "tr": "üniforma", "ok": "yuunifoorm", "ornek": "Students wear a uniform.", "ornekTr": "Öğrenciler üniforma giyer."},
+    {"en": "universe", "tr": "evren", "ok": "yuunivörs", "ornek": "The universe is huge.", "ornekTr": "Evren çok büyük."},
+    {"en": "user", "tr": "kullanıcı", "ok": "yuuzır", "ornek": "Enter your user name.", "ornekTr": "Kullanıcı adını gir."},
+    {"en": "valley", "tr": "vadi", "ok": "veli", "ornek": "The village is in a green valley.", "ornekTr": "Köy yeşil bir vadide."},
+    {"en": "view", "tr": "manzara; görüş", "ok": "vyuu", "ornek": "The room has a sea view.", "ornekTr": "Odanın deniz manzarası var."},
+    {"en": "visitor", "tr": "ziyaretçi", "ok": "vizitır", "ornek": "The museum has many visitors.", "ornekTr": "Müzenin çok ziyaretçisi var."},
+    {"en": "voice", "tr": "ses (insan)", "ok": "voys", "ornek": "She has a beautiful voice.", "ornekTr": "Çok güzel bir sesi var."},
+    {"en": "wallet", "tr": "cüzdan", "ok": "volıt", "ornek": "I left my wallet at home.", "ornekTr": "Cüzdanımı evde unuttum."},
+    {"en": "war", "tr": "savaş", "ok": "vor", "ornek": "War is terrible.", "ornekTr": "Savaş korkunçtur."},
+    {"en": "waste", "tr": "israf; atık; boşa harcamak", "ok": "veyst", "ornek": "Don't waste water.", "ornekTr": "Suyu boşa harcama."},
+    {"en": "wave", "tr": "dalga; el sallamak", "ok": "veyv", "ornek": "The waves are big today.", "ornekTr": "Bugün dalgalar büyük."},
+    {"en": "weight", "tr": "ağırlık, kilo", "ok": "veyt", "ornek": "I want to lose weight.", "ornekTr": "Kilo vermek istiyorum."},
+    {"en": "wheel", "tr": "tekerlek", "ok": "viil", "ornek": "A bike has two wheels.", "ornekTr": "Bisikletin iki tekerleği vardır."},
+    {"en": "wildlife", "tr": "yaban hayatı", "ok": "vayldlayf", "ornek": "We watched wildlife in Africa.", "ornekTr": "Afrika'da yaban hayatını izledik."},
+    {"en": "winner", "tr": "kazanan", "ok": "vinır", "ornek": "And the winner is...", "ornekTr": "Ve kazanan..."},
+    {"en": "wood", "tr": "tahta, odun; koru", "ok": "vud", "ornek": "The table is made of wood.", "ornekTr": "Masa tahtadan yapılmış."},
+    {"en": "wool", "tr": "yün", "ok": "vul", "ornek": "This sweater is wool.", "ornekTr": "Bu kazak yün."},
+    {"en": "youth", "tr": "gençlik", "ok": "yuut", "ornek": "In my youth, I played football.", "ornekTr": "Gençliğimde futbol oynardım."},
+    {"en": "zone", "tr": "bölge", "ok": "zoun", "ornek": "This is a no-parking zone.", "ornekTr": "Burası park yasağı olan bir bölge."},
+    {"en": "zoo", "tr": "hayvanat bahçesi", "ok": "zuu", "ornek": "We took the kids to the zoo.", "ornekTr": "Çocukları hayvanat bahçesine götürdük."},
+    {"en": "able", "tr": "-ebilen, muktedir", "ok": "eybıl", "ornek": "I wasn't able to sleep.", "ornekTr": "Uyuyamadım."},
+    {"en": "absent", "tr": "yok, gelmemiş", "ok": "ebsınt", "ornek": "Two students are absent today.", "ornekTr": "Bugün iki öğrenci yok."},
+    {"en": "active", "tr": "aktif, hareketli", "ok": "ektiv", "ornek": "My grandmother is very active.", "ornekTr": "Büyükannem çok hareketli."},
+    {"en": "actual", "tr": "gerçek, asıl", "ok": "ekçuıl", "ornek": "What's the actual price?", "ornekTr": "Asıl fiyat ne?"},
+    {"en": "alive", "tr": "canlı, hayatta", "ok": "ılayv", "ornek": "Is the fish still alive?", "ornekTr": "Balık hâlâ canlı mı?"},
+    {"en": "amazing", "tr": "inanılmaz, harika", "ok": "ımeyzing", "ornek": "The view is amazing!", "ornekTr": "Manzara inanılmaz!"},
+    {"en": "ancient", "tr": "antik, çok eski", "ok": "eynşınt", "ornek": "We visited an ancient city.", "ornekTr": "Antik bir şehri gezdik."},
+    {"en": "annoyed", "tr": "sinirli, canı sıkkın", "ok": "ınoyd", "ornek": "I was annoyed with him.", "ornekTr": "Ona sinirlenmiştim."},
+    {"en": "anxious", "tr": "kaygılı", "ok": "enkşıs", "ornek": "She is anxious about the exam.", "ornekTr": "Sınav için kaygılı."},
+    {"en": "asleep", "tr": "uykuda", "ok": "ısliip", "ornek": "The baby is asleep.", "ornekTr": "Bebek uyuyor."},
+    {"en": "attractive", "tr": "çekici", "ok": "ıtrektiv", "ornek": "He is very attractive.", "ornekTr": "O çok çekici."},
+    {"en": "available", "tr": "müsait, mevcut", "ok": "ıveylıbıl", "ornek": "Is this room available?", "ornekTr": "Bu oda müsait mi?"},
+    {"en": "average", "tr": "ortalama", "ok": "evıric", "ornek": "He is of average height.", "ornekTr": "Ortalama boyda."},
+    {"en": "awake", "tr": "uyanık", "ok": "ıveyk", "ornek": "Are you awake?", "ornekTr": "Uyanık mısın?"},
+    {"en": "awful", "tr": "berbat", "ok": "ofıl", "ornek": "The weather is awful.", "ornekTr": "Hava berbat."},
+    {"en": "basic", "tr": "temel", "ok": "beysik", "ornek": "I know some basic English.", "ornekTr": "Biraz temel İngilizce biliyorum."},
+    {"en": "bitter", "tr": "acı (tat)", "ok": "bitır", "ornek": "This coffee is bitter.", "ornekTr": "Bu kahve acı."},
+    {"en": "blind", "tr": "kör", "ok": "blaynd", "ornek": "The man is blind.", "ornekTr": "Adam kör."},
+    {"en": "brave", "tr": "cesur", "ok": "breyv", "ornek": "The firefighter was very brave.", "ornekTr": "İtfaiyeci çok cesurdu."},
+    {"en": "bright", "tr": "parlak; zeki", "ok": "brayt", "ornek": "It's a bright sunny day.", "ornekTr": "Parlak, güneşli bir gün."},
+    {"en": "brilliant", "tr": "harika, parlak", "ok": "brilyınt", "ornek": "That's a brilliant idea!", "ornekTr": "Bu harika bir fikir!"},
+    {"en": "broken", "tr": "kırık, bozuk", "ok": "broukın", "ornek": "My phone is broken.", "ornekTr": "Telefonum bozuk."},
+    {"en": "calm", "tr": "sakin", "ok": "kaam", "ornek": "Stay calm.", "ornekTr": "Sakin ol."},
+    {"en": "careful", "tr": "dikkatli", "ok": "kerfıl", "ornek": "Be careful on the stairs.", "ornekTr": "Merdivenlerde dikkatli ol."},
+    {"en": "careless", "tr": "dikkatsiz", "ok": "kerlıs", "ornek": "He is a careless driver.", "ornekTr": "Dikkatsiz bir sürücü."},
+    {"en": "central", "tr": "merkezi", "ok": "sentrıl", "ornek": "The hotel is in a central location.", "ornekTr": "Otel merkezi bir konumda."},
+    {"en": "certain", "tr": "kesin, belli", "ok": "sörtın", "ornek": "Are you certain?", "ornekTr": "Emin misin?"},
+    {"en": "cheerful", "tr": "neşeli", "ok": "çiırfıl", "ornek": "She is always cheerful.", "ornekTr": "O hep neşelidir."},
+    {"en": "classical", "tr": "klasik", "ok": "klesikıl", "ornek": "I like classical music.", "ornekTr": "Klasik müziği severim."},
+    {"en": "clear", "tr": "açık, net", "ok": "kliır", "ornek": "Is that clear?", "ornekTr": "Anlaşıldı mı?"},
+    {"en": "clever", "tr": "zeki", "ok": "klevır", "ornek": "She is a clever girl.", "ornekTr": "O zeki bir kız."},
+    {"en": "cloudy", "tr": "bulutlu", "ok": "klaudi", "ornek": "It's cloudy today.", "ornekTr": "Bugün hava bulutlu."},
+    {"en": "comfortable", "tr": "rahat", "ok": "kamftıbıl", "ornek": "This sofa is very comfortable.", "ornekTr": "Bu kanepe çok rahat."},
+    {"en": "common", "tr": "yaygın, ortak", "ok": "komın", "ornek": "It's a common name in Turkey.", "ornekTr": "Türkiye'de yaygın bir isim."},
+    {"en": "complete", "tr": "tam, eksiksiz; tamamlamak", "ok": "kımpliit", "ornek": "Complete the sentences.", "ornekTr": "Cümleleri tamamlayın."},
+    {"en": "confident", "tr": "kendinden emin", "ok": "konfidınt", "ornek": "She is a confident speaker.", "ornekTr": "Kendinden emin bir konuşmacı."},
+    {"en": "confused", "tr": "kafası karışık", "ok": "kınfyuuzd", "ornek": "I'm confused.", "ornekTr": "Kafam karıştı."},
+    {"en": "cool", "tr": "serin; havalı", "ok": "kuul", "ornek": "It's cool in the evening.", "ornekTr": "Akşamları hava serin."},
+    {"en": "crazy", "tr": "deli, çılgın", "ok": "kreyzi", "ornek": "You're crazy!", "ornekTr": "Sen delisin!"},
+    {"en": "cruel", "tr": "zalim", "ok": "kruuıl", "ornek": "Don't be cruel to animals.", "ornekTr": "Hayvanlara zalim olma."},
+    {"en": "curly", "tr": "kıvırcık", "ok": "körli", "ornek": "She has curly hair.", "ornekTr": "Kıvırcık saçları var."},
+    {"en": "cute", "tr": "şirin, tatlı", "ok": "kyuut", "ornek": "What a cute puppy!", "ornekTr": "Ne şirin bir yavru köpek!"},
+    {"en": "daily", "tr": "günlük", "ok": "deyli", "ornek": "Exercise is part of my daily routine.", "ornekTr": "Egzersiz günlük rutinimin bir parçası."},
+    {"en": "dead", "tr": "ölü", "ok": "ded", "ornek": "The plant is dead.", "ornekTr": "Bitki ölmüş."},
+    {"en": "deep", "tr": "derin", "ok": "diip", "ornek": "The lake is very deep.", "ornekTr": "Göl çok derin."},
+    {"en": "delighted", "tr": "çok memnun", "ok": "dilaytıd", "ornek": "I'm delighted to meet you.", "ornekTr": "Sizinle tanıştığıma çok memnun oldum."},
+    {"en": "direct", "tr": "doğrudan, aktarmasız", "ok": "dırekt", "ornek": "Is there a direct flight?", "ornekTr": "Aktarmasız uçuş var mı?"},
+    {"en": "disappointed", "tr": "hayal kırıklığına uğramış", "ok": "disıpoyntıd", "ornek": "I was disappointed with the film.", "ornekTr": "Film beni hayal kırıklığına uğrattı."},
+    {"en": "dry", "tr": "kuru", "ok": "dray", "ornek": "My skin is very dry.", "ornekTr": "Cildim çok kuru."},
+    {"en": "electric", "tr": "elektrikli", "ok": "ilektrik", "ornek": "They have an electric car.", "ornekTr": "Elektrikli bir arabaları var."},
+    {"en": "embarrassed", "tr": "utanmış, mahcup", "ok": "imberıst", "ornek": "I was so embarrassed!", "ornekTr": "Çok utandım!"},
+    {"en": "enormous", "tr": "devasa", "ok": "inormıs", "ornek": "They live in an enormous house.", "ornekTr": "Devasa bir evde yaşıyorlar."},
+    {"en": "excellent", "tr": "mükemmel", "ok": "eksılınt", "ornek": "Your English is excellent.", "ornekTr": "İngilizcen mükemmel."},
+    {"en": "exciting", "tr": "heyecan verici", "ok": "iksayting", "ornek": "The match was very exciting.", "ornekTr": "Maç çok heyecanlıydı."},
+    {"en": "extra", "tr": "ekstra, fazladan", "ok": "ekstrı", "ornek": "Can I have an extra pillow?", "ornekTr": "Fazladan bir yastık alabilir miyim?"},
+    {"en": "extreme", "tr": "aşırı", "ok": "ikstriim", "ornek": "The heat was extreme.", "ornekTr": "Sıcak aşırıydı."},
+    {"en": "fair", "tr": "adil; açık renk", "ok": "fer", "ornek": "It's not fair!", "ornekTr": "Bu adil değil!"},
+    {"en": "false", "tr": "yanlış, sahte", "ok": "fols", "ornek": "True or false?", "ornekTr": "Doğru mu yanlış mı?"},
+    {"en": "familiar", "tr": "tanıdık", "ok": "fımilyır", "ornek": "Your face looks familiar.", "ornekTr": "Yüzün tanıdık geliyor."},
+    {"en": "fantastic", "tr": "harika", "ok": "fentestik", "ornek": "We had a fantastic holiday.", "ornekTr": "Harika bir tatil geçirdik."},
+    {"en": "fashionable", "tr": "modaya uygun", "ok": "feşınıbıl", "ornek": "She wears fashionable clothes.", "ornekTr": "Modaya uygun kıyafetler giyer."},
+    {"en": "fluent", "tr": "akıcı", "ok": "fluuınt", "ornek": "She is fluent in English.", "ornekTr": "İngilizcesi akıcı."},
+    {"en": "foreign", "tr": "yabancı", "ok": "forın", "ornek": "Do you speak any foreign languages?", "ornekTr": "Hiç yabancı dil konuşuyor musun?"},
+    {"en": "formal", "tr": "resmi", "ok": "formıl", "ornek": "Wear formal clothes to the interview.", "ornekTr": "Mülakata resmi kıyafet giy."},
+    {"en": "fresh", "tr": "taze", "ok": "freş", "ornek": "I buy fresh bread every day.", "ornekTr": "Her gün taze ekmek alırım."},
+    {"en": "fried", "tr": "kızarmış", "ok": "frayd", "ornek": "I don't eat fried food.", "ornekTr": "Kızartma yemem."},
+    {"en": "frightened", "tr": "korkmuş", "ok": "fraytınd", "ornek": "The child was frightened.", "ornekTr": "Çocuk korkmuştu."},
+    {"en": "frozen", "tr": "donmuş", "ok": "frouzın", "ornek": "The lake is frozen.", "ornekTr": "Göl donmuş."},
+    {"en": "general", "tr": "genel", "ok": "cenırıl", "ornek": "I have a general question.", "ornekTr": "Genel bir sorum var."},
+    {"en": "generous", "tr": "cömert", "ok": "cenırıs", "ornek": "My uncle is very generous.", "ornekTr": "Amcam çok cömert."},
+    {"en": "gentle", "tr": "nazik, yumuşak", "ok": "centıl", "ornek": "Be gentle with the baby.", "ornekTr": "Bebeğe karşı nazik ol."},
+    {"en": "glad", "tr": "memnun", "ok": "gled", "ornek": "I'm glad you came.", "ornekTr": "Geldiğine sevindim."},
+    {"en": "global", "tr": "küresel", "ok": "gloubıl", "ornek": "Climate change is a global problem.", "ornekTr": "İklim değişikliği küresel bir sorun."},
+    {"en": "gorgeous", "tr": "çok güzel, muhteşem", "ok": "gorcıs", "ornek": "What a gorgeous dress!", "ornekTr": "Ne muhteşem bir elbise!"},
+    {"en": "guilty", "tr": "suçlu", "ok": "gilti", "ornek": "I feel guilty.", "ornekTr": "Kendimi suçlu hissediyorum."},
+    {"en": "handsome", "tr": "yakışıklı", "ok": "hensım", "ornek": "Your brother is handsome.", "ornekTr": "Abin yakışıklı."},
+    {"en": "healthy", "tr": "sağlıklı", "ok": "helti", "ornek": "Eat healthy food.", "ornekTr": "Sağlıklı yiyecekler ye."},
+    {"en": "helpful", "tr": "yardımsever, faydalı", "ok": "helpfıl", "ornek": "Thanks, that was very helpful.", "ornekTr": "Teşekkürler, çok faydalı oldu."},
+    {"en": "honest", "tr": "dürüst", "ok": "onist", "ornek": "Be honest with me.", "ornekTr": "Bana karşı dürüst ol."},
+    {"en": "huge", "tr": "kocaman", "ok": "hyuuc", "ornek": "They have a huge garden.", "ornekTr": "Kocaman bir bahçeleri var."},
+    {"en": "ideal", "tr": "ideal", "ok": "aydiıl", "ornek": "This is the ideal place for a picnic.", "ornekTr": "Burası piknik için ideal bir yer."},
+    {"en": "impossible", "tr": "imkânsız", "ok": "imposıbıl", "ornek": "Nothing is impossible.", "ornekTr": "Hiçbir şey imkânsız değil."},
+    {"en": "independent", "tr": "bağımsız", "ok": "indipendınt", "ornek": "She is very independent.", "ornekTr": "O çok bağımsız."},
+    {"en": "international", "tr": "uluslararası", "ok": "intırneşınıl", "ornek": "It's an international school.", "ornekTr": "Uluslararası bir okul."},
+    {"en": "jealous", "tr": "kıskanç", "ok": "celıs", "ornek": "He is jealous of his brother.", "ornekTr": "Kardeşini kıskanıyor."},
+    {"en": "lazy", "tr": "tembel", "ok": "leyzi", "ornek": "Don't be lazy!", "ornekTr": "Tembel olma!"},
+    {"en": "legal", "tr": "yasal", "ok": "liigıl", "ornek": "Is it legal?", "ornekTr": "Bu yasal mı?"},
+    {"en": "likely", "tr": "muhtemel", "ok": "laykli", "ornek": "It's likely to rain.", "ornekTr": "Yağmur yağması muhtemel."},
+    {"en": "lonely", "tr": "yalnız (duygu)", "ok": "lounli", "ornek": "He feels lonely.", "ornekTr": "Kendini yalnız hissediyor."},
+    {"en": "lucky", "tr": "şanslı", "ok": "laki", "ornek": "You are so lucky!", "ornekTr": "Çok şanslısın!"},
+    {"en": "main", "tr": "ana, başlıca", "ok": "meyn", "ornek": "This is the main street.", "ornekTr": "Bu ana cadde."},
+    {"en": "medium", "tr": "orta", "ok": "miidiım", "ornek": "A medium coffee, please.", "ornekTr": "Orta boy bir kahve, lütfen."},
+    {"en": "messy", "tr": "dağınık", "ok": "mesi", "ornek": "His room is very messy.", "ornekTr": "Odası çok dağınık."},
+    {"en": "mild", "tr": "ılıman, hafif", "ok": "mayld", "ornek": "The winter here is mild.", "ornekTr": "Burada kış ılımandır."},
+    {"en": "missing", "tr": "kayıp", "ok": "mising", "ornek": "My cat is missing.", "ornekTr": "Kedim kayıp."},
+    {"en": "national", "tr": "ulusal", "ok": "neşınıl", "ornek": "Today is a national holiday.", "ornekTr": "Bugün ulusal bayram."},
+    {"en": "native", "tr": "ana (dil), yerli", "ok": "neytiv", "ornek": "Turkish is my native language.", "ornekTr": "Türkçe benim ana dilim."},
+    {"en": "natural", "tr": "doğal", "ok": "neçırıl", "ornek": "I prefer natural products.", "ornekTr": "Doğal ürünleri tercih ederim."},
+    {"en": "necessary", "tr": "gerekli", "ok": "nesıseri", "ornek": "Is it necessary?", "ornekTr": "Gerekli mi?"},
+    {"en": "negative", "tr": "olumsuz", "ok": "negıtiv", "ornek": "Don't be so negative.", "ornekTr": "Bu kadar olumsuz olma."},
+    {"en": "noisy", "tr": "gürültülü", "ok": "noyzi", "ornek": "The street is very noisy.", "ornekTr": "Sokak çok gürültülü."},
+    {"en": "normal", "tr": "normal", "ok": "normıl", "ornek": "It's normal to feel nervous.", "ornekTr": "Gergin hissetmek normaldir."},
+    {"en": "obvious", "tr": "açık, belli", "ok": "obviıs", "ornek": "The answer is obvious.", "ornekTr": "Cevap belli."},
+    {"en": "online", "tr": "çevrimiçi", "ok": "onlayn", "ornek": "I shop online.", "ornekTr": "İnternetten alışveriş yaparım."},
+    {"en": "ordinary", "tr": "sıradan", "ok": "ordıneri", "ornek": "It was an ordinary day.", "ornekTr": "Sıradan bir gündü."},
+    {"en": "original", "tr": "orijinal, özgün", "ok": "ıricinıl", "ornek": "Is this the original painting?", "ornekTr": "Bu orijinal tablo mu?"},
+    {"en": "perfect", "tr": "mükemmel", "ok": "pörfikt", "ornek": "Your English is perfect!", "ornekTr": "İngilizcen mükemmel!"},
+    {"en": "personal", "tr": "kişisel", "ok": "pörsınıl", "ornek": "Can I ask a personal question?", "ornekTr": "Kişisel bir soru sorabilir miyim?"},
+    {"en": "pleasant", "tr": "hoş", "ok": "plezınt", "ornek": "It was a pleasant evening.", "ornekTr": "Hoş bir akşamdı."},
+    {"en": "pleased", "tr": "memnun", "ok": "pliizd", "ornek": "I'm pleased with the results.", "ornekTr": "Sonuçlardan memnunum."},
+    {"en": "polite", "tr": "kibar", "ok": "pılayt", "ornek": "He is very polite.", "ornekTr": "O çok kibar."},
+    {"en": "positive", "tr": "olumlu", "ok": "pozıtiv", "ornek": "Think positive!", "ornekTr": "Olumlu düşün!"},
+    {"en": "powerful", "tr": "güçlü", "ok": "pauırfıl", "ornek": "It's a powerful car.", "ornekTr": "Güçlü bir araba."},
+    {"en": "practical", "tr": "pratik, kullanışlı", "ok": "prektikıl", "ornek": "These shoes are very practical.", "ornekTr": "Bu ayakkabılar çok kullanışlı."},
+    {"en": "pregnant", "tr": "hamile", "ok": "pregnınt", "ornek": "My sister is pregnant.", "ornekTr": "Kız kardeşim hamile."},
+    {"en": "previous", "tr": "önceki", "ok": "priiviıs", "ornek": "I met him at my previous job.", "ornekTr": "Onunla önceki işimde tanıştım."},
+    {"en": "private", "tr": "özel", "ok": "prayvıt", "ornek": "This is a private beach.", "ornekTr": "Burası özel bir plaj."},
+    {"en": "professional", "tr": "profesyonel", "ok": "prıfeşınıl", "ornek": "He is a professional photographer.", "ornekTr": "Profesyonel bir fotoğrafçı."},
+    {"en": "proud", "tr": "gururlu", "ok": "praud", "ornek": "I'm proud of you.", "ornekTr": "Seninle gurur duyuyorum."},
+    {"en": "public", "tr": "kamu, halka açık", "ok": "pablik", "ornek": "Take public transport.", "ornekTr": "Toplu taşıma kullan."},
+    {"en": "quick", "tr": "hızlı, çabuk", "ok": "kvik", "ornek": "Can I ask a quick question?", "ornekTr": "Kısa bir soru sorabilir miyim?"},
+    {"en": "rare", "tr": "nadir", "ok": "rer", "ornek": "This is a rare bird.", "ornekTr": "Bu nadir bir kuş."},
+    {"en": "raw", "tr": "çiğ", "ok": "ro", "ornek": "Don't eat raw meat.", "ornekTr": "Çiğ et yeme."},
+    {"en": "recent", "tr": "son, yakın zamanda olan", "ok": "riisınt", "ornek": "This is a recent photo.", "ornekTr": "Bu yakın zamanda çekilmiş bir fotoğraf."},
+    {"en": "relaxed", "tr": "rahat, sakin", "ok": "rilekst", "ornek": "I feel relaxed on holiday.", "ornekTr": "Tatilde kendimi rahat hissederim."},
+    {"en": "reliable", "tr": "güvenilir", "ok": "rilayıbıl", "ornek": "My car is very reliable.", "ornekTr": "Arabam çok güvenilir."},
+    {"en": "responsible", "tr": "sorumlu", "ok": "risponsıbıl", "ornek": "Who is responsible for this?", "ornekTr": "Bundan kim sorumlu?"},
+    {"en": "romantic", "tr": "romantik", "ok": "roumentik", "ornek": "We had a romantic dinner.", "ornekTr": "Romantik bir akşam yemeği yedik."},
+    {"en": "rough", "tr": "pürüzlü; zor", "ok": "raf", "ornek": "It was a rough day.", "ornekTr": "Zor bir gündü."},
+    {"en": "round", "tr": "yuvarlak", "ok": "raund", "ornek": "We have a round table.", "ornekTr": "Yuvarlak bir masamız var."},
+    {"en": "rude", "tr": "kaba", "ok": "ruud", "ornek": "Don't be rude!", "ornekTr": "Kaba olma!"},
+    {"en": "salty", "tr": "tuzlu", "ok": "solti", "ornek": "The soup is too salty.", "ornekTr": "Çorba çok tuzlu."},
+    {"en": "satisfied", "tr": "tatmin olmuş, memnun", "ok": "setisfayd", "ornek": "Are you satisfied with your room?", "ornekTr": "Odanızdan memnun musunuz?"},
+    {"en": "serious", "tr": "ciddi", "ok": "siriıs", "ornek": "Are you serious?", "ornekTr": "Ciddi misin?"},
+    {"en": "sharp", "tr": "keskin", "ok": "şarp", "ornek": "Be careful, the knife is sharp.", "ornekTr": "Dikkat et, bıçak keskin."},
+    {"en": "shocked", "tr": "şok olmuş", "ok": "şokt", "ornek": "I was shocked by the news.", "ornekTr": "Haberle şok oldum."},
+    {"en": "shy", "tr": "utangaç", "ok": "şay", "ornek": "She is very shy.", "ornekTr": "O çok utangaç."},
+    {"en": "silly", "tr": "aptalca, saçma", "ok": "sili", "ornek": "Don't be silly.", "ornekTr": "Saçmalama."},
+    {"en": "similar", "tr": "benzer", "ok": "similır", "ornek": "Our cars are similar.", "ornekTr": "Arabalarımız benzer."},
+    {"en": "simple", "tr": "basit", "ok": "simpıl", "ornek": "It's very simple.", "ornekTr": "Çok basit."},
+    {"en": "skilled", "tr": "yetenekli, vasıflı", "ok": "skild", "ornek": "He is a skilled worker.", "ornekTr": "O vasıflı bir işçi."},
+    {"en": "smart", "tr": "zeki; şık", "ok": "smart", "ornek": "She is very smart.", "ornekTr": "O çok zeki."},
+    {"en": "soft", "tr": "yumuşak", "ok": "soft", "ornek": "The bed is very soft.", "ornekTr": "Yatak çok yumuşak."},
+    {"en": "sore", "tr": "ağrıyan", "ok": "sor", "ornek": "I have sore feet.", "ornekTr": "Ayaklarım ağrıyor."},
+    {"en": "sour", "tr": "ekşi", "ok": "sauır", "ornek": "Lemons are sour.", "ornekTr": "Limonlar ekşidir."},
+    {"en": "special", "tr": "özel", "ok": "speşıl", "ornek": "Today is a special day.", "ornekTr": "Bugün özel bir gün."},
+    {"en": "spicy", "tr": "acı, baharatlı", "ok": "spaysi", "ornek": "I love spicy food.", "ornekTr": "Acılı yemekleri çok severim."},
+    {"en": "standard", "tr": "standart", "ok": "stendırd", "ornek": "This is the standard price.", "ornekTr": "Bu standart fiyat."},
+    {"en": "straight", "tr": "düz", "ok": "streyt", "ornek": "She has straight hair.", "ornekTr": "Düz saçları var."},
+    {"en": "strange", "tr": "garip", "ok": "streync", "ornek": "That's strange.", "ornekTr": "Bu garip."},
+    {"en": "stressed", "tr": "stresli", "ok": "strest", "ornek": "I feel stressed at work.", "ornekTr": "İşte stresli hissediyorum."},
+    {"en": "strict", "tr": "katı, sıkı", "ok": "strikt", "ornek": "My father is very strict.", "ornekTr": "Babam çok katıdır."},
+    {"en": "stupid", "tr": "aptal", "ok": "stuupid", "ornek": "It was a stupid mistake.", "ornekTr": "Aptalca bir hataydı."},
+    {"en": "successful", "tr": "başarılı", "ok": "sıksesfıl", "ornek": "She is a successful businesswoman.", "ornekTr": "Başarılı bir iş kadını."},
+    {"en": "sudden", "tr": "ani", "ok": "sadın", "ornek": "There was a sudden noise.", "ornekTr": "Ani bir gürültü oldu."},
+    {"en": "suitable", "tr": "uygun", "ok": "suutıbıl", "ornek": "This film is not suitable for children.", "ornekTr": "Bu film çocuklar için uygun değil."},
+    {"en": "surprised", "tr": "şaşırmış", "ok": "sırprayzd", "ornek": "I was surprised to see you.", "ornekTr": "Seni gördüğüme şaşırdım."},
+    {"en": "terrible", "tr": "korkunç, berbat", "ok": "terıbıl", "ornek": "The food was terrible.", "ornekTr": "Yemek berbattı."},
+    {"en": "terrified", "tr": "dehşete düşmüş", "ok": "terifayd", "ornek": "I'm terrified of snakes.", "ornekTr": "Yılanlardan ödüm kopar."},
+    {"en": "thick", "tr": "kalın", "ok": "tik", "ornek": "This book is very thick.", "ornekTr": "Bu kitap çok kalın."},
+    {"en": "tight", "tr": "dar, sıkı", "ok": "tayt", "ornek": "These shoes are too tight.", "ornekTr": "Bu ayakkabılar çok dar."},
+    {"en": "tiny", "tr": "minicik", "ok": "tayni", "ornek": "They live in a tiny flat.", "ornekTr": "Minicik bir dairede yaşıyorlar."},
+    {"en": "total", "tr": "toplam", "ok": "toutıl", "ornek": "What's the total price?", "ornekTr": "Toplam fiyat ne?"},
+    {"en": "traditional", "tr": "geleneksel", "ok": "trıdişınıl", "ornek": "We cooked a traditional meal.", "ornekTr": "Geleneksel bir yemek pişirdik."},
+    {"en": "typical", "tr": "tipik", "ok": "tipikıl", "ornek": "This is a typical Turkish breakfast.", "ornekTr": "Bu tipik bir Türk kahvaltısı."},
+    {"en": "unbelievable", "tr": "inanılmaz", "ok": "anbiliivıbıl", "ornek": "The price is unbelievable!", "ornekTr": "Fiyat inanılmaz!"},
+    {"en": "unfortunately", "tr": "maalesef", "ok": "anforçınıtli", "ornek": "Unfortunately, I can't come.", "ornekTr": "Maalesef gelemiyorum."},
+    {"en": "unhappy", "tr": "mutsuz", "ok": "anhepi", "ornek": "He looks unhappy.", "ornekTr": "Mutsuz görünüyor."},
+    {"en": "unusual", "tr": "sıra dışı, alışılmadık", "ok": "anyuujuıl", "ornek": "That's an unusual name.", "ornekTr": "Bu alışılmadık bir isim."},
+    {"en": "upset", "tr": "üzgün, keyfi kaçmış", "ok": "apset", "ornek": "She was upset about the news.", "ornekTr": "Haberlere üzüldü."},
+    {"en": "urgent", "tr": "acil", "ok": "örcınt", "ornek": "It's urgent!", "ornekTr": "Acil!"},
+    {"en": "useful", "tr": "kullanışlı, yararlı", "ok": "yuusfıl", "ornek": "This app is very useful.", "ornekTr": "Bu uygulama çok kullanışlı."},
+    {"en": "useless", "tr": "işe yaramaz", "ok": "yuuslıs", "ornek": "This old phone is useless.", "ornekTr": "Bu eski telefon işe yaramaz."},
+    {"en": "usual", "tr": "her zamanki", "ok": "yuujuıl", "ornek": "I'll have the usual.", "ornekTr": "Her zamankinden alayım."},
+    {"en": "valuable", "tr": "değerli", "ok": "velyuıbıl", "ornek": "This ring is very valuable.", "ornekTr": "Bu yüzük çok değerli."},
+    {"en": "violent", "tr": "şiddetli", "ok": "vayılınt", "ornek": "I don't like violent films.", "ornekTr": "Şiddet içeren filmleri sevmem."},
+    {"en": "visible", "tr": "görünür", "ok": "vizıbıl", "ornek": "The mountain is visible from here.", "ornekTr": "Dağ buradan görünüyor."},
+    {"en": "weak", "tr": "zayıf, güçsüz", "ok": "viik", "ornek": "I feel weak today.", "ornekTr": "Bugün kendimi güçsüz hissediyorum."},
+    {"en": "wealthy", "tr": "varlıklı", "ok": "velti", "ornek": "They come from a wealthy family.", "ornekTr": "Varlıklı bir aileden geliyorlar."},
+    {"en": "wet", "tr": "ıslak", "ok": "vet", "ornek": "My hair is wet.", "ornekTr": "Saçım ıslak."},
+    {"en": "wide", "tr": "geniş", "ok": "vayd", "ornek": "The road is very wide.", "ornekTr": "Yol çok geniş."},
+    {"en": "wild", "tr": "vahşi, yabani", "ok": "vayld", "ornek": "Lions are wild animals.", "ornekTr": "Aslanlar vahşi hayvanlardır."},
+    {"en": "windy", "tr": "rüzgârlı", "ok": "vindi", "ornek": "It's windy today.", "ornekTr": "Bugün hava rüzgârlı."},
+    {"en": "wise", "tr": "bilge, akıllıca", "ok": "vayz", "ornek": "My grandfather is a wise man.", "ornekTr": "Dedem bilge bir adam."},
+    {"en": "wonderful", "tr": "harika", "ok": "vandırfıl", "ornek": "We had a wonderful time.", "ornekTr": "Harika vakit geçirdik."},
+    {"en": "wooden", "tr": "tahta, ahşap", "ok": "vudın", "ornek": "We have a wooden table.", "ornekTr": "Ahşap bir masamız var."},
+    {"en": "worse", "tr": "daha kötü", "ok": "vörs", "ornek": "The weather is getting worse.", "ornekTr": "Hava kötüleşiyor."},
+    {"en": "worst", "tr": "en kötü", "ok": "vörst", "ornek": "It was the worst day of my life.", "ornekTr": "Hayatımın en kötü günüydü."},
+    {"en": "worth", "tr": "değer", "ok": "vört", "ornek": "The film is worth watching.", "ornekTr": "Film izlemeye değer."},
+    {"en": "above", "tr": "üstünde, yukarısında", "ok": "ıbav", "ornek": "The picture is above the sofa.", "ornekTr": "Resim kanepenin üstünde."},
+    {"en": "across", "tr": "karşısına, öbür tarafına", "ok": "ıkros", "ornek": "Walk across the bridge.", "ornekTr": "Köprünün karşısına yürü."},
+    {"en": "against", "tr": "karşı", "ok": "ıgenst", "ornek": "I'm against the idea.", "ornekTr": "Bu fikre karşıyım."},
+    {"en": "ago", "tr": "önce (zaman)", "ok": "ıgou", "ornek": "I saw him two days ago.", "ornekTr": "Onu iki gün önce gördüm."},
+    {"en": "ahead", "tr": "ileride, önde", "ok": "ıhed", "ornek": "Go straight ahead.", "ornekTr": "Dümdüz ileri git."},
+    {"en": "almost", "tr": "neredeyse", "ok": "olmoust", "ornek": "I'm almost ready.", "ornekTr": "Neredeyse hazırım."},
+    {"en": "already", "tr": "zaten, çoktan", "ok": "olredi", "ornek": "I've already eaten.", "ornekTr": "Zaten yemek yedim."},
+    {"en": "along", "tr": "boyunca", "ok": "ılong", "ornek": "We walked along the beach.", "ornekTr": "Sahil boyunca yürüdük."},
+    {"en": "although", "tr": "-e rağmen", "ok": "oldou", "ornek": "Although it was cold, we went out.", "ornekTr": "Soğuk olmasına rağmen dışarı çıktık."},
+    {"en": "among", "tr": "arasında (çok şey)", "ok": "ımang", "ornek": "She is popular among students.", "ornekTr": "Öğrenciler arasında popüler."},
+    {"en": "anybody", "tr": "herhangi biri; kimse", "ok": "enibadi", "ornek": "Is anybody home?", "ornekTr": "Evde kimse var mı?"},
+    {"en": "anything", "tr": "bir şey; hiçbir şey", "ok": "eniting", "ornek": "Do you need anything?", "ornekTr": "Bir şeye ihtiyacın var mı?"},
+    {"en": "anywhere", "tr": "herhangi bir yer; hiçbir yer", "ok": "enivver", "ornek": "I can't find it anywhere.", "ornekTr": "Hiçbir yerde bulamıyorum."},
+    {"en": "around", "tr": "etrafında; yaklaşık", "ok": "ıraund", "ornek": "We walked around the city.", "ornekTr": "Şehrin etrafında yürüdük."},
+    {"en": "as", "tr": "olarak; -dığı gibi", "ok": "ez", "ornek": "She works as a nurse.", "ornekTr": "Hemşire olarak çalışıyor."},
+    {"en": "as well", "tr": "de, ayrıca", "ok": "ez vel", "ornek": "I'd like a coffee as well.", "ornekTr": "Bir de kahve istiyorum."},
+    {"en": "below", "tr": "altında, aşağısında", "ok": "bilou", "ornek": "The temperature is below zero.", "ornekTr": "Sıcaklık sıfırın altında."},
+    {"en": "beside", "tr": "yanında", "ok": "bisayd", "ornek": "Sit beside me.", "ornekTr": "Yanıma otur."},
+    {"en": "beyond", "tr": "ötesinde", "ok": "biyond", "ornek": "The village is beyond the hills.", "ornekTr": "Köy tepelerin ötesinde."},
+    {"en": "certainly", "tr": "kesinlikle", "ok": "sörtınli", "ornek": "I'll certainly come.", "ornekTr": "Kesinlikle geleceğim."},
+    {"en": "clearly", "tr": "açıkça", "ok": "kliırli", "ornek": "Please speak clearly.", "ornekTr": "Lütfen açık konuşun."},
+    {"en": "completely", "tr": "tamamen", "ok": "kımpliitli", "ornek": "I completely forgot.", "ornekTr": "Tamamen unuttum."},
+    {"en": "during", "tr": "sırasında, boyunca", "ok": "dyuring", "ornek": "Don't talk during the film.", "ornekTr": "Film sırasında konuşma."},
+    {"en": "either", "tr": "ikisinden biri; de (olumsuz)", "ok": "aydır", "ornek": "I don't like it either.", "ornekTr": "Ben de sevmiyorum."},
+    {"en": "else", "tr": "başka", "ok": "els", "ornek": "What else do you need?", "ornekTr": "Başka neye ihtiyacın var?"},
+    {"en": "enough", "tr": "yeterli", "ok": "inaf", "ornek": "I don't have enough time.", "ornekTr": "Yeterli vaktim yok."},
+    {"en": "especially", "tr": "özellikle", "ok": "ispeşıli", "ornek": "I love fruit, especially apples.", "ornekTr": "Meyveyi, özellikle elmayı çok severim."},
+    {"en": "even", "tr": "bile", "ok": "iivın", "ornek": "Even children know that.", "ornekTr": "Bunu çocuklar bile bilir."},
+    {"en": "ever", "tr": "hiç (soruda)", "ok": "evır", "ornek": "Have you ever been to London?", "ornekTr": "Hiç Londra'ya gittin mi?"},
+    {"en": "exactly", "tr": "tam olarak", "ok": "igzektli", "ornek": "That's exactly right.", "ornekTr": "Tam olarak doğru."},
+    {"en": "except", "tr": "hariç", "ok": "iksept", "ornek": "Everyone came except Ali.", "ornekTr": "Ali hariç herkes geldi."},
+    {"en": "finally", "tr": "sonunda", "ok": "faynıli", "ornek": "We finally arrived.", "ornekTr": "Sonunda vardık."},
+    {"en": "forward", "tr": "ileri", "ok": "forvırd", "ornek": "Move forward, please.", "ornekTr": "İleri gidin, lütfen."},
+    {"en": "fortunately", "tr": "neyse ki", "ok": "forçınıtli", "ornek": "Fortunately, nobody was hurt.", "ornekTr": "Neyse ki kimse yaralanmadı."},
+    {"en": "hard", "tr": "sıkı (çalışmak); zor; sert", "ok": "hard", "ornek": "She works very hard.", "ornekTr": "Çok sıkı çalışıyor."},
+    {"en": "hardly", "tr": "neredeyse hiç", "ok": "hardli", "ornek": "I hardly know him.", "ornekTr": "Onu neredeyse hiç tanımıyorum."},
+    {"en": "however", "tr": "ancak, fakat", "ok": "hauevır", "ornek": "It's expensive. However, it's very good.", "ornekTr": "Pahalı. Ancak çok iyi."},
+    {"en": "immediately", "tr": "hemen", "ok": "imiidiıtli", "ornek": "Call me immediately.", "ornekTr": "Beni hemen ara."},
+    {"en": "instead", "tr": "yerine", "ok": "insted", "ornek": "Let's take a taxi instead.", "ornekTr": "Onun yerine taksiye binelim."},
+    {"en": "lately", "tr": "son zamanlarda", "ok": "leytli", "ornek": "I've been busy lately.", "ornekTr": "Son zamanlarda meşgulüm."},
+    {"en": "later", "tr": "sonra", "ok": "leytır", "ornek": "I'll call you later.", "ornekTr": "Seni sonra ararım."},
+    {"en": "less", "tr": "daha az", "ok": "les", "ornek": "Eat less sugar.", "ornekTr": "Daha az şeker ye."},
+    {"en": "luckily", "tr": "şans eseri", "ok": "lakili", "ornek": "Luckily, I had an umbrella.", "ornekTr": "Şans eseri şemsiyem vardı."},
+    {"en": "mostly", "tr": "çoğunlukla", "ok": "moustli", "ornek": "I mostly work from home.", "ornekTr": "Çoğunlukla evden çalışırım."},
+    {"en": "nearly", "tr": "neredeyse", "ok": "niırli", "ornek": "It's nearly midnight.", "ornekTr": "Neredeyse gece yarısı."},
+    {"en": "neither", "tr": "ikisi de değil; ben de (olumsuz)", "ok": "naydır", "ornek": "Neither of them came.", "ornekTr": "İkisi de gelmedi."},
+    {"en": "nobody", "tr": "hiç kimse", "ok": "noubadi", "ornek": "Nobody knows the answer.", "ornekTr": "Kimse cevabı bilmiyor."},
+    {"en": "nowhere", "tr": "hiçbir yer", "ok": "nouver", "ornek": "There's nowhere to park.", "ornekTr": "Park edecek hiçbir yer yok."},
+    {"en": "once", "tr": "bir kez; bir zamanlar", "ok": "vans", "ornek": "I go there once a week.", "ornekTr": "Oraya haftada bir giderim."},
+    {"en": "perhaps", "tr": "belki", "ok": "pörheps", "ornek": "Perhaps she's ill.", "ornekTr": "Belki hastadır."},
+    {"en": "probably", "tr": "muhtemelen", "ok": "probıbli", "ornek": "He'll probably be late.", "ornekTr": "Muhtemelen geç kalacak."},
+    {"en": "quite", "tr": "oldukça", "ok": "kvayt", "ornek": "It's quite cold today.", "ornekTr": "Bugün hava oldukça soğuk."},
+    {"en": "rather", "tr": "oldukça; -den ziyade", "ok": "redır", "ornek": "I'd rather stay at home.", "ornekTr": "Evde kalmayı tercih ederim."},
+    {"en": "recently", "tr": "son zamanlarda", "ok": "riisıntli", "ornek": "I've recently moved to Izmir.", "ornekTr": "Son zamanlarda İzmir'e taşındım."},
+    {"en": "since", "tr": "-den beri", "ok": "sins", "ornek": "I've lived here since 2020.", "ornekTr": "2020'den beri burada yaşıyorum."},
+    {"en": "somebody", "tr": "birisi", "ok": "sambadi", "ornek": "Somebody called you.", "ornekTr": "Biri seni aradı."},
+    {"en": "somewhere", "tr": "bir yerde, bir yere", "ok": "samver", "ornek": "Let's go somewhere quiet.", "ornekTr": "Sessiz bir yere gidelim."},
+    {"en": "suddenly", "tr": "aniden", "ok": "sadınli", "ornek": "Suddenly, the lights went out.", "ornekTr": "Aniden ışıklar söndü."},
+    {"en": "though", "tr": "yine de; -e rağmen", "ok": "dou", "ornek": "It was hard. I enjoyed it, though.", "ornekTr": "Zordu. Yine de keyif aldım."},
+    {"en": "through", "tr": "içinden, boyunca", "ok": "truu", "ornek": "We drove through the forest.", "ornekTr": "Ormanın içinden geçtik."},
+    {"en": "till", "tr": "-e kadar", "ok": "til", "ornek": "Wait till tomorrow.", "ornekTr": "Yarına kadar bekle."},
+    {"en": "toward", "tr": "-e doğru", "ok": "tıvord", "ornek": "He walked toward the door.", "ornekTr": "Kapıya doğru yürüdü."},
+    {"en": "twice", "tr": "iki kez", "ok": "tvays", "ornek": "I've been there twice.", "ornekTr": "Oraya iki kez gittim."},
+    {"en": "unless", "tr": "-mezse", "ok": "ınles", "ornek": "Don't come unless I call you.", "ornekTr": "Seni aramazsam gelme."},
+    {"en": "until", "tr": "-e kadar", "ok": "ıntil", "ornek": "The shop is open until ten.", "ornekTr": "Dükkân ona kadar açık."},
+    {"en": "upstairs", "tr": "üst kat(ta)", "ok": "apsterz", "ornek": "The bedrooms are upstairs.", "ornekTr": "Yatak odaları üst katta."},
+    {"en": "downstairs", "tr": "alt kat(ta)", "ok": "daunsterz", "ornek": "The kitchen is downstairs.", "ornekTr": "Mutfak alt katta."},
+    {"en": "whatever", "tr": "her ne", "ok": "vatevır", "ornek": "Do whatever you want.", "ornekTr": "Ne istersen yap."},
+    {"en": "whenever", "tr": "ne zaman ... -se", "ok": "venevır", "ornek": "Call me whenever you want.", "ornekTr": "Ne zaman istersen beni ara."},
+    {"en": "whether", "tr": "-ip -mediği", "ok": "vedır", "ornek": "I don't know whether he's coming.", "ornekTr": "Gelip gelmeyeceğini bilmiyorum."},
+    {"en": "while", "tr": "-iken", "ok": "vayl", "ornek": "I read while I eat.", "ornekTr": "Yemek yerken okurum."},
+    {"en": "yet", "tr": "henüz", "ok": "yet", "ornek": "I haven't finished yet.", "ornekTr": "Henüz bitirmedim."},
+    {"en": "everywhere", "tr": "her yer(de)", "ok": "evriver", "ornek": "I looked everywhere.", "ornekTr": "Her yere baktım."},
+    {"en": "abroad", "tr": "yurt dışı(nda)", "ok": "ıbrod", "ornek": "I want to study abroad.", "ornekTr": "Yurt dışında okumak istiyorum."},
+    {"en": "anyway", "tr": "neyse; yine de", "ok": "enivey", "ornek": "Anyway, let's go.", "ornekTr": "Neyse, gidelim."},
+    {"en": "actually", "tr": "aslında", "ok": "ekçuıli", "ornek": "Actually, I don't like coffee.", "ornekTr": "Aslında kahveyi sevmem."},
+    {"en": "especially for", "tr": "özellikle için", "ok": "ispeşıli for", "ornek": "I made this especially for you.", "ornekTr": "Bunu özellikle senin için yaptım."},
+    {"en": "get on", "tr": "binmek (otobüs, tren)", "ok": "get on", "ornek": "Get on the bus here.", "ornekTr": "Otobüse buradan bin."},
+    {"en": "get off", "tr": "inmek (otobüs, tren)", "ok": "get of", "ornek": "Get off at the next stop.", "ornekTr": "Bir sonraki durakta in."},
+    {"en": "get back", "tr": "geri dönmek", "ok": "get bek", "ornek": "When did you get back?", "ornekTr": "Ne zaman döndün?"},
+    {"en": "give up", "tr": "vazgeçmek, bırakmak", "ok": "giv ap", "ornek": "Don't give up!", "ornekTr": "Pes etme!"},
+    {"en": "grow up", "tr": "büyümek (yetişmek)", "ok": "grou ap", "ornek": "I grew up in a small town.", "ornekTr": "Küçük bir kasabada büyüdüm."},
+    {"en": "look after", "tr": "bakmak, ilgilenmek", "ok": "luk eftır", "ornek": "Can you look after my cat?", "ornekTr": "Kedime bakabilir misin?"},
+    {"en": "look forward to", "tr": "dört gözle beklemek", "ok": "luk forvırd tu", "ornek": "I look forward to seeing you.", "ornekTr": "Seni görmeyi dört gözle bekliyorum."},
+    {"en": "find out", "tr": "öğrenmek, keşfetmek", "ok": "faynd aut", "ornek": "I found out the truth.", "ornekTr": "Gerçeği öğrendim."},
+    {"en": "fill in", "tr": "doldurmak (form)", "ok": "fil in", "ornek": "Fill in the form, please.", "ornekTr": "Formu doldurun, lütfen."},
+    {"en": "set off", "tr": "yola çıkmak", "ok": "set of", "ornek": "We set off early in the morning.", "ornekTr": "Sabah erkenden yola çıktık."},
+    {"en": "pay back", "tr": "borcunu ödemek", "ok": "pey bek", "ornek": "I'll pay you back tomorrow.", "ornekTr": "Borcumu yarın öderim."},
+    {"en": "run out of", "tr": "-si bitmek", "ok": "ran aut ov", "ornek": "We ran out of milk.", "ornekTr": "Sütümüz bitti."},
+    {"en": "throw away", "tr": "atmak (çöpe)", "ok": "trou ıvey", "ornek": "Don't throw away the bottles.", "ornekTr": "Şişeleri atma."},
+    {"en": "try on", "tr": "denemek (kıyafet)", "ok": "tray on", "ornek": "Can I try on these jeans?", "ornekTr": "Bu kotu deneyebilir miyim?"},
+    {"en": "turn up", "tr": "sesini açmak; gelmek", "ok": "törn ap", "ornek": "Turn up the music!", "ornekTr": "Müziğin sesini aç!"},
+    {"en": "turn down", "tr": "sesini kısmak; reddetmek", "ok": "törn daun", "ornek": "Please turn down the TV.", "ornekTr": "Lütfen televizyonun sesini kıs."},
+    {"en": "calm down", "tr": "sakinleşmek", "ok": "kaam daun", "ornek": "Calm down, please.", "ornekTr": "Sakin ol, lütfen."},
+    {"en": "check in", "tr": "giriş yapmak (otel)", "ok": "çek in", "ornek": "We checked in at the hotel.", "ornekTr": "Otele giriş yaptık."},
+    {"en": "check out", "tr": "çıkış yapmak (otel)", "ok": "çek aut", "ornek": "We check out at noon.", "ornekTr": "Öğlen çıkış yapıyoruz."},
+    {"en": "break down", "tr": "bozulmak (araç)", "ok": "breyk daun", "ornek": "Our car broke down.", "ornekTr": "Arabamız bozuldu."},
+    {"en": "hang out", "tr": "takılmak, vakit geçirmek", "ok": "heng aut", "ornek": "We hang out at the weekend.", "ornekTr": "Hafta sonu takılırız."},
+    {"en": "show around", "tr": "gezdirmek", "ok": "şou ıraund", "ornek": "I'll show you around the city.", "ornekTr": "Seni şehirde gezdireyim."},
+    {"en": "clean up", "tr": "temizlemek, toplamak", "ok": "kliin ap", "ornek": "Let's clean up the kitchen.", "ornekTr": "Mutfağı toparlayalım."},
+    {"en": "add", "tr": "eklemek", "ok": "ed", "ornek": "Add some salt.", "ornekTr": "Biraz tuz ekle."},
+    {"en": "collect", "tr": "toplamak, biriktirmek", "ok": "kılekt", "ornek": "I collect old coins.", "ornekTr": "Eski paraları biriktiririm."},
+    {"en": "contact", "tr": "iletişime geçmek", "ok": "kontekt", "ornek": "Please contact us by email.", "ornekTr": "Lütfen bize e-postayla ulaşın."},
+    {"en": "create", "tr": "oluşturmak, yaratmak", "ok": "kriyeyt", "ornek": "Create a new password.", "ornekTr": "Yeni bir şifre oluştur."},
+    {"en": "cycle", "tr": "bisiklete binmek", "ok": "saykıl", "ornek": "I cycle to work.", "ornekTr": "İşe bisikletle giderim."},
+    {"en": "feed", "tr": "beslemek, yem vermek", "ok": "fiid", "ornek": "Don't forget to feed the cat.", "ornekTr": "Kediyi beslemeyi unutma."},
+    {"en": "fry", "tr": "kızartmak", "ok": "fray", "ornek": "Fry the onions.", "ornekTr": "Soğanları kızart."},
+    {"en": "greet", "tr": "selamlamak, karşılamak", "ok": "griit", "ornek": "She greeted us at the door.", "ornekTr": "Bizi kapıda karşıladı."},
+    {"en": "hire", "tr": "kiralamak; işe almak", "ok": "hayır", "ornek": "We hired a car.", "ornekTr": "Araba kiraladık."},
+    {"en": "hunt", "tr": "avlamak", "ok": "hant", "ornek": "Cats hunt mice.", "ornekTr": "Kediler fare avlar."},
+    {"en": "inform", "tr": "bilgilendirmek", "ok": "inform", "ornek": "Please inform us of any changes.", "ornekTr": "Lütfen değişiklikleri bize bildirin."},
+    {"en": "mention", "tr": "bahsetmek", "ok": "menşın", "ornek": "He didn't mention it.", "ornekTr": "Bundan bahsetmedi."},
+    {"en": "note down", "tr": "not almak", "ok": "nout daun", "ornek": "Note down my number.", "ornekTr": "Numaramı not al."},
+    {"en": "pour", "tr": "dökmek", "ok": "por", "ornek": "Pour the milk into the cup.", "ornekTr": "Sütü fincana dök."},
+    {"en": "pray", "tr": "dua etmek", "ok": "prey", "ornek": "They pray every day.", "ornekTr": "Her gün dua ederler."},
+    {"en": "predict", "tr": "tahmin etmek", "ok": "pridikt", "ornek": "Nobody can predict the future.", "ornekTr": "Kimse geleceği tahmin edemez."},
+    {"en": "produce", "tr": "üretmek", "ok": "prıduus", "ornek": "This factory produces cars.", "ornekTr": "Bu fabrika araba üretiyor."},
+    {"en": "record", "tr": "kaydetmek", "ok": "rikord", "ornek": "Record the meeting, please.", "ornekTr": "Toplantıyı kaydet, lütfen."},
+    {"en": "reduce", "tr": "azaltmak", "ok": "riduus", "ornek": "Reduce the heat.", "ornekTr": "Ateşi kıs."},
+    {"en": "refuse", "tr": "reddetmek", "ok": "rifyuuz", "ornek": "He refused to help me.", "ornekTr": "Bana yardım etmeyi reddetti."},
+    {"en": "remove", "tr": "çıkarmak, kaldırmak", "ok": "rimuuv", "ornek": "Remove your shoes, please.", "ornekTr": "Ayakkabılarınızı çıkarın, lütfen."},
+    {"en": "rent out", "tr": "kiraya vermek", "ok": "rent aut", "ornek": "They rent out their flat.", "ornekTr": "Dairelerini kiraya veriyorlar."},
+    {"en": "rob", "tr": "soymak", "ok": "rob", "ornek": "Two men robbed the bank.", "ornekTr": "İki adam bankayı soydu."},
+    {"en": "scream", "tr": "çığlık atmak", "ok": "skriim", "ornek": "She screamed when she saw the mouse.", "ornekTr": "Fareyi görünce çığlık attı."},
+    {"en": "search", "tr": "aramak", "ok": "sörç", "ornek": "I searched the internet.", "ornekTr": "İnternette aradım."},
+    {"en": "serve", "tr": "servis yapmak, hizmet etmek", "ok": "sörv", "ornek": "Breakfast is served from seven.", "ornekTr": "Kahvaltı yediden itibaren servis edilir."},
+    {"en": "set", "tr": "kurmak (alarm); ayarlamak", "ok": "set", "ornek": "Set the alarm for six.", "ornekTr": "Alarmı altıya kur."},
+    {"en": "spill", "tr": "dökmek (kazara)", "ok": "spil", "ornek": "I spilled coffee on my shirt.", "ornekTr": "Gömleğime kahve döktüm."},
+    {"en": "store", "tr": "depolamak", "ok": "stor", "ornek": "Store it in a cool place.", "ornekTr": "Serin bir yerde saklayın."},
+    {"en": "support", "tr": "desteklemek", "ok": "sıport", "ornek": "My family supports me.", "ornekTr": "Ailem beni destekliyor."},
+    {"en": "tear", "tr": "yırtmak", "ok": "ter", "ornek": "Don't tear the paper.", "ornekTr": "Kâğıdı yırtma."},
+    {"en": "text", "tr": "mesaj atmak", "ok": "tekst", "ornek": "Text me when you arrive.", "ornekTr": "Varınca bana mesaj at."},
+    {"en": "tie", "tr": "bağlamak; kravat", "ok": "tay", "ornek": "Tie your shoes.", "ornekTr": "Ayakkabılarını bağla."},
+    {"en": "warn", "tr": "uyarmak", "ok": "vorn", "ornek": "I warned you!", "ornekTr": "Seni uyarmıştım!"},
+    {"en": "weigh", "tr": "tartmak; ağırlığında olmak", "ok": "vey", "ornek": "How much do you weigh?", "ornekTr": "Kaç kilosun?"},
+    {"en": "whisper", "tr": "fısıldamak", "ok": "vispır", "ornek": "She whispered in my ear.", "ornekTr": "Kulağıma fısıldadı."},
+    {"en": "wish", "tr": "dilemek", "ok": "viş", "ornek": "I wish you a happy birthday.", "ornekTr": "Sana mutlu bir doğum günü dilerim."},
+    {"en": "apartment block", "tr": "apartman", "ok": "ıpartmınt blok", "ornek": "We live in a big apartment block.", "ornekTr": "Büyük bir apartmanda yaşıyoruz."},
+    {"en": "aunt and uncle", "tr": "teyze ve enişte", "ok": "ent ınd ankıl", "ornek": "My aunt and uncle visited us.", "ornekTr": "Teyzemle eniştem bizi ziyaret etti."},
+    {"en": "bakery", "tr": "fırın (ekmek)", "ok": "beykıri", "ornek": "I buy bread at the bakery.", "ornekTr": "Ekmeği fırından alırım."},
+    {"en": "barbecue", "tr": "mangal", "ok": "barbıkyuu", "ornek": "Let's have a barbecue.", "ornekTr": "Hadi mangal yapalım."},
+    {"en": "bin", "tr": "çöp kutusu", "ok": "bin", "ornek": "Put it in the bin.", "ornekTr": "Onu çöp kutusuna at."},
+    {"en": "bookshop", "tr": "kitapçı", "ok": "bukşop", "ornek": "There's a nice bookshop near here.", "ornekTr": "Yakında güzel bir kitapçı var."},
+    {"en": "bread knife", "tr": "ekmek bıçağı", "ok": "bred nayf", "ornek": "Use the bread knife.", "ornekTr": "Ekmek bıçağını kullan."},
+    {"en": "bucket", "tr": "kova", "ok": "bakıt", "ornek": "Fill the bucket with water.", "ornekTr": "Kovayı suyla doldur."},
+    {"en": "butcher's", "tr": "kasap", "ok": "buçırz", "ornek": "I buy meat at the butcher's.", "ornekTr": "Eti kasaptan alırım."},
+    {"en": "cabbage", "tr": "lahana", "ok": "kebic", "ornek": "Cabbage soup is healthy.", "ornekTr": "Lahana çorbası sağlıklıdır."},
+    {"en": "cereal", "tr": "kahvaltılık gevrek", "ok": "siriıl", "ornek": "The kids eat cereal for breakfast.", "ornekTr": "Çocuklar kahvaltıda gevrek yer."},
+    {"en": "cooker", "tr": "ocak, fırın", "ok": "kukır", "ornek": "The cooker is electric.", "ornekTr": "Ocak elektrikli."},
+    {"en": "cushion", "tr": "minder, kırlent", "ok": "kuşın", "ornek": "Put the cushions on the sofa.", "ornekTr": "Kırlentleri kanepeye koy."},
+    {"en": "dessert", "tr": "tatlı (yemek sonu)", "ok": "dizört", "ornek": "What's for dessert?", "ornekTr": "Tatlı ne var?"},
+    {"en": "dishwasher", "tr": "bulaşık makinesi", "ok": "dişvoşır", "ornek": "Put the plates in the dishwasher.", "ornekTr": "Tabakları bulaşık makinesine koy."},
+    {"en": "drawer", "tr": "çekmece", "ok": "dror", "ornek": "The keys are in the top drawer.", "ornekTr": "Anahtarlar üst çekmecede."},
+    {"en": "flour", "tr": "un", "ok": "flauır", "ornek": "You need flour to make bread.", "ornekTr": "Ekmek yapmak için un gerekir."},
+    {"en": "garage", "tr": "garaj", "ok": "gıraaj", "ornek": "The car is in the garage.", "ornekTr": "Araba garajda."},
+    {"en": "garlic", "tr": "sarımsak", "ok": "garlik", "ornek": "Add some garlic.", "ornekTr": "Biraz sarımsak ekle."},
+    {"en": "heating", "tr": "ısıtma, kalorifer", "ok": "hiiting", "ornek": "The heating doesn't work.", "ornekTr": "Kalorifer çalışmıyor."},
+    {"en": "kettle", "tr": "su ısıtıcısı", "ok": "ketıl", "ornek": "Put the kettle on.", "ornekTr": "Suyu ısıt."},
+    {"en": "lettuce", "tr": "marul", "ok": "letis", "ornek": "Wash the lettuce.", "ornekTr": "Marulu yıka."},
+    {"en": "melon", "tr": "kavun", "ok": "melın", "ornek": "This melon is very sweet.", "ornekTr": "Bu kavun çok tatlı."},
+    {"en": "microwave", "tr": "mikrodalga", "ok": "maykrıveyv", "ornek": "Heat it in the microwave.", "ornekTr": "Mikrodalgada ısıt."},
+    {"en": "mushroom", "tr": "mantar", "ok": "maşruum", "ornek": "I'd like a mushroom pizza.", "ornekTr": "Mantarlı pizza istiyorum."},
+    {"en": "oil", "tr": "yağ", "ok": "oyl", "ornek": "Fry it in olive oil.", "ornekTr": "Zeytinyağında kızart."},
+    {"en": "oven", "tr": "fırın", "ok": "avın", "ornek": "The cake is in the oven.", "ornekTr": "Kek fırında."},
+    {"en": "pan", "tr": "tava", "ok": "pen", "ornek": "Heat the pan.", "ornekTr": "Tavayı ısıt."},
+    {"en": "peach", "tr": "şeftali", "ok": "piiç", "ornek": "Peaches are my favourite fruit.", "ornekTr": "Şeftali en sevdiğim meyve."},
+    {"en": "pear", "tr": "armut", "ok": "per", "ornek": "Would you like a pear?", "ornekTr": "Armut ister misin?"},
+    {"en": "pillow", "tr": "yastık", "ok": "pilou", "ornek": "This pillow is too hard.", "ornekTr": "Bu yastık çok sert."},
+    {"en": "pineapple", "tr": "ananas", "ok": "paynepıl", "ornek": "I love pineapple juice.", "ornekTr": "Ananas suyunu çok severim."},
+    {"en": "roundabout", "tr": "göbek (kavşak)", "ok": "raundıbaut", "ornek": "Turn left at the roundabout.", "ornekTr": "Göbekten sola dön."},
+    {"en": "shampoo", "tr": "şampuan", "ok": "şempuu", "ornek": "We need some shampoo.", "ornekTr": "Biraz şampuana ihtiyacımız var."},
+    {"en": "sink", "tr": "lavabo, evye", "ok": "sink", "ornek": "The dishes are in the sink.", "ornekTr": "Bulaşıklar evyede."},
+    {"en": "snack", "tr": "atıştırmalık", "ok": "snek", "ornek": "I have a snack at four.", "ornekTr": "Saat dörtte bir şeyler atıştırırım."},
+    {"en": "steak", "tr": "biftek", "ok": "steyk", "ornek": "I'd like my steak well done.", "ornekTr": "Bifteğim iyi pişmiş olsun."},
+    {"en": "toothbrush", "tr": "diş fırçası", "ok": "tuutbraş", "ornek": "Don't forget your toothbrush.", "ornekTr": "Diş fırçanı unutma."},
+    {"en": "toothpaste", "tr": "diş macunu", "ok": "tuutpeyst", "ornek": "We need toothpaste.", "ornekTr": "Diş macununa ihtiyacımız var."},
+    {"en": "vegetarian", "tr": "vejetaryen", "ok": "vecıteriın", "ornek": "My sister is a vegetarian.", "ornekTr": "Kız kardeşim vejetaryen."},
+    {"en": "washing machine", "tr": "çamaşır makinesi", "ok": "voşing mışiin", "ornek": "The washing machine is noisy.", "ornekTr": "Çamaşır makinesi gürültülü."},
+    {"en": "yoghurt", "tr": "yoğurt", "ok": "yogırt", "ornek": "Turks eat a lot of yoghurt.", "ornekTr": "Türkler çok yoğurt yer."},
+    {"en": "accountant", "tr": "muhasebeci", "ok": "ıkauntınt", "ornek": "My mother is an accountant.", "ornekTr": "Annem muhasebeci."},
+    {"en": "architect", "tr": "mimar", "ok": "arkitekt", "ornek": "The architect designed the building.", "ornekTr": "Binayı mimar tasarladı."},
+    {"en": "assistant", "tr": "asistan, yardımcı", "ok": "ısistınt", "ornek": "My assistant will call you.", "ornekTr": "Asistanım sizi arayacak."},
+    {"en": "builder", "tr": "inşaat işçisi", "ok": "bildır", "ornek": "The builders are working on the roof.", "ornekTr": "İşçiler çatıda çalışıyor."},
+    {"en": "cleaner", "tr": "temizlikçi", "ok": "kliinır", "ornek": "The cleaner comes on Mondays.", "ornekTr": "Temizlikçi pazartesi gelir."},
+    {"en": "designer", "tr": "tasarımcı", "ok": "dizaynır", "ornek": "She is a fashion designer.", "ornekTr": "O bir moda tasarımcısı."},
+    {"en": "electrician", "tr": "elektrikçi", "ok": "ilektrişın", "ornek": "Call an electrician.", "ornekTr": "Bir elektrikçi çağır."},
+    {"en": "firefighter", "tr": "itfaiyeci", "ok": "fayırfaytır", "ornek": "The firefighters put out the fire.", "ornekTr": "İtfaiyeciler yangını söndürdü."},
+    {"en": "journalist", "tr": "gazeteci", "ok": "cörnılist", "ornek": "He works as a journalist.", "ornekTr": "Gazeteci olarak çalışıyor."},
+    {"en": "mechanic", "tr": "tamirci", "ok": "mıkenik", "ornek": "The mechanic fixed my car.", "ornekTr": "Tamirci arabamı tamir etti."},
+    {"en": "musician", "tr": "müzisyen", "ok": "myuuzişın", "ornek": "He is a talented musician.", "ornekTr": "Yetenekli bir müzisyen."},
+    {"en": "photographer", "tr": "fotoğrafçı", "ok": "fıtogrıfır", "ornek": "We need a photographer for the wedding.", "ornekTr": "Düğün için bir fotoğrafçıya ihtiyacımız var."},
+    {"en": "plumber", "tr": "tesisatçı", "ok": "plamır", "ornek": "The plumber is coming tomorrow.", "ornekTr": "Tesisatçı yarın geliyor."},
+    {"en": "receptionist", "tr": "resepsiyonist", "ok": "risepşınist", "ornek": "Ask the receptionist.", "ornekTr": "Resepsiyoniste sor."},
+    {"en": "salesperson", "tr": "satış elemanı", "ok": "seylzpörsın", "ornek": "She works as a salesperson.", "ornekTr": "Satış elemanı olarak çalışıyor."},
+    {"en": "scientist", "tr": "bilim insanı", "ok": "sayıntist", "ornek": "She wants to be a scientist.", "ornekTr": "Bilim insanı olmak istiyor."},
+    {"en": "tour guide", "tr": "tur rehberi", "ok": "tur gayd", "ornek": "The tour guide was very funny.", "ornekTr": "Tur rehberi çok komikti."},
+    {"en": "vet", "tr": "veteriner", "ok": "vet", "ornek": "Take the dog to the vet.", "ornekTr": "Köpeği veterinere götür."},
+    {"en": "adult", "tr": "yetişkin", "ok": "edalt", "ornek": "Tickets are 20 lira for adults.", "ornekTr": "Yetişkinler için bilet 20 lira."},
+    {"en": "childhood", "tr": "çocukluk", "ok": "çayldhud", "ornek": "I had a happy childhood.", "ornekTr": "Mutlu bir çocukluğum oldu."},
+    {"en": "grandchild", "tr": "torun", "ok": "grençayld", "ornek": "They have five grandchildren.", "ornekTr": "Beş torunları var."},
+    {"en": "grandparents", "tr": "büyükanne ve büyükbaba", "ok": "grenperınts", "ornek": "My grandparents live in a village.", "ornekTr": "Büyükanne ve büyükbabam köyde yaşıyor."},
+    {"en": "nephew", "tr": "erkek yeğen", "ok": "nefyuu", "ornek": "My nephew is five years old.", "ornekTr": "Yeğenim beş yaşında."},
+    {"en": "niece", "tr": "kız yeğen", "ok": "niis", "ornek": "My niece is a student.", "ornekTr": "Kız yeğenim öğrenci."},
+    {"en": "teenager", "tr": "genç (13-19)", "ok": "tiineycır", "ornek": "Teenagers love social media.", "ornekTr": "Gençler sosyal medyayı çok sever."},
+    {"en": "twin", "tr": "ikiz", "ok": "tvin", "ornek": "They are twins.", "ornekTr": "Onlar ikiz."},
+    {"en": "wedding", "tr": "düğün", "ok": "veding", "ornek": "We're going to a wedding on Saturday.", "ornekTr": "Cumartesi bir düğüne gidiyoruz."},
+    {"en": "bride", "tr": "gelin", "ok": "brayd", "ornek": "The bride looks beautiful.", "ornekTr": "Gelin çok güzel görünüyor."},
+    {"en": "anniversary", "tr": "yıl dönümü", "ok": "enivörsıri", "ornek": "Today is our wedding anniversary.", "ornekTr": "Bugün evlilik yıl dönümümüz."},
+    {"en": "Christmas", "tr": "Noel", "ok": "krismıs", "ornek": "Merry Christmas!", "ornekTr": "Mutlu Noeller!"},
+    {"en": "New Year", "tr": "yılbaşı", "ok": "nuu yiır", "ornek": "Happy New Year!", "ornekTr": "Mutlu yıllar!"},
+    {"en": "weekday", "tr": "hafta içi", "ok": "viikdey", "ornek": "I work on weekdays.", "ornekTr": "Hafta içi çalışırım."},
+    {"en": "fortnight", "tr": "iki hafta", "ok": "fortnayt", "ornek": "We're going on holiday for a fortnight.", "ornekTr": "İki haftalığına tatile gidiyoruz."},
+    {"en": "midnight", "tr": "gece yarısı", "ok": "midnayt", "ornek": "The party ended at midnight.", "ornekTr": "Parti gece yarısı bitti."},
+    {"en": "noon", "tr": "öğle (12:00)", "ok": "nuun", "ornek": "Let's meet at noon.", "ornekTr": "Öğlen buluşalım."},
+    {"en": "quarter", "tr": "çeyrek", "ok": "kvortır", "ornek": "It's a quarter past five.", "ornekTr": "Saat beşi çeyrek geçiyor."},
+    {"en": "decade", "tr": "on yıl", "ok": "dekeyd", "ornek": "I've lived here for a decade.", "ornekTr": "On yıldır burada yaşıyorum."},
+    {"en": "past", "tr": "geçmiş; geçe", "ok": "pest", "ornek": "Forget the past.", "ornekTr": "Geçmişi unut."},
+    {"en": "chest", "tr": "göğüs", "ok": "çest", "ornek": "I have a pain in my chest.", "ornekTr": "Göğsümde ağrı var."},
+    {"en": "chin", "tr": "çene", "ok": "çin", "ornek": "He has a beard on his chin.", "ornekTr": "Çenesinde sakal var."},
+    {"en": "lip", "tr": "dudak", "ok": "lip", "ornek": "My lips are dry.", "ornekTr": "Dudaklarım kuru."},
+    {"en": "tongue", "tr": "dil (organ)", "ok": "tang", "ornek": "Show me your tongue.", "ornekTr": "Bana dilini göster."},
+    {"en": "toe", "tr": "ayak parmağı", "ok": "tou", "ornek": "I hurt my toe.", "ornekTr": "Ayak parmağımı incittim."},
+    {"en": "thumb", "tr": "başparmak", "ok": "tam", "ornek": "Thumbs up!", "ornekTr": "Harika! (Başparmak yukarı)"},
+    {"en": "wrist", "tr": "bilek", "ok": "rist", "ornek": "I broke my wrist.", "ornekTr": "Bileğimi kırdım."},
+    {"en": "ankle", "tr": "ayak bileği", "ok": "enkıl", "ornek": "She twisted her ankle.", "ornekTr": "Ayak bileğini burktu."}
+  ],
+  "cumleler": [
+    {"konu": "🏨 Otel ve konaklama", "en": "I have a reservation.", "tr": "Rezervasyonum var.", "ok": "ay hev ı rezırveyşın", "ornek": "What's your name, please?", "ornekTr": "Adınız, lütfen?"},
+    {"konu": "🏨 Otel ve konaklama", "en": "I'd like to check in.", "tr": "Giriş yapmak istiyorum.", "ok": "ayd layk tu çek in", "ornek": "Can I see your passport?", "ornekTr": "Pasaportunuzu görebilir miyim?"},
+    {"konu": "🏨 Otel ve konaklama", "en": "What time is breakfast?", "tr": "Kahvaltı saat kaçta?", "ok": "vat taym iz brekfıst", "ornek": "From seven to ten.", "ornekTr": "Yediden ona kadar."},
+    {"konu": "🏨 Otel ve konaklama", "en": "Is breakfast included?", "tr": "Kahvaltı dahil mi?", "ok": "iz brekfıst inkluudıd", "ornek": "Yes, it's included in the price.", "ornekTr": "Evet, fiyata dahil."},
+    {"konu": "🏨 Otel ve konaklama", "en": "The air conditioning doesn't work.", "tr": "Klima çalışmıyor.", "ok": "dı er kındişınıng dazınt vörk", "ornek": "I'll send someone right away.", "ornekTr": "Hemen birini gönderiyorum."},
+    {"konu": "🏨 Otel ve konaklama", "en": "Could I have another towel?", "tr": "Bir havlu daha alabilir miyim?", "ok": "kud ay hev ınadır tauıl", "ornek": "Of course, I'll bring one.", "ornekTr": "Tabii, hemen getiriyorum."},
+    {"konu": "🏨 Otel ve konaklama", "en": "What's the Wi-Fi password?", "tr": "İnternet şifresi ne?", "ok": "vats dı vay fay pesvörd", "ornek": "It's on the card in your room.", "ornekTr": "Odanızdaki kartta yazıyor."},
+    {"konu": "🏨 Otel ve konaklama", "en": "I'd like to check out.", "tr": "Çıkış yapmak istiyorum.", "ok": "ayd layk tu çek aut", "ornek": "How was your stay?", "ornekTr": "Konaklamanız nasıldı?"},
+    {"konu": "🏨 Otel ve konaklama", "en": "Can you call a taxi for me?", "tr": "Bana bir taksi çağırabilir misiniz?", "ok": "ken yu kol ı teksi for mii", "ornek": "Sure, it'll be here in five minutes.", "ornekTr": "Tabii, beş dakikaya burada olur."},
+    {"konu": "✈️ Seyahat", "en": "I'd like a return ticket to Izmir.", "tr": "İzmir'e gidiş-dönüş bilet istiyorum.", "ok": "ayd layk ı ritörn tikıt tu izmir", "ornek": "That's 500 lira, please.", "ornekTr": "500 lira, lütfen."},
+    {"konu": "✈️ Seyahat", "en": "When does the next train leave?", "tr": "Bir sonraki tren ne zaman kalkıyor?", "ok": "ven daz dı nekst treyn liiv", "ornek": "In twenty minutes.", "ornekTr": "Yirmi dakika sonra."},
+    {"konu": "✈️ Seyahat", "en": "Which platform does it leave from?", "tr": "Hangi perondan kalkıyor?", "ok": "viç pletform daz it liiv from", "ornek": "Platform four.", "ornekTr": "Dört numaralı peron."},
+    {"konu": "✈️ Seyahat", "en": "Is this seat taken?", "tr": "Bu koltuk dolu mu?", "ok": "iz dis siit teykın", "ornek": "No, please sit down.", "ornekTr": "Hayır, buyurun oturun."},
+    {"konu": "✈️ Seyahat", "en": "My flight is delayed.", "tr": "Uçuşum rötarlı.", "ok": "may flayt iz dileyd", "ornek": "How long is the delay?", "ornekTr": "Rötar ne kadar?"},
+    {"konu": "✈️ Seyahat", "en": "Where can I collect my luggage?", "tr": "Bagajımı nereden alabilirim?", "ok": "ver ken ay kılekt may lagıc", "ornek": "At carousel number three.", "ornekTr": "Üç numaralı banttan."},
+    {"konu": "✈️ Seyahat", "en": "I lost my passport.", "tr": "Pasaportumu kaybettim.", "ok": "ay lost may pesport", "ornek": "You should go to the police.", "ornekTr": "Polise gitmelisin."},
+    {"konu": "✈️ Seyahat", "en": "How long does it take to get there?", "tr": "Oraya gitmek ne kadar sürer?", "ok": "hau long daz it teyk tu get der", "ornek": "About half an hour.", "ornekTr": "Yaklaşık yarım saat."},
+    {"konu": "✈️ Seyahat", "en": "Can you take a photo of us?", "tr": "Bizim bir fotoğrafımızı çekebilir misiniz?", "ok": "ken yu teyk ı foutou ov as", "ornek": "Sure! Say cheese!", "ornekTr": "Tabii! Gülümseyin!"},
+    {"konu": "🍽️ Restoran", "en": "A table for two, please.", "tr": "İki kişilik bir masa, lütfen.", "ok": "ı teybıl for tuu pliiz", "ornek": "Follow me, please.", "ornekTr": "Beni takip edin, lütfen."},
+    {"konu": "🍽️ Restoran", "en": "Are you ready to order?", "tr": "Sipariş vermeye hazır mısınız?", "ok": "ar yu redi tu ordır", "ornek": "Yes, I'll have the fish.", "ornekTr": "Evet, balık alacağım."},
+    {"konu": "🍽️ Restoran", "en": "What do you recommend?", "tr": "Ne tavsiye edersiniz?", "ok": "vat duu yu rekımend", "ornek": "The lamb is very good today.", "ornekTr": "Bugün kuzu eti çok güzel."},
+    {"konu": "🍽️ Restoran", "en": "I'll have the same.", "tr": "Ben de aynısından alayım.", "ok": "ayl hev dı seym", "ornek": "Two soups, then.", "ornekTr": "O zaman iki çorba."},
+    {"konu": "🍽️ Restoran", "en": "Could we have some more bread?", "tr": "Biraz daha ekmek alabilir miyiz?", "ok": "kud vii hev sam mor bred", "ornek": "Of course, right away.", "ornekTr": "Tabii, hemen."},
+    {"konu": "🍽️ Restoran", "en": "This isn't what I ordered.", "tr": "Bu benim sipariş ettiğim şey değil.", "ok": "dis izınt vat ay ordırd", "ornek": "I'm so sorry, I'll change it.", "ornekTr": "Çok özür dilerim, değiştiriyorum."},
+    {"konu": "🍽️ Restoran", "en": "Can we pay separately?", "tr": "Ayrı ayrı ödeyebilir miyiz?", "ok": "ken vii pey sepırıtli", "ornek": "Yes, no problem.", "ornekTr": "Evet, sorun değil."},
+    {"konu": "🍽️ Restoran", "en": "Keep the change.", "tr": "Para üstü kalsın.", "ok": "kiip dı çeync", "ornek": "Thank you very much!", "ornekTr": "Çok teşekkür ederim!"},
+    {"konu": "🏥 Sağlık", "en": "I don't feel very well.", "tr": "Kendimi pek iyi hissetmiyorum.", "ok": "ay dont fiil veri vel", "ornek": "What's the matter?", "ornekTr": "Neyin var?"},
+    {"konu": "🏥 Sağlık", "en": "I have a headache.", "tr": "Başım ağrıyor.", "ok": "ay hev ı hedeyk", "ornek": "Take an aspirin.", "ornekTr": "Bir aspirin al."},
+    {"konu": "🏥 Sağlık", "en": "I have a sore throat.", "tr": "Boğazım ağrıyor.", "ok": "ay hev ı sor trout", "ornek": "Drink some warm tea with honey.", "ornekTr": "Ballı ılık çay iç."},
+    {"konu": "🏥 Sağlık", "en": "I need to see a doctor.", "tr": "Doktora görünmem gerekiyor.", "ok": "ay niid tu sii ı doktır", "ornek": "I'll make an appointment for you.", "ornekTr": "Sana bir randevu alayım."},
+    {"konu": "🏥 Sağlık", "en": "How long have you had this pain?", "tr": "Bu ağrı ne zamandır var?", "ok": "hau long hev yu hed dis peyn", "ornek": "Since yesterday.", "ornekTr": "Dünden beri."},
+    {"konu": "🏥 Sağlık", "en": "Take this medicine twice a day.", "tr": "Bu ilacı günde iki kez alın.", "ok": "teyk dis medısın tvays ı dey", "ornek": "Before or after meals?", "ornekTr": "Yemekten önce mi sonra mı?"},
+    {"konu": "🏥 Sağlık", "en": "Get well soon!", "tr": "Geçmiş olsun!", "ok": "get vel suun", "ornek": "Thanks, I'm feeling better already.", "ornekTr": "Teşekkürler, şimdiden daha iyiyim."},
+    {"konu": "🛍️ Alışveriş", "en": "I'm looking for a jacket.", "tr": "Bir ceket arıyorum.", "ok": "aym luking for ı cekit", "ornek": "What size are you?", "ornekTr": "Bedeniniz ne?"},
+    {"konu": "🛍️ Alışveriş", "en": "Do you have this in blue?", "tr": "Bunun mavisi var mı?", "ok": "duu yu hev dis in bluu", "ornek": "Let me check in the back.", "ornekTr": "Arkaya bir bakayım."},
+    {"konu": "🛍️ Alışveriş", "en": "It doesn't fit me.", "tr": "Bana olmadı.", "ok": "it dazınt fit mii", "ornek": "Try a larger size.", "ornekTr": "Daha büyük bir beden deneyin."},
+    {"konu": "🛍️ Alışveriş", "en": "Can I get a discount?", "tr": "İndirim yapabilir misiniz?", "ok": "ken ay get ı diskaunt", "ornek": "I can give you ten percent off.", "ornekTr": "Yüzde on indirim yapabilirim."},
+    {"konu": "🛍️ Alışveriş", "en": "Can I return this?", "tr": "Bunu iade edebilir miyim?", "ok": "ken ay ritörn dis", "ornek": "Do you have the receipt?", "ornekTr": "Fişiniz var mı?"},
+    {"konu": "🛍️ Alışveriş", "en": "Where are the fitting rooms?", "tr": "Deneme kabinleri nerede?", "ok": "ver ar dı fiting ruumz", "ornek": "Next to the stairs.", "ornekTr": "Merdivenlerin yanında."},
+    {"konu": "🛍️ Alışveriş", "en": "I'm just browsing, thanks.", "tr": "Sadece bakınıyorum, teşekkürler.", "ok": "aym cast brauzing tenks", "ornek": "No problem. Let me know if you need help.", "ornekTr": "Sorun değil. Yardıma ihtiyacınız olursa söyleyin."},
+    {"konu": "📞 Telefon ve plan yapma", "en": "Can I speak to Ayşe, please?", "tr": "Ayşe ile görüşebilir miyim, lütfen?", "ok": "ken ay spiik tu ayşe pliiz", "ornek": "Speaking!", "ornekTr": "Benim!"},
+    {"konu": "📞 Telefon ve plan yapma", "en": "Hold on a moment, please.", "tr": "Bir saniye bekleyin, lütfen.", "ok": "hould on ı moumınt pliiz", "ornek": "Okay, I'll wait.", "ornekTr": "Tamam, bekliyorum."},
+    {"konu": "📞 Telefon ve plan yapma", "en": "Can I leave a message?", "tr": "Mesaj bırakabilir miyim?", "ok": "ken ay liiv ı mesic", "ornek": "Of course. Go ahead.", "ornekTr": "Tabii. Buyurun."},
+    {"konu": "📞 Telefon ve plan yapma", "en": "I'll call you back later.", "tr": "Seni sonra geri ararım.", "ok": "ayl kol yu bek leytır", "ornek": "Okay, talk to you later.", "ornekTr": "Tamam, sonra konuşuruz."},
+    {"konu": "📞 Telefon ve plan yapma", "en": "Are you free on Saturday?", "tr": "Cumartesi boş musun?", "ok": "ar yu frii on setırdey", "ornek": "Yes, why?", "ornekTr": "Evet, neden?"},
+    {"konu": "📞 Telefon ve plan yapma", "en": "What are you doing this weekend?", "tr": "Bu hafta sonu ne yapıyorsun?", "ok": "vat ar yu duuing dis viikend", "ornek": "I'm going to visit my parents.", "ornekTr": "Ailemi ziyaret edeceğim."},
+    {"konu": "📞 Telefon ve plan yapma", "en": "Would you like to come with us?", "tr": "Bizimle gelmek ister misin?", "ok": "vud yu layk tu kam vid as", "ornek": "I'd love to!", "ornekTr": "Çok isterim!"},
+    {"konu": "📞 Telefon ve plan yapma", "en": "Let's meet at seven.", "tr": "Yedide buluşalım.", "ok": "lets miit et sevın", "ornek": "Where?", "ornekTr": "Nerede?"},
+    {"konu": "📞 Telefon ve plan yapma", "en": "Sorry, I can't make it.", "tr": "Üzgünüm, gelemeyeceğim.", "ok": "sori ay kent meyk it", "ornek": "Maybe next time.", "ornekTr": "Belki bir dahaki sefere."},
+    {"konu": "📞 Telefon ve plan yapma", "en": "What time shall we meet?", "tr": "Saat kaçta buluşalım?", "ok": "vat taym şel vii miit", "ornek": "How about eight?", "ornekTr": "Sekize ne dersin?"},
+    {"konu": "💬 Sohbet", "en": "What did you do yesterday?", "tr": "Dün ne yaptın?", "ok": "vat did yu duu yestırdey", "ornek": "I stayed at home and watched a film.", "ornekTr": "Evde kaldım ve film izledim."},
+    {"konu": "💬 Sohbet", "en": "How was your weekend?", "tr": "Hafta sonun nasıldı?", "ok": "hau voz yor viikend", "ornek": "It was great, thanks.", "ornekTr": "Harikaydı, teşekkürler."},
+    {"konu": "💬 Sohbet", "en": "Have you ever been to London?", "tr": "Hiç Londra'ya gittin mi?", "ok": "hev yu evır biin tu landın", "ornek": "No, never.", "ornekTr": "Hayır, hiç gitmedim."},
+    {"konu": "💬 Sohbet", "en": "What do you do in your free time?", "tr": "Boş zamanlarında ne yaparsın?", "ok": "vat duu yu duu in yor frii taym", "ornek": "I play the guitar and read.", "ornekTr": "Gitar çalarım ve kitap okurum."},
+    {"konu": "💬 Sohbet", "en": "What kind of music do you like?", "tr": "Ne tür müzik seversin?", "ok": "vat kaynd ov myuuzik duu yu layk", "ornek": "I like pop and jazz.", "ornekTr": "Pop ve caz severim."},
+    {"konu": "💬 Sohbet", "en": "I think so.", "tr": "Sanırım öyle.", "ok": "ay tink sou", "ornek": "Me too.", "ornekTr": "Ben de öyle düşünüyorum."},
+    {"konu": "💬 Sohbet", "en": "I don't think so.", "tr": "Sanmıyorum.", "ok": "ay dont tink sou", "ornek": "Why not?", "ornekTr": "Neden?"},
+    {"konu": "💬 Sohbet", "en": "That sounds good.", "tr": "Kulağa güzel geliyor.", "ok": "det saundz gud", "ornek": "Great, let's do it!", "ornekTr": "Harika, yapalım!"},
+    {"konu": "💬 Sohbet", "en": "What a pity!", "tr": "Ne yazık!", "ok": "vat ı piti", "ornek": "Yes, it's a shame.", "ornekTr": "Evet, çok yazık."},
+    {"konu": "💬 Sohbet", "en": "It doesn't matter.", "tr": "Önemli değil.", "ok": "it dazınt metır", "ornek": "Are you sure?", "ornekTr": "Emin misin?"},
+    {"konu": "💬 Sohbet", "en": "I'm not sure.", "tr": "Emin değilim.", "ok": "aym not şur", "ornek": "Let's ask someone.", "ornekTr": "Birine soralım."},
+    {"konu": "💬 Sohbet", "en": "Guess what!", "tr": "Bil bakalım ne oldu!", "ok": "ges vat", "ornek": "What?", "ornekTr": "Ne?"},
+    {"konu": "💬 Sohbet", "en": "That's a good idea.", "tr": "Bu iyi bir fikir.", "ok": "dets ı gud aydiiı", "ornek": "Thanks!", "ornekTr": "Teşekkürler!"},
+    {"konu": "💬 Sohbet", "en": "What's the matter?", "tr": "Ne oldu? / Sorun ne?", "ok": "vats dı metır", "ornek": "Nothing, I'm just tired.", "ornekTr": "Hiçbir şey, sadece yorgunum."},
+    {"konu": "🏠 Ev ve günlük işler", "en": "Could you do me a favour?", "tr": "Bana bir iyilik yapar mısın?", "ok": "kud yu duu mii ı feyvır", "ornek": "Sure, what is it?", "ornekTr": "Tabii, nedir?"},
+    {"konu": "🏠 Ev ve günlük işler", "en": "I have to do the shopping.", "tr": "Alışveriş yapmam gerekiyor.", "ok": "ay hev tu duu dı şoping", "ornek": "Can you buy some milk?", "ornekTr": "Biraz süt alabilir misin?"},
+    {"konu": "🏠 Ev ve günlük işler", "en": "Whose turn is it to do the dishes?", "tr": "Bulaşık yıkama sırası kimde?", "ok": "huuz törn iz it tu duu dı dişiz", "ornek": "It's your turn!", "ornekTr": "Senin sıran!"},
+    {"konu": "🏠 Ev ve günlük işler", "en": "Dinner is ready!", "tr": "Akşam yemeği hazır!", "ok": "dinır iz redi", "ornek": "I'm coming!", "ornekTr": "Geliyorum!"},
+    {"konu": "🏠 Ev ve günlük işler", "en": "I'm going to bed.", "tr": "Yatmaya gidiyorum.", "ok": "aym gouing tu bed", "ornek": "Good night, sleep well.", "ornekTr": "İyi geceler, iyi uykular."},
+    {"konu": "🏠 Ev ve günlük işler", "en": "Don't forget to lock the door.", "tr": "Kapıyı kilitlemeyi unutma.", "ok": "dont fırget tu lok dı dor", "ornek": "I won't.", "ornekTr": "Unutmam."}
+  ],
+  "dersler": [
+    {
+      "id": "a2-was-were",
+      "baslik": "Past Simple: was / were",
+      "ozet": "\"Dün evdeydim\": to be fiilinin geçmiş hâli",
+      "aciklama": [
+        "**am / is / are** fiilinin geçmiş zamanı **was** ve **were**'dür. Türkçedeki \"-di\" ekine karşılık gelir: I **was** tired (Yorgundum).",
+        "**I, he, she, it** ile **was**; **you, we, they** ile **were** kullanılır.",
+        "Olumsuz: **wasn't** (was not), **weren't** (were not). Soru: **Was** she at work? **Were** you happy?",
+        "Sık kullanılan geçmiş zaman ifadeleri: yesterday, last night, last week, two days ago, in 2010."
+      ],
+      "kaliplar": [
+        "I / he / she / it **was**",
+        "you / we / they **were**",
+        "Olumsuz: He **wasn't** at home.",
+        "Soru: **Were** you at the party? — Yes, I was. / No, I wasn't."
+      ],
+      "ornekler": [
+        {
+          "en": "I was at home last night.",
+          "tr": "Dün gece evdeydim."
+        },
+        {
+          "en": "The film was very good.",
+          "tr": "Film çok güzeldi."
+        },
+        {
+          "en": "We were in Antalya last summer.",
+          "tr": "Geçen yaz Antalya'daydık."
+        },
+        {
+          "en": "She wasn't happy.",
+          "tr": "O mutlu değildi."
+        },
+        {
+          "en": "Were they at school yesterday?",
+          "tr": "Dün okuldalar mıydı?"
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "I ___ very tired yesterday.",
+          "secenekler": [
+            "was",
+            "were",
+            "am"
+          ],
+          "dogru": 0,
+          "aciklama": "I ile geçmişte was."
+        },
+        {
+          "soru": "My parents ___ in Germany last year.",
+          "secenekler": [
+            "was",
+            "were",
+            "are"
+          ],
+          "dogru": 1,
+          "aciklama": "My parents = they → were."
+        },
+        {
+          "soru": "___ the shop open on Sunday?",
+          "secenekler": [
+            "Were",
+            "Was",
+            "Did"
+          ],
+          "dogru": 1,
+          "aciklama": "the shop = it → Was."
+        },
+        {
+          "soru": "We ___ at the cinema. We were at home.",
+          "secenekler": [
+            "wasn't",
+            "weren't",
+            "didn't"
+          ],
+          "dogru": 1,
+          "aciklama": "we ile olumsuz: weren't."
+        },
+        {
+          "soru": "Where ___ you last night?",
+          "secenekler": [
+            "was",
+            "were",
+            "did"
+          ],
+          "dogru": 1,
+          "aciklama": "you ile were."
+        }
+      ]
+    },
+    {
+      "id": "a2-past-simple-duzenli",
+      "baslik": "Past Simple: düzenli fiiller",
+      "ozet": "I worked, she played: -ed eki",
+      "aciklama": [
+        "**Past simple**, geçmişte olup bitmiş olayları anlatır. Türkçedeki \"-di\" geçmiş zamanına karşılık gelir: I **worked** yesterday (Dün çalıştım).",
+        "Düzenli fiillerde fiile **-ed** eklenir ve bu **bütün öznelerle aynıdır**: I worked, she worked, they worked.",
+        "Yazım kuralları: sonu **e** ile bitenlere sadece **-d** (live → lived); sessiz harf + **y** → **-ied** (study → studied); kısa, sessiz-sesli-sessiz ile bitenlerde son harf ikilenir (stop → stopped, plan → planned).",
+        "-ed üç farklı şekilde okunur: /t/ (worked → vörkt), /d/ (played → pleyd), /ıd/ (wanted → vontıd). t ve d ile biten fiillerde ek ayrı bir hece olur."
+      ],
+      "kaliplar": [
+        "özne + fiil**-ed**: We watched a film.",
+        "like → liked, study → studied, stop → stopped",
+        "Zaman ifadeleri: yesterday, last week, ... ago, in 2019"
+      ],
+      "ornekler": [
+        {
+          "en": "I visited my grandmother last Sunday.",
+          "tr": "Geçen pazar büyükannemi ziyaret ettim."
+        },
+        {
+          "en": "She studied English for three years.",
+          "tr": "Üç yıl İngilizce çalıştı."
+        },
+        {
+          "en": "The bus stopped in front of the school.",
+          "tr": "Otobüs okulun önünde durdu."
+        },
+        {
+          "en": "We played football yesterday.",
+          "tr": "Dün futbol oynadık."
+        },
+        {
+          "en": "He moved to London two years ago.",
+          "tr": "İki yıl önce Londra'ya taşındı."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "Yesterday I ___ my room.",
+          "secenekler": [
+            "clean",
+            "cleaned",
+            "cleaning"
+          ],
+          "dogru": 1,
+          "aciklama": "Geçmiş zaman: clean + ed."
+        },
+        {
+          "soru": "She ___ in Paris for two years.",
+          "secenekler": [
+            "lived",
+            "liveed",
+            "lives"
+          ],
+          "dogru": 0,
+          "aciklama": "e ile biten fiile sadece -d eklenir: lived."
+        },
+        {
+          "soru": "They ___ for the exam all night.",
+          "secenekler": [
+            "studyed",
+            "studied",
+            "studies"
+          ],
+          "dogru": 1,
+          "aciklama": "Sessiz + y → -ied: studied."
+        },
+        {
+          "soru": "The car ___ at the red light.",
+          "secenekler": [
+            "stoped",
+            "stopped",
+            "stopt"
+          ],
+          "dogru": 1,
+          "aciklama": "stop: son harf ikilenir → stopped."
+        },
+        {
+          "soru": "We ___ a holiday last month.",
+          "secenekler": [
+            "planned",
+            "planed",
+            "plan"
+          ],
+          "dogru": 0,
+          "aciklama": "plan → planned (n ikilenir)."
+        }
+      ]
+    },
+    {
+      "id": "a2-past-simple-duzensiz",
+      "baslik": "Past Simple: düzensiz fiiller, olumsuz ve soru",
+      "ozet": "went, saw, ate... ve did / didn't",
+      "aciklama": [
+        "Sık kullanılan pek çok fiil düzensizdir; geçmiş hâli ezberlenir: go → **went**, see → **saw**, eat → **ate**, have → **had**, make → **made**, buy → **bought**, take → **took**, come → **came**, get → **got**, write → **wrote**.",
+        "Olumsuz ve soru cümlelerinde, düzenli ya da düzensiz fark etmez, yardımcı fiil **did** kullanılır ve ana fiil **yalın** hâline döner.",
+        "Olumsuz: I **didn't go** (went değil!). Soru: **Did** you **see** the film? Kısa cevap: Yes, I did. / No, I didn't.",
+        "Soru kelimeleriyle: Where **did** you **go**? What **did** she **buy**?"
+      ],
+      "kaliplar": [
+        "Olumlu: I **went** to the cinema.",
+        "Olumsuz: I **didn't go** to the cinema.",
+        "Soru: **Did** you **go** to the cinema?",
+        "go-went, see-saw, buy-bought, eat-ate, drink-drank, give-gave, find-found"
+      ],
+      "ornekler": [
+        {
+          "en": "We went to Bodrum last summer.",
+          "tr": "Geçen yaz Bodrum'a gittik."
+        },
+        {
+          "en": "I saw your brother yesterday.",
+          "tr": "Dün abini gördüm."
+        },
+        {
+          "en": "She bought a new dress.",
+          "tr": "Yeni bir elbise aldı."
+        },
+        {
+          "en": "I didn't eat breakfast this morning.",
+          "tr": "Bu sabah kahvaltı yapmadım."
+        },
+        {
+          "en": "Did you call your mother?",
+          "tr": "Anneni aradın mı?"
+        },
+        {
+          "en": "What did you do at the weekend?",
+          "tr": "Hafta sonu ne yaptın?"
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "Last night I ___ to bed at midnight.",
+          "secenekler": [
+            "goed",
+            "went",
+            "go"
+          ],
+          "dogru": 1,
+          "aciklama": "go düzensizdir: went."
+        },
+        {
+          "soru": "She ___ a letter to her friend.",
+          "secenekler": [
+            "wrote",
+            "writed",
+            "write"
+          ],
+          "dogru": 0,
+          "aciklama": "write → wrote."
+        },
+        {
+          "soru": "I didn't ___ the news.",
+          "secenekler": [
+            "saw",
+            "see",
+            "seen"
+          ],
+          "dogru": 1,
+          "aciklama": "didn't'tan sonra fiil yalın gelir: see."
+        },
+        {
+          "soru": "___ you have a good time?",
+          "secenekler": [
+            "Do",
+            "Were",
+            "Did"
+          ],
+          "dogru": 2,
+          "aciklama": "Geçmiş zaman sorusu: Did."
+        },
+        {
+          "soru": "Where did you ___ that bag?",
+          "secenekler": [
+            "buy",
+            "bought",
+            "buying"
+          ],
+          "dogru": 0,
+          "aciklama": "did ile soru: fiil yalın (buy)."
+        },
+        {
+          "soru": "We ___ pizza for dinner.",
+          "secenekler": [
+            "eated",
+            "ate",
+            "eat"
+          ],
+          "dogru": 1,
+          "aciklama": "eat → ate."
+        }
+      ]
+    },
+    {
+      "id": "a2-past-continuous",
+      "baslik": "Past Continuous: geçmişte süren olaylar",
+      "ozet": "I was reading when you called. — Sen aradığında okuyordum.",
+      "aciklama": [
+        "**Past continuous**, geçmişte belli bir anda **devam etmekte olan** eylemi anlatır. Türkçedeki \"-yordu\" ekine benzer: I **was sleeping** at 11 pm (Gece 11'de uyuyordum).",
+        "Yapı: **was / were + fiil-ing**.",
+        "Çoğunlukla past simple ile birlikte kullanılır: uzun süren olay past continuous, onu kesen kısa olay past simple. I **was cooking** when the phone **rang**.",
+        "**when** genellikle kısa olayın önüne, **while** uzun olayın önüne gelir: **While** I was walking, I saw an old friend."
+      ],
+      "kaliplar": [
+        "I / he / she / it **was** + fiil-ing",
+        "you / we / they **were** + fiil-ing",
+        "uzun olay (was/were -ing) + **when** + kısa olay (past simple)",
+        "**While** + uzun olay, kısa olay"
+      ],
+      "ornekler": [
+        {
+          "en": "At eight o'clock I was having dinner.",
+          "tr": "Saat sekizde akşam yemeği yiyordum."
+        },
+        {
+          "en": "It was raining when we left.",
+          "tr": "Biz çıktığımızda yağmur yağıyordu."
+        },
+        {
+          "en": "She was watching TV when I arrived.",
+          "tr": "Ben vardığımda televizyon izliyordu."
+        },
+        {
+          "en": "While I was driving, my phone rang.",
+          "tr": "Araba sürerken telefonum çaldı."
+        },
+        {
+          "en": "What were you doing at ten?",
+          "tr": "Saat onda ne yapıyordun?"
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "I ___ a shower when you called.",
+          "secenekler": [
+            "was having",
+            "had",
+            "am having"
+          ],
+          "dogru": 0,
+          "aciklama": "Devam eden olay: was having."
+        },
+        {
+          "soru": "They ___ football at 5 pm yesterday.",
+          "secenekler": [
+            "was playing",
+            "were playing",
+            "played"
+          ],
+          "dogru": 1,
+          "aciklama": "they + were + -ing."
+        },
+        {
+          "soru": "While she was reading, the lights ___ out.",
+          "secenekler": [
+            "were going",
+            "went",
+            "go"
+          ],
+          "dogru": 1,
+          "aciklama": "Kısa, kesen olay past simple: went."
+        },
+        {
+          "soru": "What ___ you doing at midnight?",
+          "secenekler": [
+            "was",
+            "were",
+            "did"
+          ],
+          "dogru": 1,
+          "aciklama": "you ile were."
+        },
+        {
+          "soru": "I saw an accident while I ___ home.",
+          "secenekler": [
+            "walked",
+            "was walking",
+            "am walking"
+          ],
+          "dogru": 1,
+          "aciklama": "while + uzun olay: was walking."
+        }
+      ]
+    },
+    {
+      "id": "a2-going-to",
+      "baslik": "Gelecek zaman: be going to",
+      "ozet": "Planlar ve kanıta dayalı tahminler",
+      "aciklama": [
+        "**be going to + fiil**, önceden karar verilmiş **planları** anlatır: I**'m going to** buy a car next month (Gelecek ay araba alacağım).",
+        "Ayrıca şu anki bir **kanıta dayanan tahminler** için kullanılır: Look at those clouds! It**'s going to** rain.",
+        "Olumsuz: I'm **not** going to... Soru: **Are** you going to...?",
+        "Kesinleşmiş randevu ve düzenlemeler için **present continuous** da gelecek anlamı taşır: I**'m meeting** Ali tomorrow at six."
+      ],
+      "kaliplar": [
+        "am / is / are + **going to** + fiil",
+        "Olumsuz: She isn't going to come.",
+        "Soru: What are you going to do?"
+      ],
+      "ornekler": [
+        {
+          "en": "We're going to visit Cappadocia in May.",
+          "tr": "Mayısta Kapadokya'yı gezeceğiz."
+        },
+        {
+          "en": "I'm going to study medicine.",
+          "tr": "Tıp okuyacağım."
+        },
+        {
+          "en": "Be careful! You're going to fall!",
+          "tr": "Dikkat et! Düşeceksin!"
+        },
+        {
+          "en": "He isn't going to change his job.",
+          "tr": "İşini değiştirmeyecek."
+        },
+        {
+          "en": "What are you going to wear to the party?",
+          "tr": "Partiye ne giyeceksin?"
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "I ___ going to start a new course.",
+          "secenekler": [
+            "am",
+            "is",
+            "will"
+          ],
+          "dogru": 0,
+          "aciklama": "I + am going to."
+        },
+        {
+          "soru": "Look at the sky. It ___ snow.",
+          "secenekler": [
+            "is going to",
+            "goes to",
+            "going"
+          ],
+          "dogru": 0,
+          "aciklama": "Kanıta dayalı tahmin: is going to."
+        },
+        {
+          "soru": "Are they going to ___ a house?",
+          "secenekler": [
+            "buying",
+            "buy",
+            "bought"
+          ],
+          "dogru": 1,
+          "aciklama": "going to + yalın fiil."
+        },
+        {
+          "soru": "She ___ going to come. She's ill.",
+          "secenekler": [
+            "aren't",
+            "isn't",
+            "doesn't"
+          ],
+          "dogru": 1,
+          "aciklama": "she ile olumsuz: isn't."
+        },
+        {
+          "soru": "What ___ you going to do this weekend?",
+          "secenekler": [
+            "is",
+            "do",
+            "are"
+          ],
+          "dogru": 2,
+          "aciklama": "you ile are."
+        }
+      ]
+    },
+    {
+      "id": "a2-will",
+      "baslik": "Gelecek zaman: will",
+      "ozet": "Anlık kararlar, söz ve tahminler",
+      "aciklama": [
+        "**will + fiil** (kısaltması **'ll**) geleceği anlatır ve her özneyle aynıdır: I will, she will, they will.",
+        "Konuşma anında verilen **ani kararlar**: The phone is ringing. — I**'ll** answer it!",
+        "**Söz, teklif ve rica**: I**'ll** help you. **Will** you open the door, please?",
+        "Fikre dayalı **tahminler**: I think it **will** be a great party. (I think, probably, maybe ile sık kullanılır.)",
+        "Olumsuz: **won't** (will not): I won't tell anyone."
+      ],
+      "kaliplar": [
+        "özne + **will ('ll)** + fiil",
+        "özne + **won't** + fiil",
+        "**Will** + özne + fiil ...?",
+        "going to = önceden plan · will = anlık karar"
+      ],
+      "ornekler": [
+        {
+          "en": "I'm hungry. — I'll make you a sandwich.",
+          "tr": "Acıktım. — Sana bir sandviç yapayım."
+        },
+        {
+          "en": "I promise I won't be late.",
+          "tr": "Geç kalmayacağıma söz veriyorum."
+        },
+        {
+          "en": "I think she'll pass the exam.",
+          "tr": "Bence sınavı geçecek."
+        },
+        {
+          "en": "Will you marry me?",
+          "tr": "Benimle evlenir misin?"
+        },
+        {
+          "en": "Maybe it will rain tomorrow.",
+          "tr": "Belki yarın yağmur yağar."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "It's cold in here. — I ___ close the window.",
+          "secenekler": [
+            "'ll",
+            "'m going to",
+            "am"
+          ],
+          "dogru": 0,
+          "aciklama": "Konuşma anında verilen karar: will."
+        },
+        {
+          "soru": "Don't worry, I ___ tell anyone.",
+          "secenekler": [
+            "don't",
+            "won't",
+            "willn't"
+          ],
+          "dogru": 1,
+          "aciklama": "will not = won't."
+        },
+        {
+          "soru": "I think our team ___ win.",
+          "secenekler": [
+            "will",
+            "wills",
+            "is"
+          ],
+          "dogru": 0,
+          "aciklama": "Fikre dayalı tahmin: will (her özneyle aynı)."
+        },
+        {
+          "soru": "She will ___ you tomorrow.",
+          "secenekler": [
+            "calls",
+            "call",
+            "calling"
+          ],
+          "dogru": 1,
+          "aciklama": "will + yalın fiil."
+        },
+        {
+          "soru": "I've already decided. I ___ study in Ankara.",
+          "secenekler": [
+            "'ll",
+            "'m going to",
+            "will to"
+          ],
+          "dogru": 1,
+          "aciklama": "Önceden verilmiş karar: going to."
+        }
+      ]
+    },
+    {
+      "id": "a2-karsilastirma",
+      "baslik": "Karşılaştırma: -er / more, -est / most",
+      "ozet": "bigger, more expensive, the best",
+      "aciklama": [
+        "İki şeyi karşılaştırırken (**comparative**): kısa sıfatlara **-er** eklenir, ardından **than** (-den) gelir: Ali is **taller than** me.",
+        "Uzun (iki heceden fazla) sıfatlarda başa **more** gelir: This book is **more interesting than** that one.",
+        "Bir grubun en ...'si (**superlative**): kısa sıfatlarda **the ...-est**, uzun sıfatlarda **the most**: the **tallest**, the **most expensive**.",
+        "Yazım: big → bigger → biggest (son harf ikilenir), happy → happier → happiest (y → i), nice → nicer.",
+        "Düzensizler: good → **better** → **the best**, bad → **worse** → **the worst**, far → **further** → **the furthest**."
+      ],
+      "kaliplar": [
+        "kısa sıfat + **-er than**: cheaper than",
+        "**more** + uzun sıfat + **than**: more beautiful than",
+        "**the** + kısa sıfat + **-est**: the cheapest",
+        "**the most** + uzun sıfat: the most beautiful",
+        "good-better-best, bad-worse-worst"
+      ],
+      "ornekler": [
+        {
+          "en": "My brother is older than me.",
+          "tr": "Abim benden büyük."
+        },
+        {
+          "en": "Istanbul is bigger than Ankara.",
+          "tr": "İstanbul Ankara'dan büyük."
+        },
+        {
+          "en": "This is the most delicious cake in the world!",
+          "tr": "Bu dünyanın en lezzetli keki!"
+        },
+        {
+          "en": "Today is hotter than yesterday.",
+          "tr": "Bugün dünden daha sıcak."
+        },
+        {
+          "en": "She is the best student in the class.",
+          "tr": "Sınıfın en iyi öğrencisi o."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "A car is ___ than a bike.",
+          "secenekler": [
+            "fast",
+            "faster",
+            "fastest"
+          ],
+          "dogru": 1,
+          "aciklama": "İki şey karşılaştırılıyor: faster than."
+        },
+        {
+          "soru": "This phone is ___ than that one.",
+          "secenekler": [
+            "expensiver",
+            "more expensive",
+            "most expensive"
+          ],
+          "dogru": 1,
+          "aciklama": "Uzun sıfat: more expensive."
+        },
+        {
+          "soru": "Everest is the ___ mountain in the world.",
+          "secenekler": [
+            "higher",
+            "most high",
+            "highest"
+          ],
+          "dogru": 2,
+          "aciklama": "En ...: the highest."
+        },
+        {
+          "soru": "My English is ___ than last year.",
+          "secenekler": [
+            "gooder",
+            "better",
+            "best"
+          ],
+          "dogru": 1,
+          "aciklama": "good → better (düzensiz)."
+        },
+        {
+          "soru": "It was the ___ day of my life.",
+          "secenekler": [
+            "worse",
+            "baddest",
+            "worst"
+          ],
+          "dogru": 2,
+          "aciklama": "bad → worse → the worst."
+        },
+        {
+          "soru": "Today is ___ than yesterday.",
+          "secenekler": [
+            "hoter",
+            "hotter",
+            "more hot"
+          ],
+          "dogru": 1,
+          "aciklama": "hot: son harf ikilenir → hotter."
+        }
+      ]
+    },
+    {
+      "id": "a2-some-any-much-many",
+      "baslik": "Sayılabilen / sayılamayan: some, any, much, many",
+      "ozet": "How much water? How many apples?",
+      "aciklama": [
+        "**Sayılabilen** isimler tek tek sayılır ve çoğul olabilir: an apple, two apples. **Sayılamayan** isimler sayılmaz, çoğul olmaz: water, money, bread, information, advice.",
+        "**some**: olumlu cümlelerde \"biraz, birkaç\": I have **some** money. Kibar teklif ve isteklerde soruda da kullanılır: Would you like **some** tea?",
+        "**any**: olumsuz ve soru cümlelerinde \"hiç\": I don't have **any** money. Are there **any** eggs?",
+        "**many**: sayılabilen çoğullarla (çok): How **many** books? — **much**: sayılamayanlarla (çok): How **much** sugar? Olumlu cümlelerde genellikle **a lot of** tercih edilir.",
+        "Az: **a few** (sayılabilen) — **a little** (sayılamayan): a few friends, a little milk."
+      ],
+      "kaliplar": [
+        "olumlu: **some** · olumsuz/soru: **any**",
+        "sayılabilen: **many**, **a few**, How many ...?",
+        "sayılamayan: **much**, **a little**, How much ...?",
+        "her ikisi: **a lot of**, **some**, **any**"
+      ],
+      "ornekler": [
+        {
+          "en": "There is some milk in the fridge.",
+          "tr": "Buzdolabında biraz süt var."
+        },
+        {
+          "en": "We don't have any bread.",
+          "tr": "Hiç ekmeğimiz yok."
+        },
+        {
+          "en": "How many people were at the party?",
+          "tr": "Partide kaç kişi vardı?"
+        },
+        {
+          "en": "I don't have much time.",
+          "tr": "Pek vaktim yok."
+        },
+        {
+          "en": "I have a few questions.",
+          "tr": "Birkaç sorum var."
+        },
+        {
+          "en": "Can I have a little sugar?",
+          "tr": "Biraz şeker alabilir miyim?"
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "There aren't ___ apples left.",
+          "secenekler": [
+            "some",
+            "any",
+            "much"
+          ],
+          "dogru": 1,
+          "aciklama": "Olumsuz cümle: any."
+        },
+        {
+          "soru": "How ___ money do you need?",
+          "secenekler": [
+            "many",
+            "much",
+            "few"
+          ],
+          "dogru": 1,
+          "aciklama": "money sayılamaz: How much."
+        },
+        {
+          "soru": "How ___ brothers do you have?",
+          "secenekler": [
+            "much",
+            "many",
+            "little"
+          ],
+          "dogru": 1,
+          "aciklama": "brothers sayılabilir: How many."
+        },
+        {
+          "soru": "Would you like ___ coffee?",
+          "secenekler": [
+            "any",
+            "some",
+            "many"
+          ],
+          "dogru": 1,
+          "aciklama": "Kibar teklif: some."
+        },
+        {
+          "soru": "I have ___ friends in London. (birkaç)",
+          "secenekler": [
+            "a little",
+            "a few",
+            "much"
+          ],
+          "dogru": 1,
+          "aciklama": "friends sayılabilir: a few."
+        },
+        {
+          "soru": "Hangisi sayılamayan bir isimdir?",
+          "secenekler": [
+            "chair",
+            "information",
+            "egg"
+          ],
+          "dogru": 1,
+          "aciklama": "information sayılamaz (an information denmez)."
+        }
+      ]
+    },
+    {
+      "id": "a2-present-perfect",
+      "baslik": "Present Perfect: ever, never, just, already, yet",
+      "ozet": "I have been to Paris. Have you ever...?",
+      "aciklama": [
+        "**Present perfect**, geçmişte olan ama **zamanı belirtilmeyen** ya da **şimdiyle bağlantılı** olayları anlatır.",
+        "Yapı: **have / has + fiilin 3. hâli** (past participle). Düzenli fiillerde 3. hâl -ed ile biter (worked); düzensizler ezberlenir: go → **gone/been**, see → **seen**, eat → **eaten**, do → **done**.",
+        "Deneyimler: **Have** you **ever** **been** to Italy? — No, I've **never** been there.",
+        "Yeni olmuş şeyler: I've **just** finished. (az önce) — Beklenenden önce: She's **already** left. (çoktan) — Henüz olmayanlar: I haven't eaten **yet**. (henüz)",
+        "Dikkat: Belirli bir geçmiş zaman (yesterday, last year, in 2010) varsa **past simple** kullanılır: I **went** to Paris in 2019."
+      ],
+      "kaliplar": [
+        "I / you / we / they **have ('ve)** + V3",
+        "he / she / it **has ('s)** + V3",
+        "Olumsuz: haven't / hasn't + V3",
+        "Soru: Have you ever ...? / Has she ... yet?"
+      ],
+      "ornekler": [
+        {
+          "en": "I've visited many countries.",
+          "tr": "Birçok ülke gezdim."
+        },
+        {
+          "en": "Have you ever eaten sushi?",
+          "tr": "Hiç suşi yedin mi?"
+        },
+        {
+          "en": "She has never seen the sea.",
+          "tr": "O hiç deniz görmedi."
+        },
+        {
+          "en": "We've just arrived.",
+          "tr": "Az önce geldik."
+        },
+        {
+          "en": "Have you finished your homework yet?",
+          "tr": "Ödevini bitirdin mi?"
+        },
+        {
+          "en": "He has already gone home.",
+          "tr": "Çoktan eve gitti."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "I ___ seen this film before.",
+          "secenekler": [
+            "has",
+            "have",
+            "am"
+          ],
+          "dogru": 1,
+          "aciklama": "I + have + V3."
+        },
+        {
+          "soru": "She has ___ to Japan twice.",
+          "secenekler": [
+            "went",
+            "been",
+            "go"
+          ],
+          "dogru": 1,
+          "aciklama": "Deneyim için been kullanılır (has been to)."
+        },
+        {
+          "soru": "Have you ___ tried Turkish coffee?",
+          "secenekler": [
+            "ever",
+            "yet",
+            "already"
+          ],
+          "dogru": 0,
+          "aciklama": "Deneyim sorusu: Have you ever...?"
+        },
+        {
+          "soru": "I haven't finished my work ___.",
+          "secenekler": [
+            "already",
+            "yet",
+            "just"
+          ],
+          "dogru": 1,
+          "aciklama": "Olumsuz cümlenin sonunda yet."
+        },
+        {
+          "soru": "I ___ to Italy last year.",
+          "secenekler": [
+            "have been",
+            "went",
+            "have gone"
+          ],
+          "dogru": 1,
+          "aciklama": "last year belirli bir zamandır: past simple (went)."
+        },
+        {
+          "soru": "They have ___ their dinner.",
+          "secenekler": [
+            "ate",
+            "eaten",
+            "eat"
+          ],
+          "dogru": 1,
+          "aciklama": "eat → ate → eaten (V3)."
+        }
+      ]
+    },
+    {
+      "id": "a2-must-have-to",
+      "baslik": "Must, have to, mustn't, don't have to",
+      "ozet": "Zorunluluk, yasak ve gereksizlik",
+      "aciklama": [
+        "**must** ve **have to** zorunluluk bildirir (-meli, zorunda). **must** genellikle konuşanın kendi fikri ya da kurallar için: You **must** wear a seatbelt. **have to** dışarıdan gelen zorunluluk için: I **have to** work on Saturdays.",
+        "he / she / it ile **has to**: She **has to** get up early.",
+        "**mustn't** (must not) = **yasak**: You **mustn't** smoke here (Burada sigara içmemelisin / içmek yasak).",
+        "**don't have to** = **gerek yok**: You **don't have to** come (Gelmek zorunda değilsin).",
+        "Geçmişte zorunluluk için **had to** kullanılır: I **had to** wait for an hour."
+      ],
+      "kaliplar": [
+        "must + fiil · have/has to + fiil → zorunluluk",
+        "mustn't + fiil → yasak",
+        "don't/doesn't have to + fiil → gerek yok",
+        "had to → geçmişte zorunluluk"
+      ],
+      "ornekler": [
+        {
+          "en": "You must stop at a red light.",
+          "tr": "Kırmızı ışıkta durmalısın."
+        },
+        {
+          "en": "I have to go to the dentist tomorrow.",
+          "tr": "Yarın dişçiye gitmem gerekiyor."
+        },
+        {
+          "en": "You mustn't use your phone in the exam.",
+          "tr": "Sınavda telefon kullanmamalısın."
+        },
+        {
+          "en": "It's Sunday. I don't have to work.",
+          "tr": "Bugün pazar. Çalışmak zorunda değilim."
+        },
+        {
+          "en": "We had to take a taxi.",
+          "tr": "Taksiye binmek zorunda kaldık."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "You ___ park here. It's not allowed.",
+          "secenekler": [
+            "mustn't",
+            "don't have to",
+            "must"
+          ],
+          "dogru": 0,
+          "aciklama": "Yasak: mustn't."
+        },
+        {
+          "soru": "She ___ wear a uniform at work.",
+          "secenekler": [
+            "have to",
+            "has to",
+            "must to"
+          ],
+          "dogru": 1,
+          "aciklama": "she ile has to."
+        },
+        {
+          "soru": "You ___ bring food. There's a lot here.",
+          "secenekler": [
+            "mustn't",
+            "don't have to",
+            "have to"
+          ],
+          "dogru": 1,
+          "aciklama": "Gerek yok: don't have to."
+        },
+        {
+          "soru": "Yesterday I ___ stay at work until nine.",
+          "secenekler": [
+            "must",
+            "had to",
+            "have to"
+          ],
+          "dogru": 1,
+          "aciklama": "Geçmişte zorunluluk: had to."
+        },
+        {
+          "soru": "You must ___ your homework.",
+          "secenekler": [
+            "do",
+            "to do",
+            "doing"
+          ],
+          "dogru": 0,
+          "aciklama": "must + yalın fiil (to almaz)."
+        }
+      ]
+    },
+    {
+      "id": "a2-should",
+      "baslik": "Should / shouldn't: tavsiye",
+      "ozet": "You should see a doctor. — Doktora görünmelisin.",
+      "aciklama": [
+        "**should**, tavsiye ve öneri bildirir; Türkçedeki \"-meli, -malı\" (tavsiye anlamında) ya da \"bence ... yapmalısın\" ifadesine karşılık gelir.",
+        "Her özneyle aynıdır ve ardından **yalın fiil** gelir: She **should** rest.",
+        "Olumsuz: **shouldn't**: You **shouldn't** eat so much sugar.",
+        "Soru ve fikir sorma: **Should** I call him? What **should** I do?",
+        "must'tan daha yumuşaktır: must = zorunluluk, should = tavsiye."
+      ],
+      "kaliplar": [
+        "özne + **should** + fiil",
+        "özne + **shouldn't** + fiil",
+        "**Should** I ...? / What should I ...?"
+      ],
+      "ornekler": [
+        {
+          "en": "You should drink more water.",
+          "tr": "Daha çok su içmelisin."
+        },
+        {
+          "en": "You shouldn't work so hard.",
+          "tr": "Bu kadar çok çalışmamalısın."
+        },
+        {
+          "en": "Should I take an umbrella?",
+          "tr": "Şemsiye almalı mıyım?"
+        },
+        {
+          "en": "What should we do now?",
+          "tr": "Şimdi ne yapmalıyız?"
+        },
+        {
+          "en": "I think you should apologize.",
+          "tr": "Bence özür dilemelisin."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "You look tired. You ___ go to bed.",
+          "secenekler": [
+            "should",
+            "shouldn't",
+            "should to"
+          ],
+          "dogru": 0,
+          "aciklama": "Tavsiye: should + yalın fiil."
+        },
+        {
+          "soru": "You ___ eat fast food every day.",
+          "secenekler": [
+            "should",
+            "shouldn't",
+            "don't should"
+          ],
+          "dogru": 1,
+          "aciklama": "Olumsuz tavsiye: shouldn't."
+        },
+        {
+          "soru": "He should ___ to the doctor.",
+          "secenekler": [
+            "goes",
+            "go",
+            "going"
+          ],
+          "dogru": 1,
+          "aciklama": "should + yalın fiil."
+        },
+        {
+          "soru": "___ I buy this jacket?",
+          "secenekler": [
+            "Do",
+            "Should",
+            "Am"
+          ],
+          "dogru": 1,
+          "aciklama": "Fikir sorma: Should I...?"
+        },
+        {
+          "soru": "Hangisi daha güçlü bir zorunluluktur?",
+          "secenekler": [
+            "should",
+            "must",
+            "could"
+          ],
+          "dogru": 1,
+          "aciklama": "must zorunluluk, should tavsiyedir."
+        }
+      ]
+    },
+    {
+      "id": "a2-iyelik",
+      "baslik": "İyelik zamirleri ve 's: mine, yours, Ali's",
+      "ozet": "Bu kitap benim. Whose is this?",
+      "aciklama": [
+        "İyelik sıfatı (my, your...) bir isimle birlikte gelir: **my** book. İyelik zamiri ismin **yerini alır**: This book is **mine** (Bu kitap benim).",
+        "Zamirler: **mine, yours, his, hers, ours, theirs**. (its çok nadir kullanılır.)",
+        "İnsanlar ve hayvanlarla sahiplik için isme **'s** eklenir: **Ali's** car (Ali'nin arabası), my **mother's** name.",
+        "Sonu -s ile biten çoğul isimlerde sadece kesme işareti konur: my **parents'** house.",
+        "\"Kimin?\" sorusu **Whose** ile sorulur: **Whose** bag is this? — It's **Elif's**."
+      ],
+      "kaliplar": [
+        "my → **mine** · your → **yours** · his → **his**",
+        "her → **hers** · our → **ours** · their → **theirs**",
+        "isim + **'s**: Tom's phone",
+        "**Whose** + isim ...? : Whose keys are these?"
+      ],
+      "ornekler": [
+        {
+          "en": "Is this pen yours? — Yes, it's mine.",
+          "tr": "Bu kalem senin mi? — Evet, benim."
+        },
+        {
+          "en": "This is my sister's room.",
+          "tr": "Burası kız kardeşimin odası."
+        },
+        {
+          "en": "Their house is bigger than ours.",
+          "tr": "Onların evi bizimkinden büyük."
+        },
+        {
+          "en": "Whose car is that? — It's my boss's.",
+          "tr": "Şu araba kimin? — Patronumun."
+        },
+        {
+          "en": "The children's toys are everywhere.",
+          "tr": "Çocukların oyuncakları her yerde."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "That isn't my coat. ___ is blue.",
+          "secenekler": [
+            "My",
+            "Mine",
+            "Me"
+          ],
+          "dogru": 1,
+          "aciklama": "İsmin yerini tutan zamir: mine."
+        },
+        {
+          "soru": "Is this bag ___? (onun - kadın)",
+          "secenekler": [
+            "her",
+            "hers",
+            "she's"
+          ],
+          "dogru": 1,
+          "aciklama": "Zamir olarak: hers."
+        },
+        {
+          "soru": "___ phone is ringing?",
+          "secenekler": [
+            "Who",
+            "Whose",
+            "Who's"
+          ],
+          "dogru": 1,
+          "aciklama": "Kimin: Whose."
+        },
+        {
+          "soru": "This is ___ car. (babamın)",
+          "secenekler": [
+            "my father",
+            "my father's",
+            "my fathers"
+          ],
+          "dogru": 1,
+          "aciklama": "Sahiplik: father's."
+        },
+        {
+          "soru": "Our garden is small, but ___ is big. (onlarınki)",
+          "secenekler": [
+            "their",
+            "theirs",
+            "them"
+          ],
+          "dogru": 1,
+          "aciklama": "Zamir: theirs."
+        }
+      ]
+    },
+    {
+      "id": "a2-zarflar",
+      "baslik": "Durum zarfları: quickly, well, carefully",
+      "ozet": "Nasıl? Sıfattan zarf yapma",
+      "aciklama": [
+        "Sıfatlar bir **ismi** niteler: a **careful** driver (dikkatli bir sürücü). Zarflar bir **fiili** niteler ve \"nasıl?\" sorusuna cevap verir: He drives **carefully** (Dikkatlice sürer).",
+        "Çoğu sıfata **-ly** eklenerek zarf yapılır: quick → quickly, slow → slowly, careful → carefully.",
+        "y ile bitenlerde **-ily**: easy → easily, happy → happily. -le ile bitenlerde: terrible → terribly.",
+        "Düzensizler: good → **well**, fast → **fast**, hard → **hard**, late → **late**, early → **early**.",
+        "Dikkat: **hardly** \"neredeyse hiç\", **lately** \"son zamanlarda\" demektir; hard ve late ile karıştırma."
+      ],
+      "kaliplar": [
+        "sıfat + **ly**: slow → slowly",
+        "y → **ily**: easy → easily",
+        "good → **well**, fast → fast, hard → hard"
+      ],
+      "ornekler": [
+        {
+          "en": "Please speak slowly.",
+          "tr": "Lütfen yavaş konuşun."
+        },
+        {
+          "en": "She sings beautifully.",
+          "tr": "Çok güzel şarkı söylüyor."
+        },
+        {
+          "en": "He speaks English very well.",
+          "tr": "Çok iyi İngilizce konuşuyor."
+        },
+        {
+          "en": "They work hard.",
+          "tr": "Sıkı çalışıyorlar."
+        },
+        {
+          "en": "I passed the exam easily.",
+          "tr": "Sınavı kolayca geçtim."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "Drive ___! The road is wet.",
+          "secenekler": [
+            "careful",
+            "carefully",
+            "carefuly"
+          ],
+          "dogru": 1,
+          "aciklama": "Fiili niteliyor: carefully."
+        },
+        {
+          "soru": "She plays the piano very ___.",
+          "secenekler": [
+            "good",
+            "well",
+            "goodly"
+          ],
+          "dogru": 1,
+          "aciklama": "good'un zarfı well."
+        },
+        {
+          "soru": "He is a ___ runner.",
+          "secenekler": [
+            "fast",
+            "fastly",
+            "fasted"
+          ],
+          "dogru": 0,
+          "aciklama": "İsmi niteliyor ve fast'ın zarfı da fast'tır."
+        },
+        {
+          "soru": "We found the hotel ___.",
+          "secenekler": [
+            "easy",
+            "easily",
+            "easyly"
+          ],
+          "dogru": 1,
+          "aciklama": "easy → easily."
+        },
+        {
+          "soru": "I work very ___ every day.",
+          "secenekler": [
+            "hardly",
+            "hard",
+            "harder"
+          ],
+          "dogru": 1,
+          "aciklama": "Sıkı çalışmak: work hard (hardly = neredeyse hiç)."
+        }
+      ]
+    },
+    {
+      "id": "a2-ing-to",
+      "baslik": "Fiil + -ing ya da fiil + to",
+      "ozet": "I enjoy swimming. I want to swim.",
+      "aciklama": [
+        "Bir fiilden sonra ikinci bir fiil geldiğinde, ilk fiile göre ikinci fiil ya **-ing** ya da **to + fiil** olur.",
+        "**-ing** alanlar: **enjoy, like, love, hate, finish, stop, mind, don't mind, go (swimming, shopping)**: I enjoy **reading**.",
+        "**to + fiil** alanlar: **want, need, decide, hope, plan, learn, would like, promise, try**: I want **to learn** Spanish.",
+        "Edatlardan (about, of, at, for, without...) sonra fiil her zaman **-ing** olur: I'm good **at cooking**. Thanks **for helping** me.",
+        "Amaç bildirmek için **to** kullanılır: I went to the shop **to buy** milk (Süt almak için)."
+      ],
+      "kaliplar": [
+        "enjoy / finish / stop / mind + **-ing**",
+        "want / need / decide / hope / would like + **to** + fiil",
+        "edat + **-ing**: interested in learning",
+        "amaç: **to** + fiil"
+      ],
+      "ornekler": [
+        {
+          "en": "I love travelling.",
+          "tr": "Seyahat etmeyi çok severim."
+        },
+        {
+          "en": "She decided to leave her job.",
+          "tr": "İşinden ayrılmaya karar verdi."
+        },
+        {
+          "en": "Have you finished cleaning?",
+          "tr": "Temizliği bitirdin mi?"
+        },
+        {
+          "en": "I'd like to book a table.",
+          "tr": "Bir masa ayırtmak istiyorum."
+        },
+        {
+          "en": "He's interested in learning Japanese.",
+          "tr": "Japonca öğrenmekle ilgileniyor."
+        },
+        {
+          "en": "I came here to see you.",
+          "tr": "Seni görmek için buraya geldim."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "I enjoy ___ in the sea.",
+          "secenekler": [
+            "swim",
+            "to swim",
+            "swimming"
+          ],
+          "dogru": 2,
+          "aciklama": "enjoy + -ing."
+        },
+        {
+          "soru": "We want ___ a new car.",
+          "secenekler": [
+            "buying",
+            "to buy",
+            "buy"
+          ],
+          "dogru": 1,
+          "aciklama": "want + to."
+        },
+        {
+          "soru": "She finished ___ the report.",
+          "secenekler": [
+            "writing",
+            "to write",
+            "write"
+          ],
+          "dogru": 0,
+          "aciklama": "finish + -ing."
+        },
+        {
+          "soru": "Thank you for ___ me.",
+          "secenekler": [
+            "help",
+            "to help",
+            "helping"
+          ],
+          "dogru": 2,
+          "aciklama": "Edattan (for) sonra -ing."
+        },
+        {
+          "soru": "I went to the bank ___ some money.",
+          "secenekler": [
+            "getting",
+            "to get",
+            "for get"
+          ],
+          "dogru": 1,
+          "aciklama": "Amaç: to + fiil."
+        },
+        {
+          "soru": "They decided ___ at home.",
+          "secenekler": [
+            "staying",
+            "to stay",
+            "stay"
+          ],
+          "dogru": 1,
+          "aciklama": "decide + to."
+        }
+      ]
+    },
+    {
+      "id": "a2-too-enough",
+      "baslik": "Too ve enough",
+      "ozet": "too hot (fazla sıcak), old enough (yeterince büyük)",
+      "aciklama": [
+        "**too + sıfat**: gereğinden fazla, olumsuz bir anlamla: This coffee is **too hot** (Bu kahve çok/fazla sıcak, içemem).",
+        "**sıfat + enough**: yeterince. Dikkat, enough sıfattan **sonra** gelir: She is **old enough** to drive.",
+        "**enough + isim**: yeterli miktarda. Bu sefer isimden **önce** gelir: I don't have **enough money**.",
+        "Ardından **to + fiil** gelebilir: It's **too cold to swim**. He's **tall enough to reach** the shelf.",
+        "Dikkat: **very** sadece \"çok\" demektir, olumsuz sonuç bildirmez: It's very hot, but I like it. / It's too hot; I can't sleep."
+      ],
+      "kaliplar": [
+        "**too** + sıfat (+ to + fiil)",
+        "sıfat + **enough** (+ to + fiil)",
+        "**enough** + isim"
+      ],
+      "ornekler": [
+        {
+          "en": "These shoes are too small for me.",
+          "tr": "Bu ayakkabılar bana çok küçük."
+        },
+        {
+          "en": "He is too young to drive.",
+          "tr": "Araba sürmek için çok genç."
+        },
+        {
+          "en": "Is the room big enough?",
+          "tr": "Oda yeterince büyük mü?"
+        },
+        {
+          "en": "We don't have enough chairs.",
+          "tr": "Yeterince sandalyemiz yok."
+        },
+        {
+          "en": "It's too late to call her now.",
+          "tr": "Onu şimdi aramak için çok geç."
+        }
+      ],
+      "alistirmalar": [
+        {
+          "soru": "I can't drink this tea. It's ___ hot.",
+          "secenekler": [
+            "too",
+            "enough",
+            "very enough"
+          ],
+          "dogru": 0,
+          "aciklama": "Olumsuz sonuç: too hot."
+        },
+        {
+          "soru": "She isn't ___ to watch this film.",
+          "secenekler": [
+            "enough old",
+            "old enough",
+            "too old"
+          ],
+          "dogru": 1,
+          "aciklama": "Sıfat + enough: old enough."
+        },
+        {
+          "soru": "We don't have ___ for a taxi.",
+          "secenekler": [
+            "money enough",
+            "enough money",
+            "too money"
+          ],
+          "dogru": 1,
+          "aciklama": "enough + isim."
+        },
+        {
+          "soru": "The box is ___ heavy to carry.",
+          "secenekler": [
+            "too",
+            "enough",
+            "so"
+          ],
+          "dogru": 0,
+          "aciklama": "too + sıfat + to + fiil."
+        },
+        {
+          "soru": "Is your coffee warm ___?",
+          "secenekler": [
+            "too",
+            "enough",
+            "very"
+          ],
+          "dogru": 1,
+          "aciklama": "Sıfattan sonra enough."
+        }
+      ]
+    }
+  ]
+}

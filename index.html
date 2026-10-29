@@ -1359,8 +1359,8 @@
       const goster = !!sonraki && oran >= ONERI_ORANI && !ayar().oneriKapali[kod] && ayar().sekme !== "ilerleme";
       $("oneri").hidden = !goster;
       if (!goster) return;
-      $("oneriYazi").textContent = "🎉 " + kod + " kelimelerinin %" + Math.floor(oran * 100) +
-        "'ini öğrendin! " + sonraki.kod + " (" + sonraki.ad + ") seviyesine geçmeye hazırsın.";
+      $("oneriYazi").textContent = "🎉 " + kod + " kelimelerinde öğrenme oranın %" + Math.floor(oran * 100) +
+        "! " + sonraki.kod + " (" + sonraki.ad + ") seviyesine geçmeye hazırsın.";
       $("oneriGec").textContent = sonraki.kod + " seviyesine geç →";
       $("oneriGec").onclick = () => seviyeSec(sonraki.kod);
     }
@@ -1636,7 +1636,7 @@
     // Metni kelimelere böler; her kelime dokunulabilir bir <span> olur ("I'm" gibi kısaltmalar tek kelime)
     function dokunulabilirYaz(el, metin) {
       el.textContent = "";
-      metin.split(/([A-Za-z]+(?:'[A-Za-z]+)?)/).forEach((parca, i) => {
+      metin.split(/(\p{L}+(?:'\p{L}+)?)/u).forEach((parca, i) => {
         if (i % 2 === 0) {
           if (parca) el.append(parca);
           return;
