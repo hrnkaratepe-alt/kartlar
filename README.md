@@ -11,7 +11,7 @@ Telefonda çalışan, başlangıçtan ileri seviyeye İngilizce öğrenme uygula
 - **Seviye önerisi:** Bir seviyedeki kelimelerin %80'ini öğrenince sonraki seviye önerilir
 - Sesli dinleme (normal / yavaş), otomatik okuma
 - Cümlelerdeki her kelimeye dokununca anlamı, okunuşu ve sesi (tüm seviyelerin kelimeleri, düzensiz fiiller ve kısaltmalar)
-- **Hafıza kartı:** Aynı kelimeye ikinci kez dokununca açılır. Kulağa benzeyen Türkçe bir anahtar kelime (anahtar kelime yöntemi), kısa komik bir hikaye, emoji ve hikayeyi Türkçe sesle okuma düğmesi içerir. Şimdilik en sık kullanılan 300 kelime için var (`data/hafiza.json`).
+- **Hafıza kartı:** Aynı kelimeye ikinci kez dokununca açılır. Kulağa benzeyen Türkçe bir anahtar kelime (anahtar kelime yöntemi), kısa komik bir hikaye, emoji ve hikayeyi Türkçe sesle okuma düğmesi içerir. Kartlar `data/hafiza.json` dosyasında; seviye seviye ekleniyor.
 - Bilmediğin kartları daha sık gösteren tekrar sistemi (Leitner kutuları)
 - Günde 20 kartlık hedef ve 🔥 seri sayacı
 - İlerleme telefonun tarayıcısında saklanır
