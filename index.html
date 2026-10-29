@@ -3,94 +3,964 @@
 <head>
   <!-- Türkçe karakterlerin (ç, ğ, ı, ö, ş, ü) doğru görünmesi için -->
   <meta charset="UTF-8">
-  <!-- Sayfanın telefonda da düzgün görünmesi için -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>İngilizce Kelime Kartları</title>
+  <!-- Telefonda düzgün görünsün; çentikli ekranlarda da kenarlara taşmasın -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4a6cf7">
+  <!-- Ana ekrana eklenince uygulama gibi açılsın -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Kartlar">
+  <title>İngilizce Kartlar</title>
 
   <style>
-    /* Sayfanın genel görünümü */
+    /* Renkler tek yerde: koyu temada aşağıda değiştiriliyor */
+    :root {
+      --arka: #eef2f9;
+      --yuzey: #ffffff;
+      --yazi: #1d2433;
+      --soluk: #6b7385;
+      --cizgi: #dde3ee;
+      --ana: #4a6cf7;
+      --ana-acik: #e6ebff;
+      --yesil: #22a35a;
+      --turuncu: #e8920c;
+      --kirmizi: #e04848;
+      --golge: 0 10px 30px rgba(30, 45, 90, 0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --arka: #11151f;
+        --yuzey: #1b2130;
+        --yazi: #eef1f7;
+        --soluk: #98a0b3;
+        --cizgi: #2c3446;
+        --ana: #7b93ff;
+        --ana-acik: #26304d;
+        --golge: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f4f8;
       margin: 0;
-      padding: 20px;
-      text-align: center;
-      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--arka);
+      color: var(--yazi);
+      -webkit-tap-highlight-color: transparent;
     }
 
-    /* Kartları yan yana dizen kutu; sığmazsa alt satıra geçer */
-    .kartlar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-      max-width: 800px;
+    /* Tüm içerik telefon genişliğinde ortalanır */
+    .uygulama {
+      max-width: 480px;
       margin: 0 auto;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      padding: calc(12px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));
     }
 
-    /* Tek bir kartın görünümü */
-    .kart {
-      width: 140px;
-      height: 100px;
-      background: #4a90d9;
-      color: white;
-      font-size: 22px;
+    button { font: inherit; color: inherit; cursor: pointer; }
+
+    /* ---------- Üst kısım ---------- */
+    .ust {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .ust h1 { font-size: 20px; margin: 0; }
+    .seri {
       font-weight: bold;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer; /* Fare kartın üstüne gelince el işareti çıkar */
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      background: var(--yuzey);
+      border-radius: 999px;
+      padding: 6px 12px;
+      box-shadow: var(--golge);
+      font-size: 14px;
+      white-space: nowrap;
     }
 
-    /* Kart çevrilince (Türkçesi görünürken) rengi yeşil olur */
-    .kart.cevrildi {
-      background: #2e9e5b;
+    /* Çalış / İlerleme sekmeleri */
+    .sekmeler {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--yuzey);
+      border-radius: 12px;
+      padding: 4px;
+      margin: 12px 0;
+      box-shadow: var(--golge);
     }
+    .sekmeler button {
+      border: none;
+      background: none;
+      padding: 10px;
+      border-radius: 9px;
+      font-weight: 600;
+      color: var(--soluk);
+    }
+    .sekmeler button.secili { background: var(--ana); color: #fff; }
+
+    /* Günlük hedef çubuğu */
+    .hedef { margin-bottom: 12px; }
+    .hedef-yazi {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: var(--soluk);
+    }
+    .hedef-yazi b { color: var(--yazi); }
+    .cubuk {
+      height: 10px;
+      background: var(--cizgi);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .cubuk-dolu {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--ana), var(--yesil));
+      border-radius: 999px;
+      transition: width 0.4s;
+    }
+
+    /* Konu seçimi: yana kaydırılabilen çipler */
+    .konular {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 2px 8px;
+      margin: 0 -16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      scrollbar-width: none;
+    }
+    .konular::-webkit-scrollbar { display: none; }
+    .cip {
+      flex: none;
+      border: 1.5px solid var(--cizgi);
+      background: var(--yuzey);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .cip.secili {
+      border-color: var(--ana);
+      background: var(--ana-acik);
+      color: var(--ana);
+      font-weight: 600;
+    }
+
+    /* Kelime / Cümle seçimi ve otomatik ses */
+    .ayar-satiri {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 4px 0 14px;
+    }
+    .tur-secim {
+      display: flex;
+      background: var(--yuzey);
+      border-radius: 10px;
+      padding: 3px;
+      border: 1px solid var(--cizgi);
+    }
+    .tur-secim button {
+      border: none;
+      background: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--soluk);
+    }
+    .tur-secim button.secili { background: var(--ana-acik); color: var(--ana); font-weight: 600; }
+    .oto-ses { font-size: 14px; color: var(--soluk); display: flex; align-items: center; gap: 6px; }
+    .oto-ses input { width: 18px; height: 18px; accent-color: var(--ana); }
+
+    /* ---------- Kart (dokununca 3B dönen) ---------- */
+    .sahne { perspective: 1200px; flex: 1; display: flex; flex-direction: column; }
+    .kart {
+      position: relative;
+      display: grid;          /* iki yüz aynı hücrede üst üste durur */
+      min-height: 330px;
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      outline: none;
+    }
+    .kart.cevrildi { transform: rotateY(180deg); }
+    .yuz {
+      grid-area: 1 / 1;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background: var(--yuzey);
+      border-radius: 22px;
+      box-shadow: var(--golge);
+      position: relative;
+      padding: 48px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+    }
+    .kart:focus-visible .yuz { box-shadow: 0 0 0 3px var(--ana), var(--golge); }
+    .arka-yuz { transform: rotateY(180deg); }
+
+    .etiketler {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--soluk);
+    }
+    .etiket { background: var(--arka); padding: 4px 8px; border-radius: 999px; }
+    .etiket.yeni { background: var(--ana-acik); color: var(--ana); font-weight: 600; }
+
+    .ingilizce { font-size: 34px; font-weight: 700; line-height: 1.2; word-break: break-word; }
+    .ingilizce.uzun { font-size: 26px; }
+    .okunus { font-size: 18px; color: var(--ana); font-style: italic; }
+    .ipucu { font-size: 13px; color: var(--soluk); margin-top: 6px; }
+    .turkce { font-size: 30px; font-weight: 700; color: var(--yesil); line-height: 1.2; }
+    .kucuk-en { font-size: 15px; color: var(--soluk); }
+
+    .ornek {
+      width: 100%;
+      background: var(--arka);
+      border-radius: 14px;
+      padding: 12px 14px;
+      text-align: left;
+      margin-top: 6px;
+    }
+    .ornek-baslik { font-size: 12px; color: var(--soluk); margin-bottom: 4px; }
+    .ornek-en { font-size: 16px; font-weight: 600; display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; }
+    .ornek-tr { font-size: 14px; color: var(--soluk); margin-top: 4px; }
+
+    .ses-butonlari { display: flex; gap: 8px; }
+    .ses {
+      border: none;
+      background: var(--ana-acik);
+      color: var(--ana);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .ses.mini { padding: 4px 9px; font-size: 14px; flex: none; }
+
+    /* Alt butonlar: başparmakla kolay basılsın diye büyük */
+    .cevaplar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .cevap {
+      border: none;
+      border-radius: 14px;
+      padding: 14px 6px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+    .cevap small { display: block; font-weight: 400; font-size: 11px; opacity: 0.9; }
+    .cevap:active, .ses:active, .goster:active { transform: scale(0.97); }
+    .bilmiyorum { background: var(--kirmizi); }
+    .zor { background: var(--turuncu); }
+    .biliyorum { background: var(--yesil); }
+    .goster {
+      width: 100%;
+      margin-top: 16px;
+      border: none;
+      border-radius: 14px;
+      padding: 16px;
+      background: var(--ana);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .bos {
+      text-align: center;
+      color: var(--soluk);
+      padding: 40px 20px;
+      background: var(--yuzey);
+      border-radius: 22px;
+      box-shadow: var(--golge);
+    }
+
+    /* ---------- İlerleme ekranı ---------- */
+    .kutucuklar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .kutucuk {
+      background: var(--yuzey);
+      border-radius: 16px;
+      padding: 14px 8px;
+      text-align: center;
+      box-shadow: var(--golge);
+    }
+    .kutucuk b { display: block; font-size: 24px; }
+    .kutucuk span { font-size: 12px; color: var(--soluk); }
+    .panel {
+      background: var(--yuzey);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--golge);
+      margin-bottom: 16px;
+    }
+    .panel h2 { font-size: 16px; margin: 0 0 12px; }
+    .konu-satiri { margin-bottom: 12px; }
+    .konu-satiri:last-child { margin-bottom: 0; }
+    .konu-satiri .hedef-yazi { margin-bottom: 4px; }
+    .zor-liste { list-style: none; padding: 0; margin: 0; }
+    .zor-liste li {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--cizgi);
+      font-size: 14px;
+    }
+    .zor-liste li:last-child { border-bottom: none; }
+    .zor-liste span { color: var(--soluk); text-align: right; }
+    .aciklama { font-size: 13px; color: var(--soluk); line-height: 1.5; margin: 0; }
+    .sifirla {
+      width: 100%;
+      border: 1.5px solid var(--kirmizi);
+      color: var(--kirmizi);
+      background: none;
+      border-radius: 12px;
+      padding: 12px;
+      font-weight: 600;
+    }
+
+    /* Hedefe ulaşınca çıkan kısa mesaj */
+    .bildirim {
+      position: fixed;
+      left: 50%;
+      bottom: calc(24px + env(safe-area-inset-bottom));
+      transform: translate(-50%, 150%);
+      background: var(--yazi);
+      color: var(--arka);
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.35s, opacity 0.35s;
+      max-width: calc(100% - 32px);
+      text-align: center;
+      z-index: 10;
+    }
+    .bildirim.gorunur { transform: translate(-50%, 0); opacity: 1; }
+
+    [hidden] { display: none !important; }
   </style>
 </head>
 <body>
-  <h1>İngilizce Kelime Kartları</h1>
-  <p>Bir karta dokun, Türkçesini gör. Tekrar dokun, İngilizcesine dön.</p>
+  <div class="uygulama">
+    <div class="ust">
+      <h1>🇬🇧 İngilizce Kartlar</h1>
+      <div class="seri" id="seri" title="Günlük hedefi üst üste tamamladığın gün sayısı">🔥 0 gün</div>
+    </div>
 
-  <!-- Kartlar JavaScript ile bu kutunun içine eklenecek -->
-  <div class="kartlar" id="kartlar"></div>
+    <div class="sekmeler">
+      <button id="sekmeCalis" class="secili">📚 Çalış</button>
+      <button id="sekmeIlerleme">📊 İlerleme</button>
+    </div>
+
+    <!-- Günlük hedef: her iki ekranda da görünür -->
+    <div class="hedef">
+      <div class="hedef-yazi">
+        <span>Günlük hedef</span>
+        <span><b id="hedefSayi">0</b> / <span id="hedefToplam">20</span> kart</span>
+      </div>
+      <div class="cubuk"><div class="cubuk-dolu" id="hedefCubuk"></div></div>
+    </div>
+
+    <!-- ========== ÇALIŞ EKRANI ========== -->
+    <main id="ekranCalis" class="sahne">
+      <div class="konular" id="konular"></div>
+
+      <div class="ayar-satiri">
+        <div class="tur-secim" id="turSecim">
+          <button data-tur="hepsi">Hepsi</button>
+          <button data-tur="kelime">Kelime</button>
+          <button data-tur="cumle">Cümle</button>
+        </div>
+        <label class="oto-ses"><input type="checkbox" id="otoSes"> Otomatik oku</label>
+      </div>
+
+      <div id="bosMesaj" class="bos" hidden>Bu seçimde kart yok. Başka bir konu seç.</div>
+
+      <div class="kart" id="kart" role="button" tabindex="0" aria-label="Kartı çevir">
+        <!-- Ön yüz: İngilizcesi ve okunuşu -->
+        <div class="yuz">
+          <div class="etiketler">
+            <span class="etiket" id="etiketKonu"></span>
+            <span class="etiket" id="etiketDurum"></span>
+          </div>
+          <div class="ingilizce" id="onIngilizce"></div>
+          <div class="okunus" id="onOkunus"></div>
+          <div class="ses-butonlari">
+            <button class="ses" data-ses="normal">🔊 Dinle</button>
+            <button class="ses" data-ses="yavas">🐢 Yavaş</button>
+          </div>
+          <div class="ipucu">Anlamını görmek için karta dokun</div>
+        </div>
+
+        <!-- Arka yüz: Türkçesi ve örnek cümle -->
+        <div class="yuz arka-yuz">
+          <div class="turkce" id="arkaTurkce"></div>
+          <div class="kucuk-en" id="arkaIngilizce"></div>
+          <div class="ornek">
+            <div class="ornek-baslik">Örnek cümle</div>
+            <div class="ornek-en">
+              <span id="ornekEn"></span>
+              <button class="ses mini" data-ses="ornek" aria-label="Örnek cümleyi dinle">🔊</button>
+            </div>
+            <div class="ornek-tr" id="ornekTr"></div>
+          </div>
+        </div>
+      </div>
+
+      <button class="goster" id="gosterButon">Cevabı göster</button>
+      <div class="cevaplar" id="cevaplar" hidden>
+        <button class="cevap bilmiyorum" data-cevap="bilmiyorum">Bilmiyorum<small>birazdan tekrar</small></button>
+        <button class="cevap zor" data-cevap="zor">Zor<small>10 dk sonra</small></button>
+        <button class="cevap biliyorum" data-cevap="biliyorum">Biliyorum<small id="biliyorumSure">yarın</small></button>
+      </div>
+    </main>
+
+    <!-- ========== İLERLEME EKRANI ========== -->
+    <section id="ekranIlerleme" hidden>
+      <div class="kutucuklar">
+        <div class="kutucuk"><b id="istOgrenilen">0</b><span>öğrenildi</span></div>
+        <div class="kutucuk"><b id="istCalisilan">0</b><span>çalışıldı</span></div>
+        <div class="kutucuk"><b id="istToplam">0</b><span>toplam kart</span></div>
+      </div>
+
+      <div class="panel">
+        <h2>Konulara göre</h2>
+        <div id="konuIlerleme"></div>
+      </div>
+
+      <div class="panel">
+        <h2>En çok zorlandıkların</h2>
+        <ul class="zor-liste" id="zorListe"></ul>
+      </div>
+
+      <div class="panel">
+        <h2>Tekrar sistemi nasıl çalışır?</h2>
+        <p class="aciklama">
+          “Bilmiyorum” dediğin kart birkaç kart sonra yeniden gelir.
+          “Zor” dediğin kart 10 dakika sonra tekrar sorulur.
+          “Biliyorum” dedikçe kart bir üst kutuya çıkar ve araları açılır:
+          1 gün → 3 gün → 1 hafta → 2 hafta → 1 ay.
+          3. kutuya ulaşan kartlar “öğrenildi” sayılır.
+          İlerlemen bu telefonda (tarayıcıda) kaydedilir.
+        </p>
+      </div>
+
+      <button class="sifirla" id="sifirla">İlerlemeyi sıfırla</button>
+    </section>
+  </div>
+
+  <div class="bildirim" id="bildirim"></div>
 
   <script>
-    // 10 kelimelik listemiz: her satırda İngilizcesi (en) ve Türkçesi (tr) var
-    const kelimeler = [
-      { en: "apple",  tr: "elma" },
-      { en: "book",   tr: "kitap" },
-      { en: "house",  tr: "ev" },
-      { en: "water",  tr: "su" },
-      { en: "cat",    tr: "kedi" },
-      { en: "dog",    tr: "köpek" },
-      { en: "friend", tr: "arkadaş" },
-      { en: "school", tr: "okul" },
-      { en: "sun",    tr: "güneş" },
-      { en: "happy",  tr: "mutlu" }
+    // ---------- KARTLAR ----------
+    // en: İngilizcesi, ok: Türkçe harflerle okunuşu, tr: Türkçesi,
+    // ornek / ornekTr: örnek cümle ve çevirisi, tur: "kelime" ya da "cumle"
+    const KONULAR = {
+      gunluk:   "☀️ Günlük",
+      yemek:    "🍽️ Yemek",
+      is:       "💼 İş",
+      seyahat:  "✈️ Seyahat",
+      duygular: "💛 Duygular",
+      yazilim:  "💻 Yazılım"
+    };
+
+    const KARTLAR = [
+      // Günlük
+      { konu: "gunluk", tur: "kelime", en: "hello", ok: "helo", tr: "merhaba", ornek: "Hello, my name is Ali.", ornekTr: "Merhaba, benim adım Ali." },
+      { konu: "gunluk", tur: "kelime", en: "thank you", ok: "tenk yu", tr: "teşekkür ederim", ornek: "Thank you for your help.", ornekTr: "Yardımın için teşekkür ederim." },
+      { konu: "gunluk", tur: "kelime", en: "please", ok: "pliiz", tr: "lütfen", ornek: "Can I have some water, please?", ornekTr: "Biraz su alabilir miyim, lütfen?" },
+      { konu: "gunluk", tur: "kelime", en: "morning", ok: "morning", tr: "sabah", ornek: "I drink tea every morning.", ornekTr: "Her sabah çay içerim." },
+      { konu: "gunluk", tur: "kelime", en: "tomorrow", ok: "tumorou", tr: "yarın", ornek: "See you tomorrow!", ornekTr: "Yarın görüşürüz!" },
+      { konu: "gunluk", tur: "kelime", en: "always", ok: "olveyz", tr: "her zaman", ornek: "She always smiles.", ornekTr: "O her zaman gülümser." },
+      { konu: "gunluk", tur: "kelime", en: "neighbor", ok: "neybır", tr: "komşu", ornek: "My neighbor has a cat.", ornekTr: "Komşumun bir kedisi var." },
+      { konu: "gunluk", tur: "kelime", en: "weather", ok: "vedır", tr: "hava (durumu)", ornek: "The weather is nice today.", ornekTr: "Bugün hava güzel." },
+      { konu: "gunluk", tur: "cumle", en: "How are you?", ok: "hav ar yu", tr: "Nasılsın?", ornek: "I'm fine, thanks. And you?", ornekTr: "İyiyim, teşekkürler. Ya sen?" },
+      { konu: "gunluk", tur: "cumle", en: "What time is it?", ok: "vat taym iz it", tr: "Saat kaç?", ornek: "It's half past three.", ornekTr: "Saat üç buçuk." },
+      { konu: "gunluk", tur: "cumle", en: "I don't understand.", ok: "ay dont andırstend", tr: "Anlamıyorum.", ornek: "Sorry, I don't understand. Can you repeat?", ornekTr: "Pardon, anlamıyorum. Tekrar eder misin?" },
+      { konu: "gunluk", tur: "cumle", en: "Nice to meet you.", ok: "nays tu miit yu", tr: "Tanıştığıma memnun oldum.", ornek: "Nice to meet you too.", ornekTr: "Ben de memnun oldum." },
+
+      // Yemek
+      { konu: "yemek", tur: "kelime", en: "bread", ok: "bred", tr: "ekmek", ornek: "I buy fresh bread every day.", ornekTr: "Her gün taze ekmek alırım." },
+      { konu: "yemek", tur: "kelime", en: "chicken", ok: "çikın", tr: "tavuk", ornek: "We are having chicken for dinner.", ornekTr: "Akşam yemeğinde tavuk yiyoruz." },
+      { konu: "yemek", tur: "kelime", en: "vegetable", ok: "veçtıbıl", tr: "sebze", ornek: "Eat more vegetables.", ornekTr: "Daha çok sebze ye." },
+      { konu: "yemek", tur: "kelime", en: "breakfast", ok: "brekfıst", tr: "kahvaltı", ornek: "Breakfast is ready.", ornekTr: "Kahvaltı hazır." },
+      { konu: "yemek", tur: "kelime", en: "delicious", ok: "dilişıs", tr: "çok lezzetli", ornek: "This soup is delicious.", ornekTr: "Bu çorba çok lezzetli." },
+      { konu: "yemek", tur: "kelime", en: "hungry", ok: "hangri", tr: "aç", ornek: "I'm so hungry.", ornekTr: "Çok açım." },
+      { konu: "yemek", tur: "kelime", en: "spoon", ok: "spuun", tr: "kaşık", ornek: "Can I have a spoon?", ornekTr: "Bir kaşık alabilir miyim?" },
+      { konu: "yemek", tur: "kelime", en: "bill", ok: "bil", tr: "hesap", ornek: "The bill, please.", ornekTr: "Hesap, lütfen." },
+      { konu: "yemek", tur: "cumle", en: "I'd like a coffee, please.", ok: "ayd layk ı kofi, pliiz", tr: "Bir kahve rica ediyorum.", ornek: "I'd like a coffee and a cake, please.", ornekTr: "Bir kahve ve bir kek rica ediyorum." },
+      { konu: "yemek", tur: "cumle", en: "Can I see the menu?", ok: "ken ay sii dı menyu", tr: "Menüyü görebilir miyim?", ornek: "Of course, here you are.", ornekTr: "Tabii, buyurun." },
+      { konu: "yemek", tur: "cumle", en: "I'm allergic to nuts.", ok: "aym ılörcik tu nats", tr: "Kuruyemişe alerjim var.", ornek: "Does this cake have nuts? I'm allergic to nuts.", ornekTr: "Bu kekte kuruyemiş var mı? Kuruyemişe alerjim var." },
+      { konu: "yemek", tur: "cumle", en: "Enjoy your meal!", ok: "inçoy yor miil", tr: "Afiyet olsun!", ornek: "Thank you, enjoy your meal too!", ornekTr: "Teşekkürler, size de afiyet olsun!" },
+
+      // İş
+      { konu: "is", tur: "kelime", en: "meeting", ok: "miiting", tr: "toplantı", ornek: "The meeting starts at ten.", ornekTr: "Toplantı onda başlıyor." },
+      { konu: "is", tur: "kelime", en: "deadline", ok: "dedlayn", tr: "son teslim tarihi", ornek: "The deadline is Friday.", ornekTr: "Son teslim tarihi cuma." },
+      { konu: "is", tur: "kelime", en: "colleague", ok: "kaliig", tr: "iş arkadaşı", ornek: "My colleague helps me a lot.", ornekTr: "İş arkadaşım bana çok yardım ediyor." },
+      { konu: "is", tur: "kelime", en: "salary", ok: "selıri", tr: "maaş", ornek: "He asked for a higher salary.", ornekTr: "Daha yüksek bir maaş istedi." },
+      { konu: "is", tur: "kelime", en: "manager", ok: "menıcır", tr: "yönetici", ornek: "I need to talk to my manager.", ornekTr: "Yöneticimle konuşmam gerekiyor." },
+      { konu: "is", tur: "kelime", en: "schedule", ok: "skeçuul", tr: "program, takvim", ornek: "Let me check my schedule.", ornekTr: "Programıma bir bakayım." },
+      { konu: "is", tur: "kelime", en: "offer", ok: "ofır", tr: "teklif", ornek: "They made me a job offer.", ornekTr: "Bana bir iş teklifi yaptılar." },
+      { konu: "is", tur: "kelime", en: "experience", ok: "ikspiriıns", tr: "deneyim", ornek: "She has five years of experience.", ornekTr: "Beş yıllık deneyimi var." },
+      { konu: "is", tur: "cumle", en: "Let's schedule a meeting.", ok: "lets skeçuul ı miiting", tr: "Bir toplantı ayarlayalım.", ornek: "Let's schedule a meeting for Monday.", ornekTr: "Pazartesi için bir toplantı ayarlayalım." },
+      { konu: "is", tur: "cumle", en: "I'll send you an email.", ok: "ayl send yu ın iimeyl", tr: "Sana bir e-posta göndereceğim.", ornek: "I'll send you an email after lunch.", ornekTr: "Öğle yemeğinden sonra sana bir e-posta göndereceğim." },
+      { konu: "is", tur: "cumle", en: "Could you explain that again?", ok: "kud yu ikspleyn det ıgen", tr: "Bunu tekrar açıklar mısınız?", ornek: "Sorry, could you explain that again, slowly?", ornekTr: "Pardon, bunu yavaşça tekrar açıklar mısınız?" },
+      { konu: "is", tur: "cumle", en: "I'm working on it.", ok: "aym vörking on it", tr: "Üzerinde çalışıyorum.", ornek: "Is the report ready? I'm working on it.", ornekTr: "Rapor hazır mı? Üzerinde çalışıyorum." },
+
+      // Seyahat
+      { konu: "seyahat", tur: "kelime", en: "ticket", ok: "tikıt", tr: "bilet", ornek: "I bought a train ticket.", ornekTr: "Bir tren bileti aldım." },
+      { konu: "seyahat", tur: "kelime", en: "passport", ok: "pesport", tr: "pasaport", ornek: "Don't forget your passport.", ornekTr: "Pasaportunu unutma." },
+      { konu: "seyahat", tur: "kelime", en: "luggage", ok: "lagıc", tr: "bagaj", ornek: "My luggage is too heavy.", ornekTr: "Bagajım çok ağır." },
+      { konu: "seyahat", tur: "kelime", en: "airport", ok: "erport", tr: "havalimanı", ornek: "We arrived at the airport early.", ornekTr: "Havalimanına erken vardık." },
+      { konu: "seyahat", tur: "kelime", en: "reservation", ok: "rezırveyşın", tr: "rezervasyon", ornek: "I have a reservation for two nights.", ornekTr: "İki gecelik rezervasyonum var." },
+      { konu: "seyahat", tur: "kelime", en: "left", ok: "left", tr: "sol", ornek: "Turn left at the corner.", ornekTr: "Köşeden sola dön." },
+      { konu: "seyahat", tur: "kelime", en: "right", ok: "rayt", tr: "sağ", ornek: "The hotel is on the right.", ornekTr: "Otel sağda." },
+      { konu: "seyahat", tur: "kelime", en: "map", ok: "mep", tr: "harita", ornek: "Can you show me on the map?", ornekTr: "Bana haritada gösterebilir misiniz?" },
+      { konu: "seyahat", tur: "cumle", en: "Where is the train station?", ok: "ver iz dı treyn steyşın", tr: "Tren istasyonu nerede?", ornek: "Excuse me, where is the train station?", ornekTr: "Affedersiniz, tren istasyonu nerede?" },
+      { konu: "seyahat", tur: "cumle", en: "How much is this?", ok: "hav maç iz dis", tr: "Bu ne kadar?", ornek: "How much is this bag?", ornekTr: "Bu çanta ne kadar?" },
+      { konu: "seyahat", tur: "cumle", en: "I'm lost.", ok: "aym lost", tr: "Kayboldum.", ornek: "I'm lost. Can you help me?", ornekTr: "Kayboldum. Bana yardım edebilir misiniz?" },
+      { konu: "seyahat", tur: "cumle", en: "I'd like to check in.", ok: "ayd layk tu çek in", tr: "Giriş yapmak istiyorum.", ornek: "Hello, I'd like to check in. My name is Can.", ornekTr: "Merhaba, giriş yapmak istiyorum. Adım Can." },
+
+      // Duygular
+      { konu: "duygular", tur: "kelime", en: "happy", ok: "hepi", tr: "mutlu", ornek: "I'm happy to see you.", ornekTr: "Seni gördüğüme sevindim." },
+      { konu: "duygular", tur: "kelime", en: "sad", ok: "sed", tr: "üzgün", ornek: "Why are you sad?", ornekTr: "Neden üzgünsün?" },
+      { konu: "duygular", tur: "kelime", en: "angry", ok: "engri", tr: "kızgın", ornek: "He was angry with me.", ornekTr: "Bana kızgındı." },
+      { konu: "duygular", tur: "kelime", en: "tired", ok: "tayırd", tr: "yorgun", ornek: "I'm too tired to cook.", ornekTr: "Yemek yapamayacak kadar yorgunum." },
+      { konu: "duygular", tur: "kelime", en: "scared", ok: "skerd", tr: "korkmuş", ornek: "The child is scared of the dark.", ornekTr: "Çocuk karanlıktan korkuyor." },
+      { konu: "duygular", tur: "kelime", en: "excited", ok: "iksaytıd", tr: "heyecanlı", ornek: "We are excited about the trip.", ornekTr: "Yolculuk için heyecanlıyız." },
+      { konu: "duygular", tur: "kelime", en: "worried", ok: "vörid", tr: "endişeli", ornek: "Don't be worried.", ornekTr: "Endişelenme." },
+      { konu: "duygular", tur: "kelime", en: "proud", ok: "praud", tr: "gururlu", ornek: "I'm proud of you.", ornekTr: "Seninle gurur duyuyorum." },
+      { konu: "duygular", tur: "cumle", en: "I feel great today.", ok: "ay fiil greyt tudey", tr: "Bugün kendimi harika hissediyorum.", ornek: "I slept well, so I feel great today.", ornekTr: "İyi uyudum, bu yüzden bugün kendimi harika hissediyorum." },
+      { konu: "duygular", tur: "cumle", en: "What's wrong?", ok: "vats rong", tr: "Sorun ne?", ornek: "You look sad. What's wrong?", ornekTr: "Üzgün görünüyorsun. Sorun ne?" },
+      { konu: "duygular", tur: "cumle", en: "Don't worry.", ok: "dont vari", tr: "Merak etme.", ornek: "Don't worry, everything will be fine.", ornekTr: "Merak etme, her şey yoluna girecek." },
+      { konu: "duygular", tur: "cumle", en: "I miss you.", ok: "ay mis yu", tr: "Seni özledim.", ornek: "I miss you so much.", ornekTr: "Seni çok özledim." },
+
+      // Yazılım
+      { konu: "yazilim", tur: "kelime", en: "bug", ok: "bag", tr: "hata", ornek: "I found a bug in the code.", ornekTr: "Kodda bir hata buldum." },
+      { konu: "yazilim", tur: "kelime", en: "feature", ok: "fiiçır", tr: "özellik", ornek: "This app has a new feature.", ornekTr: "Bu uygulamanın yeni bir özelliği var." },
+      { konu: "yazilim", tur: "kelime", en: "database", ok: "deytıbeys", tr: "veritabanı", ornek: "The data is saved in the database.", ornekTr: "Veriler veritabanına kaydediliyor." },
+      { konu: "yazilim", tur: "kelime", en: "deploy", ok: "diploy", tr: "yayına almak", ornek: "We deploy every Friday.", ornekTr: "Her cuma yayına alıyoruz." },
+      { konu: "yazilim", tur: "kelime", en: "release", ok: "riliis", tr: "sürüm", ornek: "The new release is ready.", ornekTr: "Yeni sürüm hazır." },
+      { konu: "yazilim", tur: "kelime", en: "branch", ok: "brenç", tr: "dal (branch)", ornek: "Create a new branch for this change.", ornekTr: "Bu değişiklik için yeni bir dal oluştur." },
+      { konu: "yazilim", tur: "kelime", en: "requirement", ok: "rikvayırmınt", tr: "gereksinim", ornek: "Let's review the requirements.", ornekTr: "Gereksinimleri gözden geçirelim." },
+      { konu: "yazilim", tur: "kelime", en: "test", ok: "test", tr: "test etmek", ornek: "Please test it on your phone.", ornekTr: "Lütfen telefonunda test et." },
+      { konu: "yazilim", tur: "cumle", en: "It works on my machine.", ok: "it vörks on may mışiin", tr: "Benim bilgisayarımda çalışıyor.", ornek: "Strange, it works on my machine.", ornekTr: "Garip, benim bilgisayarımda çalışıyor." },
+      { konu: "yazilim", tur: "cumle", en: "Can you review my code?", ok: "ken yu rivyu may koud", tr: "Kodumu inceleyebilir misin?", ornek: "I opened a pull request. Can you review my code?", ornekTr: "Bir pull request açtım. Kodumu inceleyebilir misin?" },
+      { konu: "yazilim", tur: "cumle", en: "The build is failing.", ok: "dı bild iz feyling", tr: "Derleme başarısız oluyor.", ornek: "The build is failing after the last commit.", ornekTr: "Son commit'ten sonra derleme başarısız oluyor." },
+      { konu: "yazilim", tur: "cumle", en: "Let's fix this bug.", ok: "lets fiks dis bag", tr: "Bu hatayı düzeltelim.", ornek: "Let's fix this bug before the release.", ornekTr: "Sürümden önce bu hatayı düzeltelim." }
     ];
 
-    // Kartları koyacağımız kutuyu buluyoruz
-    const kutu = document.getElementById("kartlar");
+    // ---------- AYARLAR ----------
+    const GUNLUK_HEDEF = 20;
+    const DAKIKA = 60 * 1000;
+    const GUN = 24 * 60 * DAKIKA;
+    // Kutu numarasına göre "Biliyorum" sonrası bekleme süresi (gün)
+    const ARALIKLAR = [0, 1, 3, 7, 14, 30];
+    const OGRENILDI_KUTUSU = 3;
+    const KAYIT_ANAHTARI = "ingilizce-kartlar-v1";
 
-    // Listedeki her kelime için bir kart oluşturuyoruz
-    kelimeler.forEach(function (kelime) {
-      // Kartı bir buton olarak yapıyoruz (dokunma ve klavye ile çalışır)
-      const kart = document.createElement("button");
-      kart.className = "kart";
-      kart.textContent = kelime.en; // Başta İngilizce kelime yazar
+    // ---------- KAYIT (telefonun tarayıcısında saklanır) ----------
+    function bosIlerleme() {
+      return {
+        kartlar: {},                       // { "hello": { kutu, vade, dogru, yanlis } }
+        gunluk: { tarih: "", sayi: 0 },    // bugün çalışılan kart sayısı
+        seri: { gun: 0, sonGun: "" },      // hedefin tamamlandığı ardışık günler
+        ayarlar: { konular: [], tur: "hepsi", otoSes: false }
+      };
+    }
 
-      // Karta dokunulunca (tıklanınca) çalışacak kod
-      kart.addEventListener("click", function () {
-        // "cevrildi" sınıfını ekle/çıkar: kart her dokunuşta ters döner
-        const cevrildiMi = kart.classList.toggle("cevrildi");
-        // Çevrildiyse Türkçesini, değilse İngilizcesini göster
-        kart.textContent = cevrildiMi ? kelime.tr : kelime.en;
+    function yukle() {
+      try {
+        const veri = JSON.parse(localStorage.getItem(KAYIT_ANAHTARI));
+        if (veri && veri.kartlar) return Object.assign(bosIlerleme(), veri);
+      } catch (e) { /* kayıt okunamazsa sıfırdan başla */ }
+      return bosIlerleme();
+    }
+
+    function kaydet() {
+      try { localStorage.setItem(KAYIT_ANAHTARI, JSON.stringify(ilerleme)); } catch (e) { /* gizli sekmede kayıt olmayabilir */ }
+    }
+
+    let ilerleme = yukle();
+
+    // Tarihi telefonun saatine göre "2026-10-29" biçiminde verir
+    function tarihAnahtari(zaman) {
+      const t = new Date(zaman);
+      return t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+    }
+    const bugun = () => tarihAnahtari(Date.now());
+    const dun = () => tarihAnahtari(Date.now() - GUN);
+
+    function bugunSayisi() {
+      return ilerleme.gunluk.tarih === bugun() ? ilerleme.gunluk.sayi : 0;
+    }
+
+    function guncelSeri() {
+      const s = ilerleme.seri;
+      return (s.sonGun === bugun() || s.sonGun === dun()) ? s.gun : 0;
+    }
+
+    // ---------- KART SEÇME (tekrar sistemi) ----------
+    let simdikiKart = null;
+    let sonGosterilenler = []; // aynı kart hemen arka arkaya gelmesin diye
+
+    function filtreliKartlar() {
+      const { konular, tur } = ilerleme.ayarlar;
+      return KARTLAR.filter(k =>
+        (konular.length === 0 || konular.includes(k.konu)) &&
+        (tur === "hepsi" || k.tur === tur)
+      );
+    }
+
+    function rastgele(liste) {
+      return liste[Math.floor(Math.random() * liste.length)];
+    }
+
+    function siradakiKart() {
+      const havuz = filtreliKartlar();
+      if (havuz.length === 0) return null;
+
+      // Son gösterilen birkaç kartı, başka seçenek varsa atla
+      const atla = sonGosterilenler.slice(-Math.min(3, havuz.length - 1));
+      const uygun = havuz.filter(k => !atla.includes(k.en));
+      const simdi = Date.now();
+
+      // 1) Zamanı gelmiş tekrarlar: en düşük kutudakiler (en az bilinenler) önce
+      const vadeli = uygun.filter(k => ilerleme.kartlar[k.en] && ilerleme.kartlar[k.en].vade <= simdi);
+      if (vadeli.length) {
+        const enDusuk = Math.min(...vadeli.map(k => ilerleme.kartlar[k.en].kutu));
+        return rastgele(vadeli.filter(k => ilerleme.kartlar[k.en].kutu === enDusuk));
+      }
+
+      // 2) Hiç görülmemiş yeni kartlar
+      const yeniler = uygun.filter(k => !ilerleme.kartlar[k.en]);
+      if (yeniler.length) return rastgele(yeniler);
+
+      // 3) Hepsi çalışıldıysa serbest tekrar: zayıf kartlar daha çok çıkar
+      let toplam = 0;
+      const agirliklar = uygun.map(k => {
+        const d = ilerleme.kartlar[k.en];
+        const a = (6 - d.kutu) + d.yanlis;
+        toplam += a;
+        return a;
+      });
+      let r = Math.random() * toplam;
+      for (let i = 0; i < uygun.length; i++) {
+        r -= agirliklar[i];
+        if (r <= 0) return uygun[i];
+      }
+      return uygun[uygun.length - 1];
+    }
+
+    function cevapla(cevap) {
+      if (!simdikiKart) return;
+      const simdi = Date.now();
+      const d = ilerleme.kartlar[simdikiKart.en] || { kutu: 0, vade: 0, dogru: 0, yanlis: 0 };
+
+      if (cevap === "bilmiyorum") {
+        d.kutu = 0;
+        d.vade = simdi;                 // hemen tekrar sırasına girer
+        d.yanlis++;
+      } else if (cevap === "zor") {
+        d.kutu = Math.max(1, d.kutu - 1);
+        d.vade = simdi + 10 * DAKIKA;
+        d.yanlis++;
+      } else {
+        d.kutu = Math.min(ARALIKLAR.length - 1, d.kutu + 1);
+        d.vade = simdi + ARALIKLAR[d.kutu] * GUN;
+        d.dogru++;
+      }
+      ilerleme.kartlar[simdikiKart.en] = d;
+
+      // Günlük sayaç ve seri
+      if (ilerleme.gunluk.tarih !== bugun()) ilerleme.gunluk = { tarih: bugun(), sayi: 0 };
+      ilerleme.gunluk.sayi++;
+      if (ilerleme.gunluk.sayi === GUNLUK_HEDEF && ilerleme.seri.sonGun !== bugun()) {
+        ilerleme.seri.gun = ilerleme.seri.sonGun === dun() ? ilerleme.seri.gun + 1 : 1;
+        ilerleme.seri.sonGun = bugun();
+        bildir("🎉 Bugünkü 20 kartı tamamladın! Seri: " + ilerleme.seri.gun + " gün");
+      }
+
+      kaydet();
+      yeniKartGoster();
+    }
+
+    // ---------- SES ----------
+    const sesVar = "speechSynthesis" in window;
+    let ingilizceSes = null;
+
+    function sesSec() {
+      const sesler = speechSynthesis.getVoices().filter(s => s.lang && s.lang.toLowerCase().startsWith("en"));
+      ingilizceSes = sesler.find(s => s.lang === "en-US" && s.localService) ||
+                     sesler.find(s => s.lang === "en-US") ||
+                     sesler.find(s => s.lang === "en-GB") ||
+                     sesler[0] || null;
+    }
+
+    function seslendir(metin, yavas) {
+      if (!sesVar) return;
+      speechSynthesis.cancel();
+      const konusma = new SpeechSynthesisUtterance(metin);
+      konusma.lang = ingilizceSes ? ingilizceSes.lang : "en-US";
+      if (ingilizceSes) konusma.voice = ingilizceSes;
+      konusma.rate = yavas ? 0.6 : 0.95;
+      speechSynthesis.speak(konusma);
+    }
+
+    if (sesVar) {
+      sesSec();
+      speechSynthesis.onvoiceschanged = sesSec;
+    } else {
+      document.querySelectorAll(".ses").forEach(b => b.hidden = true);
+      document.querySelector(".oto-ses").hidden = true;
+    }
+
+    // ---------- EKRANA ÇİZME ----------
+    const $ = id => document.getElementById(id);
+    const kartEl = $("kart");
+
+    function gunYazisi(gun) {
+      if (gun === 1) return "yarın";
+      if (gun === 7) return "1 hafta sonra";
+      if (gun === 30) return "1 ay sonra";
+      return gun + " gün sonra";
+    }
+
+    function yeniKartGoster() {
+      simdikiKart = siradakiKart();
+      kartEl.classList.remove("cevrildi");
+      $("cevaplar").hidden = true;
+
+      const bos = !simdikiKart;
+      $("bosMesaj").hidden = !bos;
+      kartEl.hidden = bos;
+      $("gosterButon").hidden = bos;
+      hedefiGuncelle();
+      if (bos) return;
+
+      const k = simdikiKart;
+      sonGosterilenler.push(k.en);
+      if (sonGosterilenler.length > 5) sonGosterilenler.shift();
+
+      const d = ilerleme.kartlar[k.en];
+      $("etiketKonu").textContent = KONULAR[k.konu] + " · " + (k.tur === "kelime" ? "Kelime" : "Cümle");
+      $("etiketDurum").textContent = d ? "Tekrar · kutu " + d.kutu : "Yeni";
+      $("etiketDurum").className = "etiket" + (d ? "" : " yeni");
+
+      $("onIngilizce").textContent = k.en;
+      $("onIngilizce").classList.toggle("uzun", k.en.length > 16);
+      $("onOkunus").textContent = "[ " + k.ok + " ]";
+      $("arkaTurkce").textContent = k.tr;
+      $("arkaIngilizce").textContent = k.en + "  ·  " + k.ok;
+      $("ornekEn").textContent = k.ornek;
+      $("ornekTr").textContent = k.ornekTr;
+
+      const sonrakiKutu = Math.min(ARALIKLAR.length - 1, (d ? d.kutu : 0) + 1);
+      $("biliyorumSure").textContent = gunYazisi(ARALIKLAR[sonrakiKutu]);
+
+      if (ilerleme.ayarlar.otoSes) seslendir(k.en);
+    }
+
+    function kartiCevir() {
+      if (!simdikiKart) return;
+      const cevrildi = kartEl.classList.toggle("cevrildi");
+      // Cevap butonları kart ilk çevrildiğinde açılır
+      if (cevrildi) {
+        $("gosterButon").hidden = true;
+        $("cevaplar").hidden = false;
+      }
+    }
+
+    function hedefiGuncelle() {
+      const sayi = bugunSayisi();
+      $("hedefSayi").textContent = sayi;
+      $("hedefToplam").textContent = GUNLUK_HEDEF;
+      $("hedefCubuk").style.width = Math.min(100, sayi / GUNLUK_HEDEF * 100) + "%";
+      const seri = guncelSeri();
+      $("seri").textContent = "🔥 " + seri + " gün";
+    }
+
+    function konulariCiz() {
+      const kutu = $("konular");
+      kutu.innerHTML = "";
+      const secili = ilerleme.ayarlar.konular;
+
+      const tumu = document.createElement("button");
+      tumu.className = "cip" + (secili.length === 0 ? " secili" : "");
+      tumu.textContent = "🌍 Tümü";
+      tumu.onclick = () => { ilerleme.ayarlar.konular = []; secimDegisti(); };
+      kutu.appendChild(tumu);
+
+      // Birden fazla konu seçilebilir
+      Object.keys(KONULAR).forEach(anahtar => {
+        const cip = document.createElement("button");
+        cip.className = "cip" + (secili.includes(anahtar) ? " secili" : "");
+        cip.textContent = KONULAR[anahtar];
+        cip.onclick = () => {
+          const liste = ilerleme.ayarlar.konular;
+          const yer = liste.indexOf(anahtar);
+          if (yer >= 0) liste.splice(yer, 1); else liste.push(anahtar);
+          if (liste.length === Object.keys(KONULAR).length) liste.length = 0;
+          secimDegisti();
+        };
+        kutu.appendChild(cip);
+      });
+    }
+
+    function turSeciminiCiz() {
+      document.querySelectorAll("#turSecim button").forEach(b =>
+        b.classList.toggle("secili", b.dataset.tur === ilerleme.ayarlar.tur));
+    }
+
+    function secimDegisti() {
+      kaydet();
+      konulariCiz();
+      turSeciminiCiz();
+      sonGosterilenler = [];
+      yeniKartGoster();
+    }
+
+    function ilerlemeyiCiz() {
+      const tumDurumlar = KARTLAR.map(k => ilerleme.kartlar[k.en]);
+      $("istOgrenilen").textContent = tumDurumlar.filter(d => d && d.kutu >= OGRENILDI_KUTUSU).length;
+      $("istCalisilan").textContent = tumDurumlar.filter(Boolean).length;
+      $("istToplam").textContent = KARTLAR.length;
+
+      // Konu başına öğrenilen kart oranı
+      const kutu = $("konuIlerleme");
+      kutu.innerHTML = "";
+      Object.keys(KONULAR).forEach(anahtar => {
+        const kartlar = KARTLAR.filter(k => k.konu === anahtar);
+        const ogrenilen = kartlar.filter(k => (ilerleme.kartlar[k.en] || {}).kutu >= OGRENILDI_KUTUSU).length;
+        const satir = document.createElement("div");
+        satir.className = "konu-satiri";
+        satir.innerHTML =
+          '<div class="hedef-yazi"><span></span><span><b>' + ogrenilen + "</b> / " + kartlar.length + "</span></div>" +
+          '<div class="cubuk"><div class="cubuk-dolu" style="width:' + (ogrenilen / kartlar.length * 100) + '%"></div></div>';
+        satir.querySelector("span").textContent = KONULAR[anahtar];
+        kutu.appendChild(satir);
       });
 
-      // Hazırlanan kartı sayfadaki kutuya ekliyoruz
-      kutu.appendChild(kart);
+      // En çok "bilmiyorum / zor" denen kartlar
+      const zorlar = KARTLAR
+        .filter(k => ilerleme.kartlar[k.en] && ilerleme.kartlar[k.en].yanlis > 0)
+        .sort((a, b) => ilerleme.kartlar[b.en].yanlis - ilerleme.kartlar[a.en].yanlis)
+        .slice(0, 8);
+      const liste = $("zorListe");
+      liste.innerHTML = "";
+      if (zorlar.length === 0) {
+        liste.innerHTML = '<li><span style="text-align:left">Henüz zorlandığın kart yok 👍</span></li>';
+      }
+      zorlar.forEach(k => {
+        const li = document.createElement("li");
+        const sol = document.createElement("b");
+        const sag = document.createElement("span");
+        sol.textContent = k.en;
+        sag.textContent = k.tr + " · " + ilerleme.kartlar[k.en].yanlis + " kez";
+        li.append(sol, sag);
+        liste.appendChild(li);
+      });
+    }
+
+    function sekmeAc(ad) {
+      const calis = ad === "calis";
+      $("ekranCalis").hidden = !calis;
+      $("ekranIlerleme").hidden = calis;
+      $("sekmeCalis").classList.toggle("secili", calis);
+      $("sekmeIlerleme").classList.toggle("secili", !calis);
+      if (!calis) ilerlemeyiCiz();
+    }
+
+    let bildirimZamani;
+    function bildir(mesaj) {
+      const el = $("bildirim");
+      el.textContent = mesaj;
+      el.classList.add("gorunur");
+      clearTimeout(bildirimZamani);
+      bildirimZamani = setTimeout(() => el.classList.remove("gorunur"), 3500);
+    }
+
+    // ---------- DOKUNMA / TIKLAMA ----------
+    kartEl.addEventListener("click", kartiCevir);
+    $("gosterButon").addEventListener("click", kartiCevir);
+
+    // Kartın içindeki ses butonları kartı çevirmesin
+    document.querySelectorAll(".ses").forEach(b => b.addEventListener("click", e => {
+      e.stopPropagation();
+      if (!simdikiKart) return;
+      const tur = b.dataset.ses;
+      seslendir(tur === "ornek" ? simdikiKart.ornek : simdikiKart.en, tur === "yavas");
+    }));
+
+    document.querySelectorAll(".cevap").forEach(b =>
+      b.addEventListener("click", () => cevapla(b.dataset.cevap)));
+
+    document.querySelectorAll("#turSecim button").forEach(b =>
+      b.addEventListener("click", () => { ilerleme.ayarlar.tur = b.dataset.tur; secimDegisti(); }));
+
+    $("otoSes").checked = ilerleme.ayarlar.otoSes;
+    $("otoSes").addEventListener("change", e => { ilerleme.ayarlar.otoSes = e.target.checked; kaydet(); });
+
+    $("sekmeCalis").addEventListener("click", () => sekmeAc("calis"));
+    $("sekmeIlerleme").addEventListener("click", () => sekmeAc("ilerleme"));
+
+    $("sifirla").addEventListener("click", () => {
+      if (!confirm("Tüm ilerlemen silinecek. Emin misin?")) return;
+      ilerleme = bosIlerleme();
+      kaydet();
+      $("otoSes").checked = false;
+      secimDegisti();
+      ilerlemeyiCiz();
+      bildir("İlerleme sıfırlandı");
     });
+
+    // Bilgisayarda klavye: Boşluk = çevir, 1/2/3 = Bilmiyorum/Zor/Biliyorum, S = dinle
+    document.addEventListener("keydown", e => {
+      if ($("ekranCalis").hidden || e.target.tagName === "INPUT") return;
+      if (e.key === " " || e.key === "Enter") {
+        if (e.target.tagName === "BUTTON" && e.target !== kartEl) return;
+        e.preventDefault();
+        kartiCevir();
+      } else if (!$("cevaplar").hidden && ["1", "2", "3"].includes(e.key)) {
+        cevapla(["bilmiyorum", "zor", "biliyorum"][Number(e.key) - 1]);
+      } else if (e.key.toLowerCase() === "s" && simdikiKart) {
+        seslendir(simdikiKart.en);
+      }
+    });
+
+    // ---------- BAŞLAT ----------
+    konulariCiz();
+    turSeciminiCiz();
+    yeniKartGoster();
   </script>
 </body>
 </html>
