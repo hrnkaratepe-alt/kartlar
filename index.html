@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- Türkçe karakterlerin (ç, ğ, ı, ö, ş, ü) doğru görünmesi için -->
+  <meta charset="UTF-8">
+  <!-- Sayfanın telefonda da düzgün görünmesi için -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İngilizce Kelime Kartları</title>
+
+  <style>
+    /* Sayfanın genel görünümü */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #222;
+    }
+
+    /* Kartları yan yana dizen kutu; sığmazsa alt satıra geçer */
+    .kartlar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Tek bir kartın görünümü */
+    .kart {
+      width: 140px;
+      height: 100px;
+      background: #4a90d9;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer; /* Fare kartın üstüne gelince el işareti çıkar */
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Kart çevrilince (Türkçesi görünürken) rengi yeşil olur */
+    .kart.cevrildi {
+      background: #2e9e5b;
+    }
+  </style>
+</head>
+<body>
+  <h1>İngilizce Kelime Kartları</h1>
+  <p>Bir karta dokun, Türkçesini gör. Tekrar dokun, İngilizcesine dön.</p>
+
+  <!-- Kartlar JavaScript ile bu kutunun içine eklenecek -->
+  <div class="kartlar" id="kartlar"></div>
+
+  <script>
+    // 10 kelimelik listemiz: her satırda İngilizcesi (en) ve Türkçesi (tr) var
+    const kelimeler = [
+      { en: "apple",  tr: "elma" },
+      { en: "book",   tr: "kitap" },
+      { en: "house",  tr: "ev" },
+      { en: "water",  tr: "su" },
+      { en: "cat",    tr: "kedi" },
+      { en: "dog",    tr: "köpek" },
+      { en: "friend", tr: "arkadaş" },
+      { en: "school", tr: "okul" },
+      { en: "sun",    tr: "güneş" },
+      { en: "happy",  tr: "mutlu" }
+    ];
+
+    // Kartları koyacağımız kutuyu buluyoruz
+    const kutu = document.getElementById("kartlar");
+
+    // Listedeki her kelime için bir kart oluşturuyoruz
+    kelimeler.forEach(function (kelime) {
+      // Kartı bir buton olarak yapıyoruz (dokunma ve klavye ile çalışır)
+      const kart = document.createElement("button");
+      kart.className = "kart";
+      kart.textContent = kelime.en; // Başta İngilizce kelime yazar
+
+      // Karta dokunulunca (tıklanınca) çalışacak kod
+      kart.addEventListener("click", function () {
+        // "cevrildi" sınıfını ekle/çıkar: kart her dokunuşta ters döner
+        const cevrildiMi = kart.classList.toggle("cevrildi");
+        // Çevrildiyse Türkçesini, değilse İngilizcesini göster
+        kart.textContent = cevrildiMi ? kelime.tr : kelime.en;
+      });
+
+      // Hazırlanan kartı sayfadaki kutuya ekliyoruz
+      kutu.appendChild(kart);
+    });
+  </script>
+</body>
+</html>
