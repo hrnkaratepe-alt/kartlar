@@ -23,8 +23,10 @@
       --ana: #4a6cf7;
       --ana-acik: #e6ebff;
       --yesil: #22a35a;
+      --yesil-acik: #e3f6ea;
       --turuncu: #e8920c;
       --kirmizi: #e04848;
+      --kirmizi-acik: #fde8e8;
       --golge: 0 10px 30px rgba(30, 45, 90, 0.12);
     }
     @media (prefers-color-scheme: dark) {
@@ -36,6 +38,8 @@
         --cizgi: #2c3446;
         --ana: #7b93ff;
         --ana-acik: #26304d;
+        --yesil-acik: #183a28;
+        --kirmizi-acik: #45201f;
         --golge: 0 10px 30px rgba(0, 0, 0, 0.4);
       }
     }
@@ -81,10 +85,30 @@
       white-space: nowrap;
     }
 
-    /* Çalış / İlerleme sekmeleri */
+    /* Seviye seçimi: A1 · A2 · B1 · B2 · C1 */
+    .seviyeler {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .seviye {
+      border: 1.5px solid var(--cizgi);
+      background: var(--yuzey);
+      border-radius: 12px;
+      padding: 6px 2px;
+      line-height: 1.2;
+    }
+    .seviye b { display: block; font-size: 16px; }
+    .seviye span { font-size: 11px; color: var(--soluk); }
+    .seviye.secili { border-color: var(--ana); background: var(--ana-acik); color: var(--ana); }
+    .seviye.secili span { color: var(--ana); }
+    .seviye:disabled { opacity: 0.45; cursor: default; }
+
+    /* Kelimeler / Cümleler / Dilbilgisi / İlerleme sekmeleri */
     .sekmeler {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       background: var(--yuzey);
       border-radius: 12px;
       padding: 4px;
@@ -94,11 +118,14 @@
     .sekmeler button {
       border: none;
       background: none;
-      padding: 10px;
+      padding: 8px 2px;
       border-radius: 9px;
       font-weight: 600;
+      font-size: 13px;
       color: var(--soluk);
+      line-height: 1.25;
     }
+    .sekmeler button span { display: block; font-size: 18px; }
     .sekmeler button.secili { background: var(--ana); color: #fff; }
 
     /* Günlük hedef çubuğu */
@@ -123,6 +150,37 @@
       background: linear-gradient(90deg, var(--ana), var(--yesil));
       border-radius: 999px;
       transition: width 0.4s;
+    }
+
+    /* Sonraki seviye önerisi */
+    .oneri {
+      background: var(--yesil-acik);
+      border: 1.5px solid var(--yesil);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.45;
+      position: relative;
+    }
+    .oneri p { margin: 0 24px 8px 0; }
+    .oneri .gec {
+      border: none;
+      background: var(--yesil);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 8px 14px;
+    }
+    .oneri .kapat {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      border: none;
+      background: none;
+      font-size: 18px;
+      color: var(--soluk);
+      padding: 4px 8px;
     }
 
     /* Konu seçimi: yana kaydırılabilen çipler */
@@ -153,7 +211,7 @@
       font-weight: 600;
     }
 
-    /* Kelime / Cümle seçimi ve otomatik ses */
+    /* Öğrenme özeti ve otomatik ses */
     .ayar-satiri {
       display: flex;
       align-items: center;
@@ -161,23 +219,9 @@
       gap: 8px;
       margin: 4px 0 14px;
     }
-    .tur-secim {
-      display: flex;
-      background: var(--yuzey);
-      border-radius: 10px;
-      padding: 3px;
-      border: 1px solid var(--cizgi);
-    }
-    .tur-secim button {
-      border: none;
-      background: none;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-      color: var(--soluk);
-    }
-    .tur-secim button.secili { background: var(--ana-acik); color: var(--ana); font-weight: 600; }
-    .oto-ses { font-size: 14px; color: var(--soluk); display: flex; align-items: center; gap: 6px; }
+    .ozet { font-size: 13px; color: var(--soluk); }
+    .ozet b { color: var(--yazi); }
+    .oto-ses { font-size: 14px; color: var(--soluk); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
     .oto-ses input { width: 18px; height: 18px; accent-color: var(--ana); }
 
     /* ---------- Kart (dokununca 3B dönen) ---------- */
@@ -218,17 +262,20 @@
       right: 14px;
       display: flex;
       justify-content: space-between;
+      gap: 8px;
       font-size: 12px;
       color: var(--soluk);
     }
-    .etiket { background: var(--arka); padding: 4px 8px; border-radius: 999px; }
-    .etiket.yeni { background: var(--ana-acik); color: var(--ana); font-weight: 600; }
+    .etiket { background: var(--arka); padding: 4px 8px; border-radius: 999px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .etiket.yeni { background: var(--ana-acik); color: var(--ana); font-weight: 600; flex: none; }
 
     .ingilizce { font-size: 34px; font-weight: 700; line-height: 1.2; word-break: break-word; }
     .ingilizce.uzun { font-size: 26px; }
+    .ingilizce.cok-uzun { font-size: 21px; }
     .okunus { font-size: 18px; color: var(--ana); font-style: italic; }
     .ipucu { font-size: 13px; color: var(--soluk); margin-top: 6px; }
     .turkce { font-size: 30px; font-weight: 700; color: var(--yesil); line-height: 1.2; }
+    .turkce.uzun { font-size: 22px; }
     .kucuk-en { font-size: 15px; color: var(--soluk); }
 
     .ornek {
@@ -272,7 +319,7 @@
       line-height: 1.25;
     }
     .cevap small { display: block; font-weight: 400; font-size: 11px; opacity: 0.9; }
-    .cevap:active, .ses:active, .goster:active { transform: scale(0.97); }
+    .cevap:active, .ses:active, .goster:active, .secenek:active { transform: scale(0.97); }
     .bilmiyorum { background: var(--kirmizi); }
     .zor { background: var(--turuncu); }
     .biliyorum { background: var(--yesil); }
@@ -295,6 +342,91 @@
       background: var(--yuzey);
       border-radius: 22px;
       box-shadow: var(--golge);
+      line-height: 1.5;
+    }
+    .bos code { background: var(--arka); padding: 2px 6px; border-radius: 6px; }
+
+    /* ---------- Dilbilgisi ---------- */
+    .ders-liste { display: flex; flex-direction: column; gap: 10px; }
+    .ders-oge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      border: none;
+      background: var(--yuzey);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: var(--golge);
+    }
+    .ders-no {
+      flex: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--ana-acik);
+      color: var(--ana);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .ders-oge.tamam .ders-no { background: var(--yesil); color: #fff; }
+    .ders-metin { flex: 1; min-width: 0; }
+    .ders-metin b { display: block; font-size: 15px; }
+    .ders-metin span { display: block; font-size: 13px; color: var(--soluk); margin-top: 2px; }
+    .ders-puan { flex: none; font-size: 12px; color: var(--soluk); }
+
+    .geri {
+      align-self: flex-start;
+      border: none;
+      background: none;
+      color: var(--ana);
+      font-weight: 600;
+      padding: 4px 0 10px;
+    }
+    .ders-detay h2 { font-size: 22px; margin: 0 0 4px; }
+    .ders-detay .alt { color: var(--soluk); font-size: 14px; margin: 0 0 14px; }
+    .ders-detay h3 { font-size: 15px; margin: 0 0 10px; }
+    .ders-detay p { line-height: 1.55; font-size: 15px; margin: 0 0 10px; }
+    .kalip-liste { list-style: none; margin: 0; padding: 0; }
+    .kalip-liste li {
+      background: var(--arka);
+      border-left: 3px solid var(--ana);
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .ornek-satiri { padding: 8px 0; border-bottom: 1px solid var(--cizgi); }
+    .ornek-satiri:last-child { border-bottom: none; }
+    .ornek-satiri .ornek-en { font-size: 15px; }
+    .soru { padding: 12px 0; border-bottom: 1px solid var(--cizgi); }
+    .soru:last-of-type { border-bottom: none; }
+    .soru-metin { font-weight: 600; margin-bottom: 8px; font-size: 15px; }
+    .soru-metin .bosluk { color: var(--ana); }
+    .secenekler { display: flex; flex-wrap: wrap; gap: 8px; }
+    .secenek {
+      border: 1.5px solid var(--cizgi);
+      background: var(--yuzey);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 14px;
+      text-align: left;
+    }
+    .secenek:disabled { cursor: default; }
+    .secenek.dogru { border-color: var(--yesil); background: var(--yesil-acik); color: var(--yesil); font-weight: 600; }
+    .secenek.yanlis { border-color: var(--kirmizi); background: var(--kirmizi-acik); color: var(--kirmizi); }
+    .soru-aciklama { font-size: 13px; color: var(--soluk); margin-top: 8px; line-height: 1.45; }
+    .sonuc { text-align: center; padding-top: 12px; }
+    .sonuc b { display: block; font-size: 20px; margin-bottom: 8px; }
+    .ikincil {
+      border: 1.5px solid var(--ana);
+      color: var(--ana);
+      background: none;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-weight: 600;
     }
 
     /* ---------- İlerleme ekranı ---------- */
@@ -346,7 +478,7 @@
       font-weight: 600;
     }
 
-    /* Hedefe ulaşınca çıkan kısa mesaj */
+    /* Kısa bildirim mesajı */
     .bildirim {
       position: fixed;
       left: 50%;
@@ -406,12 +538,17 @@
       <div class="seri" id="seri" title="Günlük hedefi üst üste tamamladığın gün sayısı">🔥 0 gün</div>
     </div>
 
+    <!-- Seviye seçimi: yüzdeler o seviyede öğrenilen kelime oranı -->
+    <div class="seviyeler" id="seviyeler"></div>
+
     <div class="sekmeler">
-      <button id="sekmeCalis" class="secili">📚 Çalış</button>
-      <button id="sekmeIlerleme">📊 İlerleme</button>
+      <button data-sekme="kelime"><span>📚</span>Kelimeler</button>
+      <button data-sekme="cumle"><span>💬</span>Cümleler</button>
+      <button data-sekme="dilbilgisi"><span>📖</span>Dilbilgisi</button>
+      <button data-sekme="ilerleme"><span>📊</span>İlerleme</button>
     </div>
 
-    <!-- Günlük hedef: her iki ekranda da görünür -->
+    <!-- Günlük hedef: her ekranda görünür -->
     <div class="hedef">
       <div class="hedef-yazi">
         <span>Günlük hedef</span>
@@ -420,16 +557,21 @@
       <div class="cubuk"><div class="cubuk-dolu" id="hedefCubuk"></div></div>
     </div>
 
-    <!-- ========== ÇALIŞ EKRANI ========== -->
-    <main id="ekranCalis" class="sahne">
+    <!-- Seviyenin çoğu öğrenilince çıkan öneri -->
+    <div class="oneri" id="oneri" hidden>
+      <button class="kapat" id="oneriKapat" aria-label="Öneriyi kapat">×</button>
+      <p id="oneriYazi"></p>
+      <button class="gec" id="oneriGec"></button>
+    </div>
+
+    <div id="yukleniyor" class="bos">Yükleniyor…</div>
+
+    <!-- ========== KART EKRANI (Kelimeler ve Cümleler) ========== -->
+    <main id="ekranKart" class="sahne" hidden>
       <div class="konular" id="konular"></div>
 
       <div class="ayar-satiri">
-        <div class="tur-secim" id="turSecim">
-          <button data-tur="hepsi">Hepsi</button>
-          <button data-tur="kelime">Kelime</button>
-          <button data-tur="cumle">Cümle</button>
-        </div>
+        <div class="ozet" id="ozet"></div>
         <label class="oto-ses"><input type="checkbox" id="otoSes"> Otomatik oku</label>
       </div>
 
@@ -455,8 +597,8 @@
         <div class="yuz arka-yuz">
           <div class="turkce" id="arkaTurkce"></div>
           <div class="kucuk-en"><span id="arkaIngilizce"></span>  ·  <span id="arkaOkunus"></span></div>
-          <div class="ornek">
-            <div class="ornek-baslik">Örnek cümle</div>
+          <div class="ornek" id="ornekKutu">
+            <div class="ornek-baslik" id="ornekBaslik">Örnek cümle</div>
             <div class="ornek-en">
               <span id="ornekEn"></span>
               <button class="ses mini" data-ses="ornek" aria-label="Örnek cümleyi dinle">🔊</button>
@@ -474,17 +616,28 @@
       </div>
     </main>
 
+    <!-- ========== DİLBİLGİSİ EKRANI ========== -->
+    <section id="ekranDilbilgisi" hidden>
+      <div class="ders-liste" id="dersListe"></div>
+      <div class="ders-detay" id="dersDetay" hidden></div>
+    </section>
+
     <!-- ========== İLERLEME EKRANI ========== -->
     <section id="ekranIlerleme" hidden>
       <div class="kutucuklar">
         <div class="kutucuk"><b id="istOgrenilen">0</b><span>öğrenildi</span></div>
         <div class="kutucuk"><b id="istCalisilan">0</b><span>çalışıldı</span></div>
-        <div class="kutucuk"><b id="istToplam">0</b><span>toplam kart</span></div>
+        <div class="kutucuk"><b id="istToplam">0</b><span id="istToplamYazi">kart</span></div>
       </div>
 
       <div class="panel">
-        <h2>Konulara göre</h2>
-        <div id="konuIlerleme"></div>
+        <h2>Seviyelere göre öğrenilen kelimeler</h2>
+        <div id="seviyeIlerleme"></div>
+      </div>
+
+      <div class="panel">
+        <h2 id="altBaslik">Bu seviyede</h2>
+        <div id="bolumIlerleme"></div>
       </div>
 
       <div class="panel">
@@ -500,6 +653,7 @@
           “Biliyorum” dedikçe kart bir üst kutuya çıkar ve araları açılır:
           1 gün → 3 gün → 1 hafta → 2 hafta → 1 ay.
           3. kutuya ulaşan kartlar “öğrenildi” sayılır.
+          Bir seviyedeki kelimelerin %80'ini öğrenince sonraki seviye önerilir.
           İlerlemen bu telefonda (tarayıcıda) kaydedilir.
         </p>
       </div>
@@ -521,106 +675,19 @@
   </div>
 
   <script>
-    // ---------- KARTLAR ----------
-    // en: İngilizcesi, ok: Türkçe harflerle okunuşu, tr: Türkçesi,
-    // ornek / ornekTr: örnek cümle ve çevirisi, tur: "kelime" ya da "cumle"
-    const KONULAR = {
-      gunluk:   "☀️ Günlük",
-      yemek:    "🍽️ Yemek",
-      is:       "💼 İş",
-      seyahat:  "✈️ Seyahat",
-      duygular: "💛 Duygular",
-      yazilim:  "💻 Yazılım"
-    };
-
-    const KARTLAR = [
-      // Günlük
-      { konu: "gunluk", tur: "kelime", en: "hello", ok: "helo", tr: "merhaba", ornek: "Hello, my name is Ali.", ornekTr: "Merhaba, benim adım Ali." },
-      { konu: "gunluk", tur: "kelime", en: "thank you", ok: "tenk yu", tr: "teşekkür ederim", ornek: "Thank you for your help.", ornekTr: "Yardımın için teşekkür ederim." },
-      { konu: "gunluk", tur: "kelime", en: "please", ok: "pliiz", tr: "lütfen", ornek: "Can I have some water, please?", ornekTr: "Biraz su alabilir miyim, lütfen?" },
-      { konu: "gunluk", tur: "kelime", en: "morning", ok: "morning", tr: "sabah", ornek: "I drink tea every morning.", ornekTr: "Her sabah çay içerim." },
-      { konu: "gunluk", tur: "kelime", en: "tomorrow", ok: "tumorou", tr: "yarın", ornek: "See you tomorrow!", ornekTr: "Yarın görüşürüz!" },
-      { konu: "gunluk", tur: "kelime", en: "always", ok: "olveyz", tr: "her zaman", ornek: "She always smiles.", ornekTr: "O her zaman gülümser." },
-      { konu: "gunluk", tur: "kelime", en: "neighbor", ok: "neybır", tr: "komşu", ornek: "My neighbor has a cat.", ornekTr: "Komşumun bir kedisi var." },
-      { konu: "gunluk", tur: "kelime", en: "weather", ok: "vedır", tr: "hava (durumu)", ornek: "The weather is nice today.", ornekTr: "Bugün hava güzel." },
-      { konu: "gunluk", tur: "cumle", en: "How are you?", ok: "hav ar yu", tr: "Nasılsın?", ornek: "I'm fine, thanks. And you?", ornekTr: "İyiyim, teşekkürler. Ya sen?" },
-      { konu: "gunluk", tur: "cumle", en: "What time is it?", ok: "vat taym iz it", tr: "Saat kaç?", ornek: "It's half past three.", ornekTr: "Saat üç buçuk." },
-      { konu: "gunluk", tur: "cumle", en: "I don't understand.", ok: "ay dont andırstend", tr: "Anlamıyorum.", ornek: "Sorry, I don't understand. Can you repeat?", ornekTr: "Pardon, anlamıyorum. Tekrar eder misin?" },
-      { konu: "gunluk", tur: "cumle", en: "Nice to meet you.", ok: "nays tu miit yu", tr: "Tanıştığıma memnun oldum.", ornek: "Nice to meet you too.", ornekTr: "Ben de memnun oldum." },
-
-      // Yemek
-      { konu: "yemek", tur: "kelime", en: "bread", ok: "bred", tr: "ekmek", ornek: "I buy fresh bread every day.", ornekTr: "Her gün taze ekmek alırım." },
-      { konu: "yemek", tur: "kelime", en: "chicken", ok: "çikın", tr: "tavuk", ornek: "We are having chicken for dinner.", ornekTr: "Akşam yemeğinde tavuk yiyoruz." },
-      { konu: "yemek", tur: "kelime", en: "vegetable", ok: "veçtıbıl", tr: "sebze", ornek: "Eat more vegetables.", ornekTr: "Daha çok sebze ye." },
-      { konu: "yemek", tur: "kelime", en: "breakfast", ok: "brekfıst", tr: "kahvaltı", ornek: "Breakfast is ready.", ornekTr: "Kahvaltı hazır." },
-      { konu: "yemek", tur: "kelime", en: "delicious", ok: "dilişıs", tr: "çok lezzetli", ornek: "This soup is delicious.", ornekTr: "Bu çorba çok lezzetli." },
-      { konu: "yemek", tur: "kelime", en: "hungry", ok: "hangri", tr: "aç", ornek: "I'm so hungry.", ornekTr: "Çok açım." },
-      { konu: "yemek", tur: "kelime", en: "spoon", ok: "spuun", tr: "kaşık", ornek: "Can I have a spoon?", ornekTr: "Bir kaşık alabilir miyim?" },
-      { konu: "yemek", tur: "kelime", en: "bill", ok: "bil", tr: "hesap", ornek: "The bill, please.", ornekTr: "Hesap, lütfen." },
-      { konu: "yemek", tur: "cumle", en: "I'd like a coffee, please.", ok: "ayd layk ı kofi, pliiz", tr: "Bir kahve rica ediyorum.", ornek: "I'd like a coffee and a cake, please.", ornekTr: "Bir kahve ve bir kek rica ediyorum." },
-      { konu: "yemek", tur: "cumle", en: "Can I see the menu?", ok: "ken ay sii dı menyu", tr: "Menüyü görebilir miyim?", ornek: "Of course, here you are.", ornekTr: "Tabii, buyurun." },
-      { konu: "yemek", tur: "cumle", en: "I'm allergic to nuts.", ok: "aym ılörcik tu nats", tr: "Kuruyemişe alerjim var.", ornek: "Does this cake have nuts? I'm allergic to nuts.", ornekTr: "Bu kekte kuruyemiş var mı? Kuruyemişe alerjim var." },
-      { konu: "yemek", tur: "cumle", en: "Enjoy your meal!", ok: "inçoy yor miil", tr: "Afiyet olsun!", ornek: "Thank you, enjoy your meal too!", ornekTr: "Teşekkürler, size de afiyet olsun!" },
-
-      // İş
-      { konu: "is", tur: "kelime", en: "meeting", ok: "miiting", tr: "toplantı", ornek: "The meeting starts at ten.", ornekTr: "Toplantı onda başlıyor." },
-      { konu: "is", tur: "kelime", en: "deadline", ok: "dedlayn", tr: "son teslim tarihi", ornek: "The deadline is Friday.", ornekTr: "Son teslim tarihi cuma." },
-      { konu: "is", tur: "kelime", en: "colleague", ok: "kaliig", tr: "iş arkadaşı", ornek: "My colleague helps me a lot.", ornekTr: "İş arkadaşım bana çok yardım ediyor." },
-      { konu: "is", tur: "kelime", en: "salary", ok: "selıri", tr: "maaş", ornek: "He asked for a higher salary.", ornekTr: "Daha yüksek bir maaş istedi." },
-      { konu: "is", tur: "kelime", en: "manager", ok: "menıcır", tr: "yönetici", ornek: "I need to talk to my manager.", ornekTr: "Yöneticimle konuşmam gerekiyor." },
-      { konu: "is", tur: "kelime", en: "schedule", ok: "skeçuul", tr: "program, takvim", ornek: "Let me check my schedule.", ornekTr: "Programıma bir bakayım." },
-      { konu: "is", tur: "kelime", en: "offer", ok: "ofır", tr: "teklif", ornek: "They made me a job offer.", ornekTr: "Bana bir iş teklifi yaptılar." },
-      { konu: "is", tur: "kelime", en: "experience", ok: "ikspiriıns", tr: "deneyim", ornek: "She has five years of experience.", ornekTr: "Beş yıllık deneyimi var." },
-      { konu: "is", tur: "cumle", en: "Let's schedule a meeting.", ok: "lets skeçuul ı miiting", tr: "Bir toplantı ayarlayalım.", ornek: "Let's schedule a meeting for Monday.", ornekTr: "Pazartesi için bir toplantı ayarlayalım." },
-      { konu: "is", tur: "cumle", en: "I'll send you an email.", ok: "ayl send yu ın iimeyl", tr: "Sana bir e-posta göndereceğim.", ornek: "I'll send you an email after lunch.", ornekTr: "Öğle yemeğinden sonra sana bir e-posta göndereceğim." },
-      { konu: "is", tur: "cumle", en: "Could you explain that again?", ok: "kud yu ikspleyn det ıgen", tr: "Bunu tekrar açıklar mısınız?", ornek: "Sorry, could you explain that again, slowly?", ornekTr: "Pardon, bunu yavaşça tekrar açıklar mısınız?" },
-      { konu: "is", tur: "cumle", en: "I'm working on it.", ok: "aym vörking on it", tr: "Üzerinde çalışıyorum.", ornek: "Is the report ready? I'm working on it.", ornekTr: "Rapor hazır mı? Üzerinde çalışıyorum." },
-
-      // Seyahat
-      { konu: "seyahat", tur: "kelime", en: "ticket", ok: "tikıt", tr: "bilet", ornek: "I bought a train ticket.", ornekTr: "Bir tren bileti aldım." },
-      { konu: "seyahat", tur: "kelime", en: "passport", ok: "pesport", tr: "pasaport", ornek: "Don't forget your passport.", ornekTr: "Pasaportunu unutma." },
-      { konu: "seyahat", tur: "kelime", en: "luggage", ok: "lagıc", tr: "bagaj", ornek: "My luggage is too heavy.", ornekTr: "Bagajım çok ağır." },
-      { konu: "seyahat", tur: "kelime", en: "airport", ok: "erport", tr: "havalimanı", ornek: "We arrived at the airport early.", ornekTr: "Havalimanına erken vardık." },
-      { konu: "seyahat", tur: "kelime", en: "reservation", ok: "rezırveyşın", tr: "rezervasyon", ornek: "I have a reservation for two nights.", ornekTr: "İki gecelik rezervasyonum var." },
-      { konu: "seyahat", tur: "kelime", en: "left", ok: "left", tr: "sol", ornek: "Turn left at the corner.", ornekTr: "Köşeden sola dön." },
-      { konu: "seyahat", tur: "kelime", en: "right", ok: "rayt", tr: "sağ", ornek: "The hotel is on the right.", ornekTr: "Otel sağda." },
-      { konu: "seyahat", tur: "kelime", en: "map", ok: "mep", tr: "harita", ornek: "Can you show me on the map?", ornekTr: "Bana haritada gösterebilir misiniz?" },
-      { konu: "seyahat", tur: "cumle", en: "Where is the train station?", ok: "ver iz dı treyn steyşın", tr: "Tren istasyonu nerede?", ornek: "Excuse me, where is the train station?", ornekTr: "Affedersiniz, tren istasyonu nerede?" },
-      { konu: "seyahat", tur: "cumle", en: "How much is this?", ok: "hav maç iz dis", tr: "Bu ne kadar?", ornek: "How much is this bag?", ornekTr: "Bu çanta ne kadar?" },
-      { konu: "seyahat", tur: "cumle", en: "I'm lost.", ok: "aym lost", tr: "Kayboldum.", ornek: "I'm lost. Can you help me?", ornekTr: "Kayboldum. Bana yardım edebilir misiniz?" },
-      { konu: "seyahat", tur: "cumle", en: "I'd like to check in.", ok: "ayd layk tu çek in", tr: "Giriş yapmak istiyorum.", ornek: "Hello, I'd like to check in. My name is Can.", ornekTr: "Merhaba, giriş yapmak istiyorum. Adım Can." },
-
-      // Duygular
-      { konu: "duygular", tur: "kelime", en: "happy", ok: "hepi", tr: "mutlu", ornek: "I'm happy to see you.", ornekTr: "Seni gördüğüme sevindim." },
-      { konu: "duygular", tur: "kelime", en: "sad", ok: "sed", tr: "üzgün", ornek: "Why are you sad?", ornekTr: "Neden üzgünsün?" },
-      { konu: "duygular", tur: "kelime", en: "angry", ok: "engri", tr: "kızgın", ornek: "He was angry with me.", ornekTr: "Bana kızgındı." },
-      { konu: "duygular", tur: "kelime", en: "tired", ok: "tayırd", tr: "yorgun", ornek: "I'm too tired to cook.", ornekTr: "Yemek yapamayacak kadar yorgunum." },
-      { konu: "duygular", tur: "kelime", en: "scared", ok: "skerd", tr: "korkmuş", ornek: "The child is scared of the dark.", ornekTr: "Çocuk karanlıktan korkuyor." },
-      { konu: "duygular", tur: "kelime", en: "excited", ok: "iksaytıd", tr: "heyecanlı", ornek: "We are excited about the trip.", ornekTr: "Yolculuk için heyecanlıyız." },
-      { konu: "duygular", tur: "kelime", en: "worried", ok: "vörid", tr: "endişeli", ornek: "Don't be worried.", ornekTr: "Endişelenme." },
-      { konu: "duygular", tur: "kelime", en: "proud", ok: "praud", tr: "gururlu", ornek: "I'm proud of you.", ornekTr: "Seninle gurur duyuyorum." },
-      { konu: "duygular", tur: "cumle", en: "I feel great today.", ok: "ay fiil greyt tudey", tr: "Bugün kendimi harika hissediyorum.", ornek: "I slept well, so I feel great today.", ornekTr: "İyi uyudum, bu yüzden bugün kendimi harika hissediyorum." },
-      { konu: "duygular", tur: "cumle", en: "What's wrong?", ok: "vats rong", tr: "Sorun ne?", ornek: "You look sad. What's wrong?", ornekTr: "Üzgün görünüyorsun. Sorun ne?" },
-      { konu: "duygular", tur: "cumle", en: "Don't worry.", ok: "dont vari", tr: "Merak etme.", ornek: "Don't worry, everything will be fine.", ornekTr: "Merak etme, her şey yoluna girecek." },
-      { konu: "duygular", tur: "cumle", en: "I miss you.", ok: "ay mis yu", tr: "Seni özledim.", ornek: "I miss you so much.", ornekTr: "Seni çok özledim." },
-
-      // Yazılım
-      { konu: "yazilim", tur: "kelime", en: "bug", ok: "bag", tr: "hata", ornek: "I found a bug in the code.", ornekTr: "Kodda bir hata buldum." },
-      { konu: "yazilim", tur: "kelime", en: "feature", ok: "fiiçır", tr: "özellik", ornek: "This app has a new feature.", ornekTr: "Bu uygulamanın yeni bir özelliği var." },
-      { konu: "yazilim", tur: "kelime", en: "database", ok: "deytıbeys", tr: "veritabanı", ornek: "The data is saved in the database.", ornekTr: "Veriler veritabanına kaydediliyor." },
-      { konu: "yazilim", tur: "kelime", en: "deploy", ok: "diploy", tr: "yayına almak", ornek: "We deploy every Friday.", ornekTr: "Her cuma yayına alıyoruz." },
-      { konu: "yazilim", tur: "kelime", en: "release", ok: "riliis", tr: "sürüm", ornek: "The new release is ready.", ornekTr: "Yeni sürüm hazır." },
-      { konu: "yazilim", tur: "kelime", en: "branch", ok: "brenç", tr: "dal (branch)", ornek: "Create a new branch for this change.", ornekTr: "Bu değişiklik için yeni bir dal oluştur." },
-      { konu: "yazilim", tur: "kelime", en: "requirement", ok: "rikvayırmınt", tr: "gereksinim", ornek: "Let's review the requirements.", ornekTr: "Gereksinimleri gözden geçirelim." },
-      { konu: "yazilim", tur: "kelime", en: "test", ok: "test", tr: "test etmek", ornek: "Please test it on your phone.", ornekTr: "Lütfen telefonunda test et." },
-      { konu: "yazilim", tur: "cumle", en: "It works on my machine.", ok: "it vörks on may mışiin", tr: "Benim bilgisayarımda çalışıyor.", ornek: "Strange, it works on my machine.", ornekTr: "Garip, benim bilgisayarımda çalışıyor." },
-      { konu: "yazilim", tur: "cumle", en: "Can you review my code?", ok: "ken yu rivyu may koud", tr: "Kodumu inceleyebilir misin?", ornek: "I opened a pull request. Can you review my code?", ornekTr: "Bir pull request açtım. Kodumu inceleyebilir misin?" },
-      { konu: "yazilim", tur: "cumle", en: "The build is failing.", ok: "dı bild iz feyling", tr: "Derleme başarısız oluyor.", ornek: "The build is failing after the last commit.", ornekTr: "Son commit'ten sonra derleme başarısız oluyor." },
-      { konu: "yazilim", tur: "cumle", en: "Let's fix this bug.", ok: "lets fiks dis bag", tr: "Bu hatayı düzeltelim.", ornek: "Let's fix this bug before the release.", ornekTr: "Sürümden önce bu hatayı düzeltelim." }
-    ];
+    // ---------- İÇERİK ----------
+    // Seviyeler data/seviyeler.json'da listelenir; her seviyenin kelime, cümle ve
+    // dilbilgisi içeriği kendi dosyasındadır (data/a1.json gibi) ve gerektiğinde yüklenir.
+    // Kelime/cümle alanları: en: İngilizcesi, ok: Türkçe harflerle okunuşu, tr: Türkçesi,
+    // ornek / ornekTr: örnek cümle ve çevirisi
+    let SEVIYELER = [];   // [{ kod: "A1", ad: "Başlangıç", dosya: "data/a1.json" }]
+    const VERI = {};      // { A1: { kelimeler, cumleler, dersler } }
 
     // ---------- SÖZLÜK ----------
-    // Kartlarda geçen her İngilizce kelime: [Türkçe anlamı, Türkçe harflerle okunuşu]
+    // Seviye dosyalarındaki kelimeler yüklendikçe buraya eklenir: { "apple": ["elma", "epıl"] }
+    const KELIME_SOZLUGU = {};
+
+    // Kelime listelerinde olmayan çekimli hâller ve kısaltmalar: [Türkçe anlamı, Türkçe harflerle okunuşu]
     const SOZLUK = {
       "a": ["bir", "ı"],
       "about": ["hakkında, ile ilgili", "ıbaut"],
@@ -837,7 +904,101 @@
       "wrong": ["yanlış; ters giden", "rong"],
       "years": ["yıl, yıllar", "yiırz"],
       "you": ["sen, siz", "yu"],
-      "your": ["senin, sizin", "yor"]
+      "your": ["senin, sizin", "yor"],
+      "isn't": ["is not: değil", "izınt"],
+      "aren't": ["are not: değil", "arınt"],
+      "wasn't": ["was not: değildi", "vozınt"],
+      "weren't": ["were not: değildi", "vörınt"],
+      "doesn't": ["does not: -mez, -maz (o)", "dazınt"],
+      "didn't": ["did not: -medi, -madı", "didınt"],
+      "can't": ["cannot: -emez, -amaz", "kent"],
+      "couldn't": ["could not: -emedi, -amazdı", "kudınt"],
+      "won't": ["will not: -meyecek", "vount"],
+      "wouldn't": ["would not: -mezdi", "vudınt"],
+      "shouldn't": ["should not: -memeli", "şudınt"],
+      "mustn't": ["must not: -memeli (yasak)", "masınt"],
+      "haven't": ["have not: -medim, yok", "hevınt"],
+      "hasn't": ["has not: -medi, yok (o)", "hezınt"],
+      "hadn't": ["had not: -memişti", "hedınt"],
+      "you're": ["you are: sen ...-sin", "yor"],
+      "we're": ["we are: biz ...-iz", "viır"],
+      "they're": ["they are: onlar ...-ler", "der"],
+      "he's": ["he is / he has: o ...", "hiiz"],
+      "she's": ["she is / she has: o ...", "şiiz"],
+      "that's": ["that is: bu ...-dir", "dets"],
+      "there's": ["there is: ... var", "derz"],
+      "here's": ["here is: işte ...", "hiırz"],
+      "who's": ["who is: kim?", "huuz"],
+      "where's": ["where is: nerede?", "verz"],
+      "how's": ["how is: nasıl?", "hauz"],
+      "i've": ["I have: -dim; var", "ayv"],
+      "you've": ["you have: -din; var", "yuuv"],
+      "we've": ["we have: -dik; var", "viiv"],
+      "they've": ["they have: -diler; var", "deyv"],
+      "you'll": ["you will: -eceksin", "yuul"],
+      "he'll": ["he will: -ecek (o)", "hiil"],
+      "she'll": ["she will: -ecek (o)", "şiil"],
+      "we'll": ["we will: -eceğiz", "viil"],
+      "they'll": ["they will: -ecekler", "deyl"],
+      "it'll": ["it will: -ecek", "itıl"],
+      "you'd": ["you would / you had", "yuud"],
+      "he'd": ["he would / he had", "hiid"],
+      "she'd": ["she would / she had", "şiid"],
+      "we'd": ["we would / we had", "viid"],
+      "they'd": ["they would / they had", "deyd"],
+      "o'clock": ["saat (tam)", "ıklok"],
+      "ok": ["tamam", "oukey"]
+    };
+
+    // Düzensiz fiillerin geçmiş ve 3. hâlleri: { "went": ["go", "vent"] } → anlamı go'dan alınır
+    const DUZENSIZ = {
+      "was": ["be", "voz"], "were": ["be", "vör"], "been": ["be", "biin"],
+      "had": ["have", "hed"], "did": ["do", "did"], "done": ["do", "dan"],
+      "went": ["go", "vent"], "gone": ["go", "gon"], "came": ["come", "keym"],
+      "got": ["get", "got"], "gotten": ["get", "gotın"], "made": ["make", "meyd"],
+      "knew": ["know", "nuu"], "known": ["know", "noun"], "thought": ["think", "tot"],
+      "took": ["take", "tuk"], "taken": ["take", "teykın"], "saw": ["see", "so"],
+      "seen": ["see", "siin"], "found": ["find", "faund"], "gave": ["give", "geyv"],
+      "given": ["give", "givın"], "told": ["tell", "tould"], "felt": ["feel", "felt"],
+      "said": ["say", "sed"], "ate": ["eat", "eyt"], "eaten": ["eat", "iitın"],
+      "drank": ["drink", "drenk"], "drunk": ["drink", "drank"], "wrote": ["write", "rout"],
+      "written": ["write", "ritın"], "spoke": ["speak", "spouk"], "spoken": ["speak", "spoukın"],
+      "sat": ["sit", "set"], "stood": ["stand", "stud"], "bought": ["buy", "bot"],
+      "paid": ["pay", "peyd"], "slept": ["sleep", "slept"], "ran": ["run", "ren"],
+      "taught": ["teach", "tot"], "met": ["meet", "met"], "sent": ["send", "sent"],
+      "brought": ["bring", "brot"], "left": ["leave", "left"], "swam": ["swim", "svem"],
+      "sang": ["sing", "seng"], "sung": ["sing", "sang"], "drew": ["draw", "druu"],
+      "drawn": ["draw", "dron"], "drove": ["drive", "drouv"], "driven": ["drive", "drivın"],
+      "flew": ["fly", "fluu"], "flown": ["fly", "floun"], "sold": ["sell", "sould"],
+      "chose": ["choose", "çouz"], "chosen": ["choose", "çouzın"], "forgot": ["forget", "fırgot"],
+      "forgotten": ["forget", "fırgotın"], "heard": ["hear", "hörd"], "showed": ["show", "şoud"],
+      "shown": ["show", "şoun"], "woke": ["wake", "vouk"], "woken": ["wake", "voukın"],
+      "fell": ["fall", "fel"], "fallen": ["fall", "folın"], "won": ["win", "van"],
+      "lost": ["lose", "lost"], "grew": ["grow", "gruu"], "grown": ["grow", "groun"],
+      "wore": ["wear", "vor"], "worn": ["wear", "vorn"], "rode": ["ride", "roud"],
+      "ridden": ["ride", "ridın"], "began": ["begin", "bigen"], "begun": ["begin", "bigan"],
+      "broke": ["break", "brouk"], "broken": ["break", "broukın"], "built": ["build", "bilt"],
+      "caught": ["catch", "kot"], "fought": ["fight", "fot"], "held": ["hold", "held"],
+      "kept": ["keep", "kept"], "led": ["lead", "led"], "lent": ["lend", "lent"],
+      "meant": ["mean", "ment"], "rang": ["ring", "reng"], "rung": ["ring", "rang"],
+      "rose": ["rise", "rouz"], "risen": ["rise", "rizın"], "shook": ["shake", "şuk"],
+      "spent": ["spend", "spent"], "stole": ["steal", "stoul"], "stolen": ["steal", "stoulın"],
+      "threw": ["throw", "truu"], "thrown": ["throw", "troun"], "understood": ["understand", "andırstud"],
+      "hid": ["hide", "hid"], "hidden": ["hide", "hidın"], "bit": ["bite", "bit"],
+      "blew": ["blow", "bluu"], "fed": ["feed", "fed"], "forgave": ["forgive", "fırgeyv"],
+      "froze": ["freeze", "frouz"], "frozen": ["freeze", "frouzın"], "hung": ["hang", "hang"],
+      "lay": ["lie", "ley"], "lain": ["lie", "leyn"], "laid": ["lay", "leyd"],
+      "lit": ["light", "lit"], "slid": ["slide", "slid"], "spun": ["spin", "span"],
+      "struck": ["strike", "strak"], "swore": ["swear", "svor"], "tore": ["tear", "tor"],
+      "torn": ["tear", "torn"], "wept": ["weep", "vept"], "wound": ["wind", "vaund"],
+      "dug": ["dig", "dag"], "fled": ["flee", "fled"], "sought": ["seek", "sot"],
+      "bound": ["bind", "baund"], "bent": ["bend", "bent"], "dealt": ["deal", "delt"],
+      "dreamt": ["dream", "dremt"], "learnt": ["learn", "lörnt"], "spelt": ["spell", "spelt"],
+      "burnt": ["burn", "börnt"], "smelt": ["smell", "smelt"], "spilt": ["spill", "spilt"],
+      "children": ["child", "çildrın"], "men": ["man", "men"], "women": ["woman", "vimin"],
+      "feet": ["foot", "fiit"], "teeth": ["tooth", "tiit"], "mice": ["mouse", "mays"],
+      "better": ["good", "betır"], "best": ["good", "best"], "worse": ["bad", "vörs"],
+      "worst": ["bad", "vörst"]
     };
 
     // ---------- AYARLAR ----------
@@ -847,22 +1008,31 @@
     // Kutu numarasına göre "Biliyorum" sonrası bekleme süresi (gün)
     const ARALIKLAR = [0, 1, 3, 7, 14, 30];
     const OGRENILDI_KUTUSU = 3;
+    // Bir seviyedeki kelimelerin bu oranı öğrenilince sonraki seviye önerilir
+    const ONERI_ORANI = 0.8;
     const KAYIT_ANAHTARI = "ingilizce-kartlar-v1";
 
     // ---------- KAYIT (telefonun tarayıcısında saklanır) ----------
     function bosIlerleme() {
       return {
         kartlar: {},                       // { "hello": { kutu, vade, dogru, yanlis } }
+        dersler: {},                       // { "a1-to-be": { dogru, toplam } } en iyi sonuç
         gunluk: { tarih: "", sayi: 0 },    // bugün çalışılan kart sayısı
         seri: { gun: 0, sonGun: "" },      // hedefin tamamlandığı ardışık günler
-        ayarlar: { konular: [], tur: "hepsi", otoSes: false }
+        oneriler: {},                      // { "A1": true } öneri bir kez kutlanır
+        ayarlar: { seviye: "A1", sekme: "kelime", cumleKonulari: [], otoSes: false, oneriKapali: {} }
       };
     }
 
     function yukle() {
       try {
         const veri = JSON.parse(localStorage.getItem(KAYIT_ANAHTARI));
-        if (veri && veri.kartlar) return Object.assign(bosIlerleme(), veri);
+        if (veri && veri.kartlar) {
+          // Eski kayıtlarda olmayan yeni ayarlar varsayılanlarla tamamlanır
+          const bos = bosIlerleme();
+          veri.ayarlar = Object.assign(bos.ayarlar, veri.ayarlar);
+          return Object.assign(bos, veri);
+        }
       } catch (e) { /* kayıt okunamazsa sıfırdan başla */ }
       return bosIlerleme();
     }
@@ -872,6 +1042,7 @@
     }
 
     let ilerleme = yukle();
+    const ayar = () => ilerleme.ayarlar;
 
     // Tarihi telefonun saatine göre "2026-10-29" biçiminde verir
     function tarihAnahtari(zaman) {
@@ -890,16 +1061,52 @@
       return (s.sonGun === bugun() || s.sonGun === dun()) ? s.gun : 0;
     }
 
+    // ---------- İÇERİK YÜKLEME ----------
+    async function jsonAl(yol) {
+      const cevap = await fetch(yol);
+      if (!cevap.ok) throw new Error(yol + " yüklenemedi (" + cevap.status + ")");
+      return cevap.json();
+    }
+
+    const yuklemeler = {};
+    function seviyeyiYukle(kod) {
+      if (!yuklemeler[kod]) {
+        const s = SEVIYELER.find(x => x.kod === kod);
+        yuklemeler[kod] = jsonAl(s.dosya).then(v => {
+          v.kelimeler.forEach(k => { k.tur = "kelime"; k.seviye = kod; });
+          v.cumleler.forEach(k => { k.tur = "cumle"; k.seviye = kod; });
+          v.kelimeler.forEach(k => {
+            const anahtar = k.en.toLowerCase();
+            if (!KELIME_SOZLUGU[anahtar]) KELIME_SOZLUGU[anahtar] = [k.tr, k.ok];
+          });
+          VERI[kod] = v;
+          return v;
+        });
+        yuklemeler[kod].catch(() => { delete yuklemeler[kod]; });
+      }
+      return yuklemeler[kod];
+    }
+
+    const seviyeVerisi = () => VERI[ayar().seviye];
+    const sonrakiSeviye = kod => SEVIYELER[SEVIYELER.findIndex(s => s.kod === kod) + 1];
+    const ogrenildi = k => (ilerleme.kartlar[k.en] || {}).kutu >= OGRENILDI_KUTUSU;
+
+    function seviyeOrani(kod) {
+      const v = VERI[kod];
+      if (!v || !v.kelimeler.length) return 0;
+      return v.kelimeler.filter(ogrenildi).length / v.kelimeler.length;
+    }
+
     // ---------- KART SEÇME (tekrar sistemi) ----------
     let simdikiKart = null;
     let sonGosterilenler = []; // aynı kart hemen arka arkaya gelmesin diye
 
     function filtreliKartlar() {
-      const { konular, tur } = ilerleme.ayarlar;
-      return KARTLAR.filter(k =>
-        (konular.length === 0 || konular.includes(k.konu)) &&
-        (tur === "hepsi" || k.tur === tur)
-      );
+      const v = seviyeVerisi();
+      if (!v) return [];
+      if (ayar().sekme === "kelime") return v.kelimeler;
+      const konular = ayar().cumleKonulari;
+      return v.cumleler.filter(k => konular.length === 0 || konular.includes(k.konu));
     }
 
     function rastgele(liste) {
@@ -922,9 +1129,9 @@
         return rastgele(vadeli.filter(k => ilerleme.kartlar[k.en].kutu === enDusuk));
       }
 
-      // 2) Hiç görülmemiş yeni kartlar
-      const yeniler = uygun.filter(k => !ilerleme.kartlar[k.en]);
-      if (yeniler.length) return rastgele(yeniler);
+      // 2) Hiç görülmemiş yeni kartlar: listeler sık kullanılandan seyreğe sıralı, sırayla gelir
+      const yeni = uygun.find(k => !ilerleme.kartlar[k.en]);
+      if (yeni) return yeni;
 
       // 3) Hepsi çalışıldıysa serbest tekrar: zayıf kartlar daha çok çıkar
       let toplam = 0;
@@ -971,7 +1178,17 @@
         bildir("🎉 Bugünkü 20 kartı tamamladın! Seri: " + ilerleme.seri.gun + " gün");
       }
 
+      // Seviyenin çoğu öğrenildiyse bir kez kutla
+      const kod = ayar().seviye;
+      const sonraki = sonrakiSeviye(kod);
+      if (sonraki && !ilerleme.oneriler[kod] && seviyeOrani(kod) >= ONERI_ORANI) {
+        ilerleme.oneriler[kod] = true;
+        bildir("🏆 " + kod + " kelimelerinin çoğunu öğrendin! " + sonraki.kod + " seviyesine geçebilirsin.");
+      }
+
       kaydet();
+      seviyeleriCiz();
+      oneriyiCiz();
       yeniKartGoster();
     }
 
@@ -1027,6 +1244,7 @@
       kartEl.hidden = bos;
       $("gosterButon").hidden = bos;
       hedefiGuncelle();
+      ozetiCiz();
       if (bos) return;
 
       const k = simdikiKart;
@@ -1034,28 +1252,34 @@
       if (sonGosterilenler.length > 5) sonGosterilenler.shift();
 
       const d = ilerleme.kartlar[k.en];
-      $("etiketKonu").textContent = KONULAR[k.konu] + " · " + (k.tur === "kelime" ? "Kelime" : "Cümle");
+      $("etiketKonu").textContent = k.seviye + " · " + (k.tur === "kelime" ? "Kelime" : k.konu);
       $("etiketDurum").textContent = d ? "Tekrar · kutu " + d.kutu : "Yeni";
       $("etiketDurum").className = "etiket" + (d ? "" : " yeni");
 
       // Kelime kartının ön yüzünde anlamı ele vermesin diye yalnızca cümlelerde kelimelere dokunulur
       if (k.tur === "cumle") dokunulabilirYaz($("onIngilizce"), k.en);
       else $("onIngilizce").textContent = k.en;
-      $("onIngilizce").classList.toggle("uzun", k.en.length > 16);
+      $("onIngilizce").classList.toggle("uzun", k.en.length > 16 && k.en.length <= 32);
+      $("onIngilizce").classList.toggle("cok-uzun", k.en.length > 32);
       $("onOkunus").textContent = "[ " + k.ok + " ]";
       $("ipucu").textContent = k.tur === "cumle"
         ? "Kelimeye dokun: anlamı · Boş yere dokun: kartı çevir"
         : "Anlamını görmek için karta dokun";
       $("arkaTurkce").textContent = k.tr;
+      $("arkaTurkce").classList.toggle("uzun", k.tr.length > 24);
       dokunulabilirYaz($("arkaIngilizce"), k.en);
       $("arkaOkunus").textContent = k.ok;
-      dokunulabilirYaz($("ornekEn"), k.ornek);
-      $("ornekTr").textContent = k.ornekTr;
+      $("ornekKutu").hidden = !k.ornek;
+      if (k.ornek) {
+        $("ornekBaslik").textContent = k.tur === "cumle" ? "Örnek konuşma" : "Örnek cümle";
+        dokunulabilirYaz($("ornekEn"), k.ornek);
+        $("ornekTr").textContent = k.ornekTr;
+      }
 
       const sonrakiKutu = Math.min(ARALIKLAR.length - 1, (d ? d.kutu : 0) + 1);
       $("biliyorumSure").textContent = gunYazisi(ARALIKLAR[sonrakiKutu]);
 
-      if (ilerleme.ayarlar.otoSes) seslendir(k.en);
+      if (ayar().otoSes) seslendir(k.en);
     }
 
     function kartiCevir() {
@@ -1078,69 +1302,287 @@
       $("seri").textContent = "🔥 " + seri + " gün";
     }
 
+    // Kart ekranının üstündeki kısa özet: "12 öğrenildi · 40 çalışıldı / 798"
+    function ozetiCiz() {
+      const havuz = filtreliKartlar();
+      const calisilan = havuz.filter(k => ilerleme.kartlar[k.en]).length;
+      const el = $("ozet");
+      el.textContent = "";
+      const b = document.createElement("b");
+      b.textContent = havuz.filter(ogrenildi).length;
+      el.append("✅ ", b, " öğrenildi · " + calisilan + " / " + havuz.length + " çalışıldı");
+    }
+
+    function seviyeleriCiz() {
+      const kutu = $("seviyeler");
+      kutu.innerHTML = "";
+      ["A1", "A2", "B1", "B2", "C1"].forEach(kod => {
+        const mevcut = SEVIYELER.some(s => s.kod === kod);
+        const b = document.createElement("button");
+        b.className = "seviye" + (kod === ayar().seviye ? " secili" : "");
+        b.disabled = !mevcut;
+        const ad = document.createElement("b");
+        ad.textContent = kod;
+        const alt = document.createElement("span");
+        alt.textContent = !mevcut ? "yakında" : VERI[kod] ? "%" + Math.floor(seviyeOrani(kod) * 100) : "…";
+        b.append(ad, alt);
+        if (mevcut) {
+          const s = SEVIYELER.find(x => x.kod === kod);
+          b.title = kod + " · " + s.ad;
+          b.onclick = () => seviyeSec(kod);
+        }
+        kutu.appendChild(b);
+      });
+    }
+
+    async function seviyeSec(kod) {
+      if (kod === ayar().seviye) return;
+      try {
+        await seviyeyiYukle(kod);
+      } catch (e) {
+        bildir("İçerik yüklenemedi. İnternet bağlantını kontrol et.");
+        return;
+      }
+      ayar().seviye = kod;
+      ayar().cumleKonulari = [];
+      acikDers = null;
+      kaydet();
+      const s = SEVIYELER.find(x => x.kod === kod);
+      bildir(kod + " · " + s.ad + " seviyesine geçtin");
+      ekraniCiz();
+    }
+
+    function oneriyiCiz() {
+      const kod = ayar().seviye;
+      const sonraki = sonrakiSeviye(kod);
+      const oran = seviyeOrani(kod);
+      const goster = !!sonraki && oran >= ONERI_ORANI && !ayar().oneriKapali[kod] && ayar().sekme !== "ilerleme";
+      $("oneri").hidden = !goster;
+      if (!goster) return;
+      $("oneriYazi").textContent = "🎉 " + kod + " kelimelerinin %" + Math.floor(oran * 100) +
+        "'ini öğrendin! " + sonraki.kod + " (" + sonraki.ad + ") seviyesine geçmeye hazırsın.";
+      $("oneriGec").textContent = sonraki.kod + " seviyesine geç →";
+      $("oneriGec").onclick = () => seviyeSec(sonraki.kod);
+    }
+
     function konulariCiz() {
       const kutu = $("konular");
       kutu.innerHTML = "";
-      const secili = ilerleme.ayarlar.konular;
+      kutu.hidden = ayar().sekme !== "cumle";
+      if (kutu.hidden) return;
+      const tumKonular = [...new Set(seviyeVerisi().cumleler.map(c => c.konu))];
+      const secili = ayar().cumleKonulari = ayar().cumleKonulari.filter(k => tumKonular.includes(k));
 
       const tumu = document.createElement("button");
       tumu.className = "cip" + (secili.length === 0 ? " secili" : "");
       tumu.textContent = "🌍 Tümü";
-      tumu.onclick = () => { ilerleme.ayarlar.konular = []; secimDegisti(); };
+      tumu.onclick = () => { ayar().cumleKonulari = []; secimDegisti(); };
       kutu.appendChild(tumu);
 
       // Birden fazla konu seçilebilir
-      Object.keys(KONULAR).forEach(anahtar => {
+      tumKonular.forEach(konu => {
         const cip = document.createElement("button");
-        cip.className = "cip" + (secili.includes(anahtar) ? " secili" : "");
-        cip.textContent = KONULAR[anahtar];
+        cip.className = "cip" + (secili.includes(konu) ? " secili" : "");
+        cip.textContent = konu;
         cip.onclick = () => {
-          const liste = ilerleme.ayarlar.konular;
-          const yer = liste.indexOf(anahtar);
-          if (yer >= 0) liste.splice(yer, 1); else liste.push(anahtar);
-          if (liste.length === Object.keys(KONULAR).length) liste.length = 0;
+          const liste = ayar().cumleKonulari;
+          const yer = liste.indexOf(konu);
+          if (yer >= 0) liste.splice(yer, 1); else liste.push(konu);
+          if (liste.length === tumKonular.length) liste.length = 0;
           secimDegisti();
         };
         kutu.appendChild(cip);
       });
     }
 
-    function turSeciminiCiz() {
-      document.querySelectorAll("#turSecim button").forEach(b =>
-        b.classList.toggle("secili", b.dataset.tur === ilerleme.ayarlar.tur));
-    }
-
     function secimDegisti() {
       kaydet();
       konulariCiz();
-      turSeciminiCiz();
       sonGosterilenler = [];
       yeniKartGoster();
     }
 
-    function ilerlemeyiCiz() {
-      const tumDurumlar = KARTLAR.map(k => ilerleme.kartlar[k.en]);
-      $("istOgrenilen").textContent = tumDurumlar.filter(d => d && d.kutu >= OGRENILDI_KUTUSU).length;
-      $("istCalisilan").textContent = tumDurumlar.filter(Boolean).length;
-      $("istToplam").textContent = KARTLAR.length;
+    // ---------- DİLBİLGİSİ ----------
+    let acikDers = null;
 
-      // Konu başına öğrenilen kart oranı
-      const kutu = $("konuIlerleme");
-      kutu.innerHTML = "";
-      Object.keys(KONULAR).forEach(anahtar => {
-        const kartlar = KARTLAR.filter(k => k.konu === anahtar);
-        const ogrenilen = kartlar.filter(k => (ilerleme.kartlar[k.en] || {}).kutu >= OGRENILDI_KUTUSU).length;
-        const satir = document.createElement("div");
-        satir.className = "konu-satiri";
-        satir.innerHTML =
-          '<div class="hedef-yazi"><span></span><span><b>' + ogrenilen + "</b> / " + kartlar.length + "</span></div>" +
-          '<div class="cubuk"><div class="cubuk-dolu" style="width:' + (ogrenilen / kartlar.length * 100) + '%"></div></div>';
-        satir.querySelector("span").textContent = KONULAR[anahtar];
-        kutu.appendChild(satir);
+    // "**kalın**" işaretli metni güvenli biçimde (innerHTML kullanmadan) yazar
+    function vurguluYaz(el, metin) {
+      el.textContent = "";
+      metin.split(/\*\*(.+?)\*\*/).forEach((parca, i) => {
+        if (!parca) return;
+        if (i % 2) {
+          const b = document.createElement("b");
+          b.textContent = parca;
+          el.appendChild(b);
+        } else el.append(parca);
+      });
+    }
+
+    function yeni(etiket, sinif, metin) {
+      const el = document.createElement(etiket);
+      if (sinif) el.className = sinif;
+      if (metin !== undefined) el.textContent = metin;
+      return el;
+    }
+
+    function dersleriCiz() {
+      const liste = $("dersListe");
+      const detay = $("dersDetay");
+      const dersler = seviyeVerisi().dersler;
+      const ders = acikDers && dersler.find(d => d.id === acikDers);
+      liste.hidden = !!ders;
+      detay.hidden = !ders;
+      if (ders) return dersDetayiCiz(ders);
+
+      liste.innerHTML = "";
+      dersler.forEach((d, i) => {
+        const sonuc = ilerleme.dersler[d.id];
+        const oge = yeni("button", "ders-oge" + (sonuc ? " tamam" : ""));
+        const no = yeni("span", "ders-no", sonuc ? "✓" : String(i + 1));
+        const metin = yeni("span", "ders-metin");
+        metin.append(yeni("b", "", d.baslik), yeni("span", "", d.ozet));
+        const puan = yeni("span", "ders-puan", sonuc ? sonuc.dogru + "/" + sonuc.toplam : "");
+        oge.append(no, metin, puan);
+        oge.onclick = () => { acikDers = d.id; dersleriCiz(); window.scrollTo(0, 0); };
+        liste.appendChild(oge);
+      });
+    }
+
+    function dersDetayiCiz(d) {
+      const detay = $("dersDetay");
+      detay.innerHTML = "";
+
+      const geri = yeni("button", "geri", "← Tüm dersler");
+      geri.onclick = () => { acikDers = null; dersleriCiz(); };
+      detay.appendChild(geri);
+      detay.append(yeni("h2", "", d.baslik), yeni("p", "alt", d.ozet));
+
+      const anlatim = yeni("div", "panel");
+      anlatim.appendChild(yeni("h3", "", "📘 Konu anlatımı"));
+      d.aciklama.forEach(p => { const el = yeni("p"); vurguluYaz(el, p); anlatim.appendChild(el); });
+      detay.appendChild(anlatim);
+
+      const kalip = yeni("div", "panel");
+      kalip.appendChild(yeni("h3", "", "🧩 Kalıplar"));
+      const ul = yeni("ul", "kalip-liste");
+      d.kaliplar.forEach(k => { const li = yeni("li"); vurguluYaz(li, k); ul.appendChild(li); });
+      kalip.appendChild(ul);
+      detay.appendChild(kalip);
+
+      const ornek = yeni("div", "panel");
+      ornek.appendChild(yeni("h3", "", "💡 Örnekler"));
+      d.ornekler.forEach(o => {
+        const satir = yeni("div", "ornek-satiri");
+        const en = yeni("div", "ornek-en");
+        const cumle = yeni("span");
+        dokunulabilirYaz(cumle, o.en);
+        const ses = yeni("button", "ses mini", "🔊");
+        ses.setAttribute("aria-label", "Cümleyi dinle");
+        ses.hidden = !sesVar;
+        ses.onclick = () => seslendir(o.en);
+        en.append(cumle, ses);
+        satir.append(en, yeni("div", "ornek-tr", o.tr));
+        ornek.appendChild(satir);
+      });
+      detay.appendChild(ornek);
+
+      // Alıştırmalar: her soru bir kez cevaplanır, açıklama hemen görünür
+      const alistirma = yeni("div", "panel");
+      alistirma.appendChild(yeni("h3", "", "✏️ Alıştırmalar"));
+      let cevaplanan = 0, dogruSayisi = 0;
+      const sonuc = yeni("div", "sonuc");
+      sonuc.hidden = true;
+
+      d.alistirmalar.forEach((a, no) => {
+        const soru = yeni("div", "soru");
+        const metin = yeni("div", "soru-metin");
+        metin.append((no + 1) + ". ");
+        a.soru.split("___").forEach((parca, i) => {
+          if (i > 0) metin.appendChild(yeni("span", "bosluk", "_____"));
+          metin.append(parca);
+        });
+        const secenekler = yeni("div", "secenekler");
+        const aciklama = yeni("div", "soru-aciklama");
+        aciklama.hidden = true;
+        a.secenekler.forEach((s, i) => {
+          const b = yeni("button", "secenek", s);
+          b.onclick = () => {
+            const butonlar = secenekler.querySelectorAll("button");
+            butonlar.forEach(x => x.disabled = true);
+            butonlar[a.dogru].classList.add("dogru");
+            if (i !== a.dogru) b.classList.add("yanlis"); else dogruSayisi++;
+            aciklama.textContent = (i === a.dogru ? "✅ Doğru! " : "❌ Doğrusu: " + a.secenekler[a.dogru] + ". ") + a.aciklama;
+            aciklama.hidden = false;
+            if (a.soru.includes("___")) seslendir(a.soru.replace("___", a.secenekler[a.dogru]).replace(/\s*\(.*?\)/g, ""));
+            if (++cevaplanan === d.alistirmalar.length) alistirmaBitti();
+          };
+          secenekler.appendChild(b);
+        });
+        soru.append(metin, secenekler, aciklama);
+        alistirma.appendChild(soru);
       });
 
-      // En çok "bilmiyorum / zor" denen kartlar
-      const zorlar = KARTLAR
+      function alistirmaBitti() {
+        const toplam = d.alistirmalar.length;
+        const eski = ilerleme.dersler[d.id];
+        if (!eski || dogruSayisi >= eski.dogru) ilerleme.dersler[d.id] = { dogru: dogruSayisi, toplam };
+        kaydet();
+        sonuc.innerHTML = "";
+        const yuzde = dogruSayisi / toplam;
+        sonuc.appendChild(yeni("b", "", (yuzde === 1 ? "🌟 " : yuzde >= 0.6 ? "👏 " : "💪 ") + dogruSayisi + " / " + toplam + " doğru"));
+        const tekrar = yeni("button", "ikincil", "Tekrar çöz");
+        tekrar.onclick = () => { dersDetayiCiz(d); };
+        sonuc.appendChild(tekrar);
+        sonuc.hidden = false;
+      }
+
+      alistirma.appendChild(sonuc);
+      detay.appendChild(alistirma);
+    }
+
+    // ---------- İLERLEME ----------
+    function cubukSatiri(baslik, sayi, toplam) {
+      const satir = yeni("div", "konu-satiri");
+      const yazi = yeni("div", "hedef-yazi");
+      const sag = yeni("span");
+      sag.append(yeni("b", "", String(sayi)), " / " + toplam);
+      yazi.append(yeni("span", "", baslik), sag);
+      const cubuk = yeni("div", "cubuk");
+      const dolu = yeni("div", "cubuk-dolu");
+      dolu.style.width = (toplam ? sayi / toplam * 100 : 0) + "%";
+      cubuk.appendChild(dolu);
+      satir.append(yazi, cubuk);
+      return satir;
+    }
+
+    function ilerlemeyiCiz() {
+      const v = seviyeVerisi();
+      const tumu = v.kelimeler.concat(v.cumleler);
+      $("istOgrenilen").textContent = tumu.filter(ogrenildi).length;
+      $("istCalisilan").textContent = tumu.filter(k => ilerleme.kartlar[k.en]).length;
+      $("istToplam").textContent = tumu.length;
+      $("istToplamYazi").textContent = ayar().seviye + " kartı";
+
+      // Her seviyede öğrenilen kelime oranı
+      const kutu = $("seviyeIlerleme");
+      kutu.innerHTML = "";
+      SEVIYELER.forEach(s => {
+        const sv = VERI[s.kod];
+        if (!sv) return kutu.appendChild(cubukSatiri(s.kod + " · " + s.ad, 0, "…"));
+        kutu.appendChild(cubukSatiri(s.kod + " · " + s.ad, sv.kelimeler.filter(ogrenildi).length, sv.kelimeler.length));
+      });
+
+      // Seçili seviyenin bölümleri
+      $("altBaslik").textContent = ayar().seviye + " seviyesinde";
+      const bolum = $("bolumIlerleme");
+      bolum.innerHTML = "";
+      bolum.appendChild(cubukSatiri("📚 Kelimeler", v.kelimeler.filter(ogrenildi).length, v.kelimeler.length));
+      bolum.appendChild(cubukSatiri("💬 Cümleler", v.cumleler.filter(ogrenildi).length, v.cumleler.length));
+      bolum.appendChild(cubukSatiri("📖 Tamamlanan dersler", v.dersler.filter(d => ilerleme.dersler[d.id]).length, v.dersler.length));
+
+      // Yüklenen tüm seviyelerde en çok "bilmiyorum / zor" denen kartlar
+      const hepsi = Object.values(VERI).flatMap(x => x.kelimeler.concat(x.cumleler));
+      const zorlar = hepsi
         .filter(k => ilerleme.kartlar[k.en] && ilerleme.kartlar[k.en].yanlis > 0)
         .sort((a, b) => ilerleme.kartlar[b.en].yanlis - ilerleme.kartlar[a.en].yanlis)
         .slice(0, 8);
@@ -1160,13 +1602,34 @@
       });
     }
 
+    // ---------- SEKMELER ----------
+    function ekraniCiz() {
+      const sekme = ayar().sekme;
+      const kartEkrani = sekme === "kelime" || sekme === "cumle";
+      document.querySelectorAll(".sekmeler button").forEach(b =>
+        b.classList.toggle("secili", b.dataset.sekme === sekme));
+      $("ekranKart").hidden = !kartEkrani;
+      $("ekranDilbilgisi").hidden = sekme !== "dilbilgisi";
+      $("ekranIlerleme").hidden = sekme !== "ilerleme";
+      seviyeleriCiz();
+      oneriyiCiz();
+      hedefiGuncelle();
+      if (kartEkrani) {
+        konulariCiz();
+        sonGosterilenler = [];
+        yeniKartGoster();
+      } else {
+        sozlukKapat();
+        if (sekme === "dilbilgisi") dersleriCiz();
+        else ilerlemeyiCiz();
+      }
+    }
+
     function sekmeAc(ad) {
-      const calis = ad === "calis";
-      $("ekranCalis").hidden = !calis;
-      $("ekranIlerleme").hidden = calis;
-      $("sekmeCalis").classList.toggle("secili", calis);
-      $("sekmeIlerleme").classList.toggle("secili", !calis);
-      if (!calis) ilerlemeyiCiz();
+      if (ad === ayar().sekme && ad === "dilbilgisi") acikDers = null;
+      ayar().sekme = ad;
+      kaydet();
+      ekraniCiz();
     }
 
     // ---------- SÖZLÜK KUTUSU ----------
@@ -1185,12 +1648,35 @@
       });
     }
 
-    // Sözlükte yoksa basit ekleri atarak dener: "cats" → "cat", "worked" → "work"
+    const kayitBul = k => KELIME_SOZLUGU[k] || SOZLUK[k] || null;
+
+    // Sözlükte yoksa ekleri atarak dener: "cats" → "cat", "studied" → "study", "running" → "run"
     function sozlukteBul(kelime) {
       const k = kelime.toLowerCase();
-      if (SOZLUK[k]) return SOZLUK[k];
-      for (const ek of ["'s", "es", "s", "ed", "d", "ing"]) {
-        if (k.endsWith(ek) && SOZLUK[k.slice(0, -ek.length)]) return SOZLUK[k.slice(0, -ek.length)];
+      if (kayitBul(k)) return kayitBul(k);
+
+      // Düzensiz fiiller ve çoğullar: "went" → go
+      if (DUZENSIZ[k]) {
+        const [kok, okunus] = DUZENSIZ[k];
+        const kokKaydi = kayitBul(kok);
+        if (kokKaydi) return [kokKaydi[0] + " (" + kok + " kelimesinin çekimli hâli)", okunus];
+      }
+
+      const adaylar = [];
+      const kes = n => k.slice(0, k.length - n);
+      if (k.endsWith("'s")) adaylar.push(kes(2));
+      if (k.endsWith("ies") || k.endsWith("ied")) adaylar.push(kes(3) + "y");
+      if (k.endsWith("es")) adaylar.push(kes(2));
+      if (k.endsWith("s")) adaylar.push(kes(1));
+      if (k.endsWith("ed")) adaylar.push(kes(2), kes(1), kes(3));          // worked, liked, stopped
+      if (k.endsWith("ing")) adaylar.push(kes(3), kes(3) + "e", kes(4));   // working, making, running
+      if (k.endsWith("ier") || k.endsWith("iest")) adaylar.push(k.replace(/ie(r|st)$/, "y"));
+      if (k.endsWith("er")) adaylar.push(kes(2), kes(1), kes(3));          // taller, nicer, bigger
+      if (k.endsWith("est")) adaylar.push(kes(3), kes(2), kes(4));
+      if (k.endsWith("ily")) adaylar.push(kes(3) + "y");                    // easily → easy
+      if (k.endsWith("ly")) adaylar.push(kes(2));                           // quickly → quick
+      for (const aday of adaylar) {
+        if (aday.length > 1 && kayitBul(aday)) return kayitBul(aday);
       }
       return null;
     }
@@ -1238,15 +1724,16 @@
     }
 
     // ---------- DOKUNMA / TIKLAMA ----------
-    // Kelimeye dokunmak sözlüğü açar, kartın başka bir yerine dokunmak kartı çevirir
+    // Kartta: kelimeye dokunmak sözlüğü açar, kartın başka bir yerine dokunmak kartı çevirir
     kartEl.addEventListener("click", e => {
-      const kelime = e.target.closest(".kelime");
-      if (kelime) sozlukGoster(kelime); else kartiCevir();
+      if (!e.target.closest(".kelime")) kartiCevir();
     });
 
-    // Kutunun dışına dokununca, kaydırınca ya da ekran dönünce kutu kapanır
+    // Her yerde (kart, ders örnekleri) kelimeye dokununca sözlük açılır; dışarı dokununca kapanır
     document.addEventListener("click", e => {
-      if (!e.target.closest(".kelime, .sozluk-kutu")) sozlukKapat();
+      const kelime = e.target.closest(".kelime");
+      if (kelime) sozlukGoster(kelime);
+      else if (!e.target.closest(".sozluk-kutu")) sozlukKapat();
     });
     window.addEventListener("scroll", sozlukKapat, true);
     window.addEventListener("resize", sozlukKapat);
@@ -1266,28 +1753,32 @@
     document.querySelectorAll(".cevap").forEach(b =>
       b.addEventListener("click", () => cevapla(b.dataset.cevap)));
 
-    document.querySelectorAll("#turSecim button").forEach(b =>
-      b.addEventListener("click", () => { ilerleme.ayarlar.tur = b.dataset.tur; secimDegisti(); }));
+    document.querySelectorAll(".sekmeler button").forEach(b =>
+      b.addEventListener("click", () => sekmeAc(b.dataset.sekme)));
 
-    $("otoSes").checked = ilerleme.ayarlar.otoSes;
-    $("otoSes").addEventListener("change", e => { ilerleme.ayarlar.otoSes = e.target.checked; kaydet(); });
+    $("otoSes").checked = ayar().otoSes;
+    $("otoSes").addEventListener("change", e => { ayar().otoSes = e.target.checked; kaydet(); });
 
-    $("sekmeCalis").addEventListener("click", () => sekmeAc("calis"));
-    $("sekmeIlerleme").addEventListener("click", () => sekmeAc("ilerleme"));
+    $("oneriKapat").addEventListener("click", () => {
+      ayar().oneriKapali[ayar().seviye] = true;
+      kaydet();
+      oneriyiCiz();
+    });
 
     $("sifirla").addEventListener("click", () => {
       if (!confirm("Tüm ilerlemen silinecek. Emin misin?")) return;
+      const { seviye, sekme } = ayar();
       ilerleme = bosIlerleme();
+      Object.assign(ayar(), { seviye, sekme });
       kaydet();
       $("otoSes").checked = false;
-      secimDegisti();
-      ilerlemeyiCiz();
+      ekraniCiz();
       bildir("İlerleme sıfırlandı");
     });
 
     // Bilgisayarda klavye: Boşluk = çevir, 1/2/3 = Bilmiyorum/Zor/Biliyorum, S = dinle
     document.addEventListener("keydown", e => {
-      if ($("ekranCalis").hidden || e.target.tagName === "INPUT") return;
+      if ($("ekranKart").hidden || e.target.tagName === "INPUT") return;
       if (e.key === " " || e.key === "Enter") {
         if (e.target.tagName === "BUTTON" && e.target !== kartEl) return;
         e.preventDefault();
@@ -1300,9 +1791,36 @@
     });
 
     // ---------- BAŞLAT ----------
-    konulariCiz();
-    turSeciminiCiz();
-    yeniKartGoster();
+    async function baslat() {
+      try {
+        SEVIYELER = await jsonAl("data/seviyeler.json");
+        if (!SEVIYELER.some(s => s.kod === ayar().seviye)) ayar().seviye = SEVIYELER[0].kod;
+        if (!["kelime", "cumle", "dilbilgisi", "ilerleme"].includes(ayar().sekme)) ayar().sekme = "kelime";
+        await seviyeyiYukle(ayar().seviye);
+      } catch (e) {
+        const el = $("yukleniyor");
+        el.textContent = "";
+        el.append("İçerik yüklenemedi. ");
+        if (location.protocol === "file:") {
+          el.append("Bu uygulama içerik dosyalarını (data/*.json) yüklediği için bir web adresinden açılmalı: GitHub Pages ya da bilgisayarda ");
+          el.appendChild(yeni("code", "", "python3 -m http.server"));
+          el.append(" komutu.");
+        } else {
+          el.append("İnternet bağlantını kontrol edip sayfayı yenile.");
+        }
+        return;
+      }
+      $("yukleniyor").hidden = true;
+      ekraniCiz();
+
+      // Diğer seviyeler arka planda yüklenir: sözlük tüm kelimeleri tanısın, yüzdeler görünsün
+      SEVIYELER.forEach(s => seviyeyiYukle(s.kod).then(() => {
+        seviyeleriCiz();
+        if (ayar().sekme === "ilerleme") ilerlemeyiCiz();
+      }).catch(() => {}));
+    }
+
+    baslat();
   </script>
 </body>
 </html>
