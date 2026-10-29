@@ -1,4 +1,5 @@
 [
-  { "kod": "A1", "ad": "Başlangıç", "dosya": "data/a1.json" },
-  { "kod": "A2", "ad": "Temel", "dosya": "data/a2.json" }
+  {"kod": "A1", "ad": "Başlangıç", "dosya": "data/a1.json"},
+  {"kod": "A2", "ad": "Temel", "dosya": "data/a2.json"},
+  {"kod": "B1", "ad": "Orta", "dosya": "data/b1.json"}
 ]

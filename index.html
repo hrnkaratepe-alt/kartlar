@@ -1448,6 +1448,15 @@
       });
     }
 
+    // Boşlukları doğru şıkla doldurur; "Have / been" gibi şıklar sırayla birden çok boşluğa gider
+    function tamCumle(a) {
+      const parcalar = a.secenekler[a.dogru].split(" / ");
+      let i = 0;
+      return a.soru
+        .replace(/___/g, () => parcalar[Math.min(i++, parcalar.length - 1)])
+        .replace(/\s*\(.*?\)/g, "");
+    }
+
     function dersDetayiCiz(d) {
       const detay = $("dersDetay");
       detay.innerHTML = "";
@@ -1513,7 +1522,7 @@
             if (i !== a.dogru) b.classList.add("yanlis"); else dogruSayisi++;
             aciklama.textContent = (i === a.dogru ? "✅ Doğru! " : "❌ Doğrusu: " + a.secenekler[a.dogru] + ". ") + a.aciklama;
             aciklama.hidden = false;
-            if (a.soru.includes("___")) seslendir(a.soru.replace("___", a.secenekler[a.dogru]).replace(/\s*\(.*?\)/g, ""));
+            if (a.soru.includes("___")) seslendir(tamCumle(a));
             if (++cevaplanan === d.alistirmalar.length) alistirmaBitti();
           };
           secenekler.appendChild(b);
