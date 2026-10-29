@@ -366,6 +366,36 @@
     }
     .bildirim.gorunur { transform: translate(-50%, 0); opacity: 1; }
 
+    /* ---------- Dokunulabilir kelimeler ve sözlük kutusu ---------- */
+    .kelime {
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: underline dotted;
+      text-decoration-color: var(--soluk);
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 4px;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .kelime.acik { background: var(--ana-acik); color: var(--ana); text-decoration-color: var(--ana); }
+    .sozluk-kutu {
+      position: fixed;
+      z-index: 20;
+      max-width: min(280px, calc(100% - 16px));
+      background: var(--yuzey);
+      color: var(--yazi);
+      border: 1px solid var(--cizgi);
+      border-radius: 14px;
+      box-shadow: var(--golge);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .sozluk-ust { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .sozluk-kelime { font-size: 17px; font-weight: 700; }
+    .sozluk-okunus { font-size: 14px; color: var(--ana); font-style: italic; margin-top: 2px; }
+    .sozluk-anlam { font-size: 15px; color: var(--yesil); font-weight: 600; margin-top: 4px; }
+    .sozluk-anlam.yok { color: var(--soluk); font-weight: 400; }
+
     [hidden] { display: none !important; }
   </style>
 </head>
@@ -418,13 +448,13 @@
             <button class="ses" data-ses="normal">🔊 Dinle</button>
             <button class="ses" data-ses="yavas">🐢 Yavaş</button>
           </div>
-          <div class="ipucu">Anlamını görmek için karta dokun</div>
+          <div class="ipucu" id="ipucu">Anlamını görmek için karta dokun</div>
         </div>
 
         <!-- Arka yüz: Türkçesi ve örnek cümle -->
         <div class="yuz arka-yuz">
           <div class="turkce" id="arkaTurkce"></div>
-          <div class="kucuk-en" id="arkaIngilizce"></div>
+          <div class="kucuk-en"><span id="arkaIngilizce"></span>  ·  <span id="arkaOkunus"></span></div>
           <div class="ornek">
             <div class="ornek-baslik">Örnek cümle</div>
             <div class="ornek-en">
@@ -479,6 +509,16 @@
   </div>
 
   <div class="bildirim" id="bildirim"></div>
+
+  <!-- Bir kelimeye dokununca anlamını ve okunuşunu gösteren küçük kutu -->
+  <div class="sozluk-kutu" id="sozlukKutu" role="dialog" aria-live="polite" hidden>
+    <div class="sozluk-ust">
+      <span class="sozluk-kelime" id="sozlukKelime"></span>
+      <button class="ses mini" id="sozlukSes" aria-label="Kelimeyi dinle">🔊</button>
+    </div>
+    <div class="sozluk-okunus" id="sozlukOkunus"></div>
+    <div class="sozluk-anlam" id="sozlukAnlam"></div>
+  </div>
 
   <script>
     // ---------- KARTLAR ----------
@@ -578,6 +618,227 @@
       { konu: "yazilim", tur: "cumle", en: "The build is failing.", ok: "dı bild iz feyling", tr: "Derleme başarısız oluyor.", ornek: "The build is failing after the last commit.", ornekTr: "Son commit'ten sonra derleme başarısız oluyor." },
       { konu: "yazilim", tur: "cumle", en: "Let's fix this bug.", ok: "lets fiks dis bag", tr: "Bu hatayı düzeltelim.", ornek: "Let's fix this bug before the release.", ornekTr: "Sürümden önce bu hatayı düzeltelim." }
     ];
+
+    // ---------- SÖZLÜK ----------
+    // Kartlarda geçen her İngilizce kelime: [Türkçe anlamı, Türkçe harflerle okunuşu]
+    const SOZLUK = {
+      "a": ["bir", "ı"],
+      "about": ["hakkında, ile ilgili", "ıbaut"],
+      "after": ["sonra", "eftır"],
+      "again": ["tekrar, yine", "ıgen"],
+      "airport": ["havalimanı", "erport"],
+      "ali": ["Ali (isim)", "ali"],
+      "allergic": ["alerjisi olan, alerjik", "ılörcik"],
+      "always": ["her zaman", "olveyz"],
+      "an": ["bir (sesli harften önce)", "ın"],
+      "and": ["ve", "end"],
+      "angry": ["kızgın", "engri"],
+      "app": ["uygulama", "ep"],
+      "are": ["-dır, olmak (sen/biz/onlar)", "ar"],
+      "arrived": ["vardı, ulaştı", "ırayvd"],
+      "asked": ["sordu, istedi", "eskt"],
+      "at": ["-de, -da (yer ve saat)", "et"],
+      "bag": ["çanta", "beg"],
+      "be": ["olmak", "bii"],
+      "before": ["önce", "bifor"],
+      "bill": ["hesap, fatura", "bil"],
+      "bought": ["satın aldı", "bot"],
+      "branch": ["dal (branch)", "brenç"],
+      "bread": ["ekmek", "bred"],
+      "breakfast": ["kahvaltı", "brekfıst"],
+      "bug": ["hata (yazılımda)", "bag"],
+      "build": ["derleme; inşa etmek", "bild"],
+      "buy": ["satın almak", "bay"],
+      "cake": ["kek, pasta", "keyk"],
+      "can": ["-ebilmek; (isim olarak) Can", "ken"],
+      "cat": ["kedi", "ket"],
+      "change": ["değişiklik; değiştirmek", "çeync"],
+      "check": ["kontrol etmek; check in: giriş yapmak", "çek"],
+      "chicken": ["tavuk", "çikın"],
+      "child": ["çocuk", "çayld"],
+      "code": ["kod", "koud"],
+      "coffee": ["kahve", "kofi"],
+      "colleague": ["iş arkadaşı", "kaliig"],
+      "commit": ["commit (kod kaydı)", "kımit"],
+      "cook": ["yemek pişirmek", "kuk"],
+      "corner": ["köşe", "kornır"],
+      "could": ["-ebilir misin (kibar rica)", "kud"],
+      "course": ["of course: tabii ki", "kors"],
+      "create": ["oluşturmak", "kriyeyt"],
+      "dark": ["karanlık", "dark"],
+      "data": ["veri", "deyta"],
+      "database": ["veritabanı", "deytıbeys"],
+      "day": ["gün", "dey"],
+      "deadline": ["son teslim tarihi", "dedlayn"],
+      "delicious": ["çok lezzetli", "dilişıs"],
+      "deploy": ["yayına almak", "diploy"],
+      "dinner": ["akşam yemeği", "dinır"],
+      "does": ["yapar; soru yapar (-mı?)", "daz"],
+      "don't": ["do not: -me, -ma (olumsuz)", "dont"],
+      "drink": ["içmek", "drink"],
+      "early": ["erken", "örli"],
+      "eat": ["yemek yemek", "iit"],
+      "email": ["e-posta", "iimeyl"],
+      "enjoy": ["tadını çıkarmak", "inçoy"],
+      "every": ["her", "evri"],
+      "everything": ["her şey", "evriting"],
+      "excited": ["heyecanlı", "iksaytıd"],
+      "excuse": ["excuse me: affedersiniz", "ikskyuuz"],
+      "experience": ["deneyim", "ikspiriıns"],
+      "explain": ["açıklamak", "ikspleyn"],
+      "failing": ["başarısız oluyor", "feyling"],
+      "feature": ["özellik", "fiiçır"],
+      "feel": ["hissetmek", "fiil"],
+      "fine": ["iyi", "fayn"],
+      "five": ["beş", "fayv"],
+      "fix": ["düzeltmek", "fiks"],
+      "for": ["için", "for"],
+      "forget": ["unutmak", "fırget"],
+      "found": ["buldu", "faund"],
+      "fresh": ["taze", "freş"],
+      "friday": ["cuma", "fraydey"],
+      "great": ["harika", "greyt"],
+      "half": ["yarım, buçuk", "haf"],
+      "happy": ["mutlu", "hepi"],
+      "has": ["-si var, sahip (o)", "hez"],
+      "have": ["-si var, sahip olmak", "hev"],
+      "having": ["yiyor (yemek için); sahip olmak", "heving"],
+      "he": ["o (erkek)", "hii"],
+      "heavy": ["ağır", "hevi"],
+      "hello": ["merhaba", "helo"],
+      "help": ["yardım; yardım etmek", "help"],
+      "helps": ["yardım ediyor", "helps"],
+      "here": ["burada; here you are: buyurun", "hiır"],
+      "higher": ["daha yüksek", "hayır"],
+      "hotel": ["otel", "houtel"],
+      "how": ["nasıl; how much: ne kadar", "hav"],
+      "hungry": ["aç", "hangri"],
+      "i": ["ben", "ay"],
+      "i'd": ["I would: -mek isterim", "ayd"],
+      "i'll": ["I will: -eceğim", "ayl"],
+      "i'm": ["I am: ben ...-im", "aym"],
+      "in": ["içinde, -de, -da", "in"],
+      "is": ["-dır, -dir (o)", "iz"],
+      "it": ["o (şey), bu", "it"],
+      "it's": ["it is: o ...-dır", "its"],
+      "job": ["iş", "cob"],
+      "last": ["son, en son", "lest"],
+      "left": ["sol", "left"],
+      "let": ["izin vermek", "let"],
+      "let's": ["let us: hadi ...-elim", "lets"],
+      "like": ["sevmek; gibi; I'd like: isterim", "layk"],
+      "look": ["görünmek; bakmak", "luk"],
+      "lost": ["kaybolmuş, kayıp", "lost"],
+      "lot": ["a lot: çok", "lot"],
+      "luggage": ["bagaj", "lagıc"],
+      "lunch": ["öğle yemeği", "lanç"],
+      "machine": ["makine, bilgisayar", "mışiin"],
+      "made": ["yaptı", "meyd"],
+      "manager": ["yönetici", "menıcır"],
+      "map": ["harita", "mep"],
+      "me": ["beni, bana", "mii"],
+      "meal": ["yemek, öğün", "miil"],
+      "meet": ["tanışmak, buluşmak", "miit"],
+      "meeting": ["toplantı", "miiting"],
+      "menu": ["menü", "menyu"],
+      "miss": ["özlemek", "mis"],
+      "monday": ["pazartesi", "mandey"],
+      "more": ["daha çok", "mor"],
+      "morning": ["sabah", "morning"],
+      "much": ["çok; how much: ne kadar", "maç"],
+      "my": ["benim", "may"],
+      "name": ["isim, ad", "neym"],
+      "need": ["ihtiyacı olmak, gerekmek", "niid"],
+      "neighbor": ["komşu", "neybır"],
+      "new": ["yeni", "nyu"],
+      "nice": ["güzel, hoş", "nays"],
+      "nights": ["geceler", "nayts"],
+      "nuts": ["kuruyemiş", "nats"],
+      "of": ["-in, -nın; -den", "ov"],
+      "offer": ["teklif", "ofır"],
+      "on": ["üzerinde, -de", "on"],
+      "opened": ["açtı", "oupınd"],
+      "passport": ["pasaport", "pesport"],
+      "past": ["geçe (saat); geçmiş", "pest"],
+      "phone": ["telefon", "foun"],
+      "please": ["lütfen", "pliiz"],
+      "proud": ["gururlu", "praud"],
+      "pull": ["çekmek; pull request: kod değişikliği isteği", "pul"],
+      "ready": ["hazır", "redi"],
+      "release": ["sürüm", "riliis"],
+      "repeat": ["tekrar etmek", "ripiit"],
+      "report": ["rapor", "riport"],
+      "request": ["istek", "rikvest"],
+      "requirement": ["gereksinim", "rikvayırmınt"],
+      "requirements": ["gereksinimler", "rikvayırmınts"],
+      "reservation": ["rezervasyon", "rezırveyşın"],
+      "review": ["incelemek, gözden geçirmek", "rivyu"],
+      "right": ["sağ; doğru", "rayt"],
+      "sad": ["üzgün", "sed"],
+      "salary": ["maaş", "selıri"],
+      "saved": ["kaydedildi", "seyvd"],
+      "scared": ["korkmuş", "skerd"],
+      "schedule": ["program, takvim; ayarlamak", "skeçuul"],
+      "see": ["görmek", "sii"],
+      "send": ["göndermek", "send"],
+      "she": ["o (kadın)", "şii"],
+      "show": ["göstermek", "şou"],
+      "slept": ["uyudu", "slept"],
+      "slowly": ["yavaşça", "slouli"],
+      "smiles": ["gülümser", "smaylz"],
+      "so": ["çok; bu yüzden", "sou"],
+      "some": ["biraz, bazı", "sam"],
+      "sorry": ["özür dilerim, pardon", "sori"],
+      "soup": ["çorba", "suup"],
+      "spoon": ["kaşık", "spuun"],
+      "starts": ["başlıyor", "starts"],
+      "station": ["istasyon", "steyşın"],
+      "strange": ["garip", "streync"],
+      "talk": ["konuşmak", "tok"],
+      "tea": ["çay", "tii"],
+      "ten": ["on (10)", "ten"],
+      "test": ["test etmek", "test"],
+      "thank": ["teşekkür etmek", "tenk"],
+      "thanks": ["teşekkürler", "tenks"],
+      "that": ["o, şu; bunu", "det"],
+      "the": ["belirli tanımlık (o, bu)", "dı"],
+      "they": ["onlar", "dey"],
+      "this": ["bu", "dis"],
+      "three": ["üç", "trii"],
+      "ticket": ["bilet", "tikıt"],
+      "time": ["zaman; saat", "taym"],
+      "tired": ["yorgun", "tayırd"],
+      "to": ["-e, -a; -mek, -mak", "tu"],
+      "today": ["bugün", "tudey"],
+      "tomorrow": ["yarın", "tumorou"],
+      "too": ["de, da; fazla", "tuu"],
+      "train": ["tren", "treyn"],
+      "trip": ["yolculuk, gezi", "trip"],
+      "turn": ["dönmek", "törn"],
+      "two": ["iki", "tuu"],
+      "understand": ["anlamak", "andırstend"],
+      "vegetable": ["sebze", "veçtıbıl"],
+      "vegetables": ["sebzeler", "veçtıbılz"],
+      "was": ["idi, -dı (o)", "voz"],
+      "water": ["su", "votır"],
+      "we": ["biz", "vii"],
+      "weather": ["hava (durumu)", "vedır"],
+      "well": ["iyi", "vel"],
+      "what": ["ne", "vat"],
+      "what's": ["what is: ne?", "vats"],
+      "where": ["nerede", "ver"],
+      "why": ["neden", "vay"],
+      "will": ["-ecek, -acak", "vil"],
+      "with": ["ile", "vid"],
+      "working": ["çalışıyor", "vörking"],
+      "works": ["çalışıyor", "vörks"],
+      "worried": ["endişeli", "vörid"],
+      "worry": ["endişelenmek", "vari"],
+      "wrong": ["yanlış; ters giden", "rong"],
+      "years": ["yıl, yıllar", "yiırz"],
+      "you": ["sen, siz", "yu"],
+      "your": ["senin, sizin", "yor"]
+    };
 
     // ---------- AYARLAR ----------
     const GUNLUK_HEDEF = 20;
@@ -756,6 +1017,7 @@
     }
 
     function yeniKartGoster() {
+      sozlukKapat();
       simdikiKart = siradakiKart();
       kartEl.classList.remove("cevrildi");
       $("cevaplar").hidden = true;
@@ -776,12 +1038,18 @@
       $("etiketDurum").textContent = d ? "Tekrar · kutu " + d.kutu : "Yeni";
       $("etiketDurum").className = "etiket" + (d ? "" : " yeni");
 
-      $("onIngilizce").textContent = k.en;
+      // Kelime kartının ön yüzünde anlamı ele vermesin diye yalnızca cümlelerde kelimelere dokunulur
+      if (k.tur === "cumle") dokunulabilirYaz($("onIngilizce"), k.en);
+      else $("onIngilizce").textContent = k.en;
       $("onIngilizce").classList.toggle("uzun", k.en.length > 16);
       $("onOkunus").textContent = "[ " + k.ok + " ]";
+      $("ipucu").textContent = k.tur === "cumle"
+        ? "Kelimeye dokun: anlamı · Boş yere dokun: kartı çevir"
+        : "Anlamını görmek için karta dokun";
       $("arkaTurkce").textContent = k.tr;
-      $("arkaIngilizce").textContent = k.en + "  ·  " + k.ok;
-      $("ornekEn").textContent = k.ornek;
+      dokunulabilirYaz($("arkaIngilizce"), k.en);
+      $("arkaOkunus").textContent = k.ok;
+      dokunulabilirYaz($("ornekEn"), k.ornek);
       $("ornekTr").textContent = k.ornekTr;
 
       const sonrakiKutu = Math.min(ARALIKLAR.length - 1, (d ? d.kutu : 0) + 1);
@@ -792,6 +1060,7 @@
 
     function kartiCevir() {
       if (!simdikiKart) return;
+      sozlukKapat();
       const cevrildi = kartEl.classList.toggle("cevrildi");
       // Cevap butonları kart ilk çevrildiğinde açılır
       if (cevrildi) {
@@ -900,6 +1169,65 @@
       if (!calis) ilerlemeyiCiz();
     }
 
+    // ---------- SÖZLÜK KUTUSU ----------
+    // Metni kelimelere böler; her kelime dokunulabilir bir <span> olur ("I'm" gibi kısaltmalar tek kelime)
+    function dokunulabilirYaz(el, metin) {
+      el.textContent = "";
+      metin.split(/([A-Za-z]+(?:'[A-Za-z]+)?)/).forEach((parca, i) => {
+        if (i % 2 === 0) {
+          if (parca) el.append(parca);
+          return;
+        }
+        const kelime = document.createElement("span");
+        kelime.className = "kelime";
+        kelime.textContent = parca;
+        el.appendChild(kelime);
+      });
+    }
+
+    // Sözlükte yoksa basit ekleri atarak dener: "cats" → "cat", "worked" → "work"
+    function sozlukteBul(kelime) {
+      const k = kelime.toLowerCase();
+      if (SOZLUK[k]) return SOZLUK[k];
+      for (const ek of ["'s", "es", "s", "ed", "d", "ing"]) {
+        if (k.endsWith(ek) && SOZLUK[k.slice(0, -ek.length)]) return SOZLUK[k.slice(0, -ek.length)];
+      }
+      return null;
+    }
+
+    let acikKelime = null;
+
+    function sozlukGoster(kelimeEl) {
+      const kutu = $("sozlukKutu");
+      const kelime = kelimeEl.textContent;
+      const kayit = sozlukteBul(kelime);
+      if (acikKelime) acikKelime.classList.remove("acik");
+      acikKelime = kelimeEl;
+      kelimeEl.classList.add("acik");
+
+      $("sozlukKelime").textContent = kelime;
+      $("sozlukOkunus").textContent = kayit ? "[ " + kayit[1] + " ]" : "";
+      $("sozlukAnlam").textContent = kayit ? kayit[0] : "Bu kelime sözlükte yok";
+      $("sozlukAnlam").classList.toggle("yok", !kayit);
+      seslendir(kelime);
+
+      // Kutuyu kelimenin üstüne ortala; yer yoksa altına koy, ekrandan taşırma
+      kutu.hidden = false;
+      const r = kelimeEl.getBoundingClientRect();
+      const g = kutu.offsetWidth, y = kutu.offsetHeight;
+      const sol = Math.max(8, Math.min(r.left + r.width / 2 - g / 2, window.innerWidth - g - 8));
+      let ust = r.top - y - 8;
+      if (ust < 8) ust = r.bottom + 8;
+      kutu.style.left = sol + "px";
+      kutu.style.top = ust + "px";
+    }
+
+    function sozlukKapat() {
+      $("sozlukKutu").hidden = true;
+      if (acikKelime) acikKelime.classList.remove("acik");
+      acikKelime = null;
+    }
+
     let bildirimZamani;
     function bildir(mesaj) {
       const el = $("bildirim");
@@ -910,11 +1238,25 @@
     }
 
     // ---------- DOKUNMA / TIKLAMA ----------
-    kartEl.addEventListener("click", kartiCevir);
+    // Kelimeye dokunmak sözlüğü açar, kartın başka bir yerine dokunmak kartı çevirir
+    kartEl.addEventListener("click", e => {
+      const kelime = e.target.closest(".kelime");
+      if (kelime) sozlukGoster(kelime); else kartiCevir();
+    });
+
+    // Kutunun dışına dokununca, kaydırınca ya da ekran dönünce kutu kapanır
+    document.addEventListener("click", e => {
+      if (!e.target.closest(".kelime, .sozluk-kutu")) sozlukKapat();
+    });
+    window.addEventListener("scroll", sozlukKapat, true);
+    window.addEventListener("resize", sozlukKapat);
+    $("sozlukSes").addEventListener("click", () => {
+      if (acikKelime) seslendir(acikKelime.textContent, true);
+    });
     $("gosterButon").addEventListener("click", kartiCevir);
 
     // Kartın içindeki ses butonları kartı çevirmesin
-    document.querySelectorAll(".ses").forEach(b => b.addEventListener("click", e => {
+    document.querySelectorAll(".kart .ses").forEach(b => b.addEventListener("click", e => {
       e.stopPropagation();
       if (!simdikiKart) return;
       const tur = b.dataset.ses;
